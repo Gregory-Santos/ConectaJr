@@ -1,1 +1,27 @@
-<p>header works!</p>
+<div class="header-component">
+    <div class="barra-pesquisa">
+        <form (submit)="pesquisar($event)">
+            <input type="text" [formField]="pesquisaForm" />
+            <button [disabled]="pesquisaForm().invalid()">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </form>
+    </div>
+
+    <div class="chat-suspenso">
+        <span>Aqui vai ficar o chat suspenso</span>
+    </div>
+
+    <div class="notificacoes-suspenso">
+        <button class="botao-notificacao" type="button">
+            <i class="fa-solid fa-bell"></i>
+
+            <span class="contador-notificacao">3</span>
+        </button>
+
+    </div>
+
+    <div class="menu-projeto-atual">
+        <span>Aqui vai ficar o menu do seu projeto atual</span>
+    </div>
+</div>
