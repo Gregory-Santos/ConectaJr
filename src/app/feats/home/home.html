@@ -1,1 +1,23 @@
-<p>home works!</p>
+<section class="reunioes">
+
+  <div class="titulo-secao">
+    <h2>Reuniões de hoje</h2>
+
+    <button>
+      Ver todas
+    </button>
+  </div>
+
+  <div class="lista-reunioes">
+
+    @for (reuniao of reunioes; track reuniao.id) {
+
+      <app-reuniao-card
+        [reuniao]="reuniao">
+      </app-reuniao-card>
+
+    }
+
+  </div>
+
+</section>

@@ -1,0 +1,147 @@
+/* =========================================
+   CARD DA REUNIÃO
+========================================= */
+
+.reuniao-card {
+
+  display: flex;
+  flex-direction: column;
+
+  width: 50%;
+  min-height: 50px;
+
+  background-color: #25184a;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  border: 1px solid #382568;
+
+  font-family: 'Segoe UI', Roboto, sans-serif;
+
+  transition: transform 0.2s ease,
+              border-color 0.2s ease;
+}
+
+
+/* =========================================
+   EFEITO AO PASSAR O MOUSE
+========================================= */
+
+.reuniao-card:hover {
+
+  transform: translateY(-2px);
+
+  border-color: #6940b8;
+
+}
+
+
+/* =========================================
+   CABEÇALHO
+========================================= */
+
+.cabecalho-card {
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: #f59e0b;
+
+  padding: 7px 10px;
+
+}
+
+
+/* =========================================
+   CATEGORIA
+========================================= */
+
+.categoria {
+
+  color: #ffffff;
+
+  font-size: 0.65rem;
+
+  font-weight: 700;
+
+  text-transform: none;
+
+  letter-spacing: 0;
+
+}
+
+
+/* =========================================
+   HORÁRIO
+========================================= */
+
+.horario {
+
+  color: #ffffff;
+
+  font-size: 0.65rem;
+
+  font-weight: 600;
+
+}
+
+
+/* =========================================
+   TÍTULO
+========================================= */
+
+.reuniao-card h3 {
+
+  margin: 10px 10px 6px;
+
+  color: #ffffff;
+
+  font-size: 0.75rem;
+
+  line-height: 1.2;
+
+  font-weight: 600;
+
+}
+
+
+/* =========================================
+   PARTICIPANTES
+========================================= */
+
+.participantes {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+
+  padding: 0 10px 10px;
+
+}
+
+
+/* =========================================
+   CADA PARTICIPANTE
+========================================= */
+
+.participantes span {
+
+  color: #c9c1df;
+
+  background: transparent;
+
+  border: none;
+
+  padding: 0;
+
+  font-size: 0.62rem;
+
+  line-height: 1.2;
+
+}

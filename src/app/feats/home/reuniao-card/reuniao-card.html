@@ -1,0 +1,34 @@
+<article class="reuniao-card">
+
+  <div class="cabecalho-card">
+
+    <span class="categoria">
+      {{ reuniao().categoria }}
+    </span>
+
+    <span class="horario">
+      {{ reuniao().horario }}
+    </span>
+
+  </div>
+
+  <h3>
+    {{ reuniao().titulo }}
+  </h3>
+
+  <div class="participantes">
+
+    @for (
+      participante of reuniao().participantes;
+      track participante
+    ) {
+
+      <span>
+        {{ participante }}
+      </span>
+
+    }
+
+  </div>
+
+</article>
