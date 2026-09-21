@@ -1,0 +1,73 @@
+.side-bar{
+    height: 1067xp;
+    width: 260px;
+    background-color: #1B1C30;
+}
+
+.logo img{
+    height: 35px;
+    width: 203px;
+    margin-left: 27px;
+    margin-top: 32px;
+}
+
+.info-perfil{
+    display:flex;
+    align-items: center;
+    background-color: #2D2C4E; 
+    height: 66px;
+    width: 233px;
+    margin-top: 60px; 
+    margin-left: 13px;
+    border-radius: 13px;
+}
+
+.avatar-perfil{
+    height: 44px;
+    width: 44px;
+    border-radius: 13%;
+    object-fit: cover;
+    margin-left: 9px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.info h2{
+    margin: 0;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-top: 11px;
+    margin-left: 13px;
+
+}
+
+.info p{
+    font-size: 11px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.6);
+    margin-left: 13px;
+    margin-top: 2px;
+    
+}
+
+.info-perfil i{
+    color: #F5F5F5;
+    margin-left: 30px;
+}
+
+.titulo-perfil {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: #FFFFFF;
+    font-size: 14px;
+    
+
+}
+
