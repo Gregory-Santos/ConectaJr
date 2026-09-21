@@ -1,0 +1,221 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.header-component {
+  width: 100%;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 22px;
+  box-sizing: border-box;
+
+  background-color: #19192e;
+  color: #ffffff;
+
+  gap: 22px;
+}
+
+
+/* =========================
+   BARRA DE PESQUISA
+========================= */
+
+.barra-pesquisa {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.barra-pesquisa form {
+  width: 100%;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+
+  border: 1px solid #d9d9e2;
+  border-radius: 20px;
+
+  overflow: hidden;
+}
+
+.barra-pesquisa input {
+  width: 100%;
+  height: 100%;
+
+  padding: 0 14px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+  color: #ffffff;
+
+  font-size: 14px;
+}
+
+.barra-pesquisa input::placeholder {
+  color: #aaaabd;
+}
+
+.barra-pesquisa button {
+  width: 45px;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  background: transparent;
+
+  color: #d9d9e2;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.barra-pesquisa button:hover {
+  color: #ffffff;
+}
+
+.barra-pesquisa button:disabled {
+  cursor: default;
+}
+
+
+/* =========================
+   CHAT
+========================= */
+
+.chat-suspenso {
+  width: 25px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+
+  font-size: 18px;
+}
+
+
+/* =========================
+   NOTIFICAÇÕES
+========================= */
+
+.notificacoes-suspenso {
+  position: relative;
+
+  width: 28px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.botao-notificacao {
+  position: relative;
+
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+  color: #ffffff;
+
+  font-size: 17px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.botao-notificacao:hover {
+  color: #cfcfdc;
+}
+
+.contador-notificacao {
+  position: absolute;
+
+  top: 1px;
+  right: 1px;
+
+  min-width: 14px;
+  height: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 3px;
+
+  border-radius: 50%;
+
+  background-color: #6d24d9;
+  color: #ffffff;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   MENU DO PROJETO
+========================= */
+
+.menu-projeto-atual {
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 15px;
+
+  border-radius: 18px;
+
+  background-color: #4d16a3;
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 800px) {
+
+  .header-component {
+    gap: 12px;
+    padding: 0 15px;
+  }
+
+  .barra-pesquisa {
+    min-width: 0;
+  }
+
+  .menu-projeto-atual {
+    display: none;
+  }
+}
