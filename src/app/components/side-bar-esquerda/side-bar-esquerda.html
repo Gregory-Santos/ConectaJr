@@ -1,9 +1,14 @@
+<!--Construção do side bar inteiro-->
 <div class="side-bar">
+
+    <!--logo da conecta-->
     <div class="logo">
         <img src="/img/logo-conectajr.png" alt="logo do Conecta Júnior">
     </div>
+
+    <!--card de perfil, titulo perfil, avatar usuario, estudante, seta e nome de usuario-->
     <div class="titulo-perfil">
-        <h1>perfil</h1>
+        <h1>Perfil</h1>
     </div>
     <div class="info-perfil">
 
@@ -17,23 +22,50 @@
         <i class="fa-solid fa-angle-down"></i>
     </div>
 
+
+    <!--mini menu, inicio, dashboard, buscar e meu time-->
     <div class="mini-menu">
-        <h1>Menu</h1>
+        <div class="titulo-menu">
+            <h1>Menu</h1>
+        </div>
+
+
         <nav class="icones">
 
-            <a routerLink="/home"> <i class="fa-regular fa-house"></i> Inicio</a>
-            <a routerLink="/dashboard"> <i class="fa-solid fa-border-all"></i> Dashboard</a>
-            <a routerLink="/buscar"> <i class="fa-solid fa-magnifying-glass"></i> Buscar</a>
-            <a routerLink="/meu-time"> <i class="fa-solid fa-globe"></i> Meu time</a>
+            <div class="card-menu"> <a routerLink="/home"> <i class="fa-solid fa-house"></i> 
+                <span>Início</span>
+                </a></div>
+
+            <div class="card-menu">
+                <a routerLink="/dashboard"> <i class="fa-solid fa-border-all"></i> <span>Dashboard</span>
+                </a>
+            </div>
+
+            <div class="card-menu">
+                <a routerLink="/buscar"> <i class="fa-solid fa-magnifying-glass"></i> <span>Buscar</span>
+                </a>
+            </div>
+
+            <div class="card-menu">
+                <a routerLink="/meu-time"> <i class="fa-solid fa-globe"></i> <span>Meu time</span>
+                </a>
+            </div>
         </nav>
     </div>
 
+    <!--card de configuração-->
     <div class="outros-config">
-        <h1>Configurações</h1>
-        <a routerLink="/config"> <i class="fa-solid fa-gear"></i> Configurações</a>
+        <div class="titulo-config">
+        <h1>Configurações</h1></div>
+
+<div class="card-config">
+        <a routerLink="/config"> <i class="fa-solid fa-gear"></i> 
+           <span>Configurações</span> 
+        </a></div>
 
     </div>
 
+    <!--chat-->
     <div class="chat-side-bar">
 
         <div class="conversa">
@@ -43,19 +75,19 @@
             <i class="fa-solid fa-circle"></i>
         </div>
 
-        <div class="conversa2">
+        <div class="conversa">
             <img src="img/teste-chat.webp" alt="teste-foto-perfil" width="90">
             <h1>Lucas O.</h1>
             <p>mensagem</p>
         </div>
 
-        <div class="conversa3">
+        <div class="conversa">
             <img src="img/teste-chat.webp" alt="teste-foto-perfil" width="90">
             <h1>Winicius R.</h1>
             <p>mensagem</p>
         </div>
 
-        <div class="conversa4">
+        <div class="conversa">
             <img src="img/teste-chat.webp" alt="teste-foto-perfil" width="90">
             <h1>Amanda V.</h1>
             <p>mensagem</p>
