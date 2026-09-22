@@ -1,28 +1,55 @@
-.side-bar{
-    height: 1067xp;
+/*config global do side-bar*/
+.side-bar {
+    height: 100%;
     width: 260px;
     background-color: #1B1C30;
 }
 
-.logo img{
+/*logo da conecta gobal*/
+.logo {
+    margin-bottom: 41px;
+}
+
+/*config da img da logo*/
+.logo img {
     height: 35px;
     width: 203px;
     margin-left: 27px;
     margin-top: 32px;
 }
 
-.info-perfil{
-    display:flex;
+/*config global do card perfil*/
+.info-perfil {
+    display: flex;
     align-items: center;
-    background-color: #2D2C4E; 
+    background-color: #2D2C4E;
     height: 66px;
     width: 233px;
-    margin-top: 60px; 
+    margin-top: 16px;
     margin-left: 13px;
     border-radius: 13px;
 }
 
-.avatar-perfil{
+
+/*titulo perfil global*/
+.titulo-perfil {
+    margin-left: 18px;
+    margin-bottom: -9px;
+}
+
+/*titulo perfil h1*/
+.titulo-perfil h1 {
+    margin: 0;
+    line-height: 17px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+
+/*avatar do usuario*/
+.avatar-perfil {
     height: 44px;
     width: 44px;
     border-radius: 13%;
@@ -30,44 +57,181 @@
     margin-left: 9px;
 }
 
-.info{
+/*informaçoes do usuario global*/
+.info {
     display: flex;
     flex-direction: column;
-    
+    margin-left: 13px;
+
 }
 
-.info h2{
+/*nome do usuario*/
+.info h2 {
     margin: 0;
     font-size: 16px;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
     color: #FFFFFF;
-    margin-top: 11px;
-    margin-left: 13px;
 
 }
 
-.info p{
+/*estudante*/
+.info p {
+    margin: 2px 0 0 0;
     font-size: 11px;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.6);
-    margin-left: 13px;
-    margin-top: 2px;
-    
 }
 
-.info-perfil i{
+/*icone de setinha*/
+.info-perfil i {
     color: #F5F5F5;
     margin-left: 30px;
 }
 
-.titulo-perfil {
+/*titulo menu global*/
+.titulo-menu {
+    margin-left: 18px;
+    margin-bottom: -9px;
+    margin-top: 44px;
+}
+
+/*titulo menu */
+.titulo-menu h1 {
+    margin: 0;
+    line-height: 17px;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     color: #FFFFFF;
     font-size: 14px;
-    
+}
 
+/*card menu global*/
+.card-menu {
+    display: flex;
+    align-items: center;
+    background-color: #2D2C4E;
+    height: 51px;
+    width: 233px;
+    margin-top: 20px;
+    margin-left: 13px;
+    border-radius: 13px;
+
+}
+
+/*card menu texto e icone style*/
+.card-menu a {
+    display: flex;
+    align-items: center;
+    gap: 19px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 400;
+    color: #FFFFFFA8;
+    margin: 10px;
+    margin-top: 8px;
+}
+
+/*card menu style icone*/
+.card-menu i {
+    width: 32px;
+    height: 32px;
+    font-size: 32px;
+}
+
+/*card menu escritas, início, dashboard, buscar, meu time*/
+.card-menu a span {
+    transform: translateY(4px);
+}
+
+/*card configuração titulo*/
+.titulo-config {
+    margin-left: 18px;
+    margin-bottom: -9px;
+    margin-top: 44px;
+}
+
+.titulo-config h1 {
+    margin: 0;
+    line-height: 17px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+/*card configuração global*/
+.card-config {
+    display: flex;
+    align-items: center;
+    background-color: #2D2C4E;
+    height: 51px;
+    width: 233px;
+    margin-top: 20px;
+    margin-left: 13px;
+    border-radius: 13px;
+}
+
+/*card configuração icone e escrita*/
+.card-config a {
+    display: flex;
+    align-items: center;
+    gap: 19px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 400;
+    color: #FFFFFFA8;
+    margin: 10px;
+    margin-top: 8px;
+}
+
+/*card configuração icone*/
+.card-config i {
+    width: 32px;
+    height: 32px;
+    font-size: 32px;
+}
+
+/*card configuração escrita*/
+.card-config a span {
+    transform: translateY(4px);
+}
+
+/*card chat*/
+
+.chat-side-bar {
+    display: flex;
+    flex-direction: column;
+    width: 232px;
+    height: 270px;
+    background: linear-gradient(to right,
+            rgba(78, 25, 150, 0.93),
+            rgba(78, 25, 150, 0.45));
+
+    border-radius: 13px;
+}
+
+.conversa h1{
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #F5F5F5;
+}
+
+.conversa img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.conversa p{
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #909090;
 }
 
