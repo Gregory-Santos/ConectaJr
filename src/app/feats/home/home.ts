@@ -1,9 +1,36 @@
-import { Component } from '@angular/core';
+
+import { Component, inject } from '@angular/core';
+import { FeedProjeto } from '../../core/service/feed-projeto';
+import { Projeto } from '../../core/models/projeto';
 
 @Component({
-  imports: [],
   selector: 'app-home',
-  styleUrl: './home.css',
+
+  imports: [],
+
   templateUrl: './home.html',
+
+  styleUrl: './home.css'
 })
-export class Home {}
+export class Home {
+
+  /*
+   * Injeta o Service.
+   */
+  private feedService = inject(FeedProjeto);
+
+
+  /*
+   * Projetos que combinam com o candidato.
+   */
+  projetosMatch: Projeto[] =
+    this.feedService.listarMatches();
+
+
+  /*
+   * Projetos que são apenas sugestões.
+   */
+  projetosSugestoes: Projeto[] =
+    this.feedService.listarSugestoes();
+
+}

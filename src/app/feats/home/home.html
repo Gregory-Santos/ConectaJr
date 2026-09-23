@@ -1,1 +1,225 @@
-<p>home works!</p>
+<div class="home-container">
+
+
+  <!-- =====================================
+       TÍTULO
+  ====================================== -->
+
+  <header class="feed-header">
+
+    <span>
+      FEED
+    </span>
+
+    <h1>
+      Projetos para você
+    </h1>
+
+    <p>
+      Encontramos projetos que combinam
+      com suas habilidades.
+    </p>
+
+  </header>
+
+
+  <!-- =====================================
+       COMBINA COM SEU PERFIL
+  ====================================== -->
+
+  <section class="feed-section">
+
+    <div class="section-title">
+
+      <h2>
+        Combina com seu perfil
+      </h2>
+
+      <span>
+        {{ projetosMatch.length }} projetos
+      </span>
+
+    </div>
+
+
+    <div class="feed-grid">
+
+      @for (
+        projeto of projetosMatch;
+        track projeto.id
+      ) {
+
+        <article class="projeto-card">
+
+
+          <!-- CABEÇALHO -->
+
+          <div class="card-header">
+
+            <span class="empresa">
+              {{ projeto.empresa }}
+            </span>
+
+            <span class="match">
+              {{ projeto.percentualMatch }}%
+            </span>
+
+          </div>
+
+
+          <!-- CONTEÚDO -->
+
+          <div class="card-content">
+
+            <h3>
+              {{ projeto.titulo }}
+            </h3>
+
+            <p>
+              {{ projeto.descricao }}
+            </p>
+
+          </div>
+
+
+          <!-- SKILLS -->
+
+          <div class="skills">
+
+            @for (
+              skill of projeto.skills;
+              track skill.name
+            ) {
+
+              <span
+                class="skill"
+                [class.matched]="skill.status === 'matched'"
+                [class.pending]="skill.status === 'pending'"
+              >
+
+                {{
+                  skill.status === 'matched'
+                    ? '✓'
+                    : '?'
+                }}
+
+                {{ skill.name }}
+
+              </span>
+
+            }
+
+          </div>
+
+
+          <!-- RODAPÉ -->
+
+          <button class="btn-projeto">
+
+            Ver projeto
+
+          </button>
+
+
+        </article>
+
+      }
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================
+       SUGESTÕES
+  ====================================== -->
+
+  <section class="feed-section">
+
+    <div class="section-title">
+
+      <h2>
+        Sugestões para você
+      </h2>
+
+    </div>
+
+
+    <div class="feed-grid">
+
+      @for (
+        projeto of projetosSugestoes;
+        track projeto.id
+      ) {
+
+        <article class="projeto-card sugestao">
+
+          <div class="card-header">
+
+            <span class="empresa">
+              {{ projeto.empresa }}
+            </span>
+
+            <span class="match">
+              {{ projeto.percentualMatch }}%
+            </span>
+
+          </div>
+
+
+          <div class="card-content">
+
+            <h3>
+              {{ projeto.titulo }}
+            </h3>
+
+            <p>
+              {{ projeto.descricao }}
+            </p>
+
+          </div>
+
+
+          <div class="skills">
+
+            @for (
+              skill of projeto.skills;
+              track skill.name
+            ) {
+
+              <span
+                class="skill"
+                [class.matched]="skill.status === 'matched'"
+                [class.pending]="skill.status === 'pending'"
+              >
+
+                {{
+                  skill.status === 'matched'
+                    ? '✓'
+                    : '?'
+                }}
+
+                {{ skill.name }}
+
+              </span>
+
+            }
+
+          </div>
+
+
+          <button class="btn-projeto">
+
+            Ver projeto
+
+          </button>
+
+        </article>
+
+      }
+
+    </div>
+
+  </section>
+
+</div>   
