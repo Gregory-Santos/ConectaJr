@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+
+/*Config do side-bar, para tirar margin do navegador*/
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
