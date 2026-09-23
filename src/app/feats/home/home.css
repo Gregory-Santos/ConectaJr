@@ -15,11 +15,11 @@
 
 .home-container {
 
-  width: 100%;
+  width: auto;
+  
+  max-width: 1092px;
 
-  max-width: 1200px;
-
-  margin: 0 auto;
+  margin: auto;
 
   padding: 30px 40px;
 
@@ -282,9 +282,7 @@
 
   overflow: hidden;
 
-  border: 1px solid
-    rgba(139, 92, 246, 0.25);
-
+  
   box-shadow:
     0 8px 18px
     rgba(0, 0, 0, 0.18);
@@ -656,4 +654,50 @@
 
   }
 
+}
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.carousel-window {
+  overflow: hidden;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+.carousel .feed-grid {
+  display: flex !important;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  gap: 16px;
+  width: 100%;
+}
+
+.carousel .projeto-card {
+  flex: 0 0 calc((100% - 30px) / 3);
+  min-width: 20%;
+  max-width: calc((100% -44px) / 3);
+}
+
+/* Botões */
+.carousel-button {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: #6b21a8;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.carousel-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
