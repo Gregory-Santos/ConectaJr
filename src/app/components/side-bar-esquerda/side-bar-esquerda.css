@@ -1,8 +1,9 @@
 /*config global do side-bar*/
 .side-bar {
     height: 100%;
-    width: 260px;
+    width: 100%;
     background-color: #1B1C30;
+    display: 100%;
 }
 
 /*logo da conecta gobal*/
