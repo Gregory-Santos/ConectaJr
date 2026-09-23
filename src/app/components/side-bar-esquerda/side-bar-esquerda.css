@@ -4,6 +4,7 @@
     width: 100%;
     background-color: #1B1C30;
     display: 100%;
+    margin-right: 13px;
 }
 
 /*logo da conecta gobal*/
@@ -147,6 +148,15 @@
     transform: translateY(4px);
 }
 
+/*cor roxa ao passar o mouse nos cards-menu*/
+.card-menu:hover{
+    background-color: #4E1996;
+}
+
+
+.card-config:hover{
+    background-color: #4E1996;
+}
 /*card configuração titulo*/
 .titulo-config {
     margin-left: 18px;
@@ -219,6 +229,7 @@
     margin-top: 147px;
     overflow-y: auto;
     overflow-x: hidden;
+    margin-bottom: 30px;
 }
 /*o chat em si, nome, avatar usuario e mensagem*/
 .conversa {
