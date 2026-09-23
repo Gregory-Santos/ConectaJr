@@ -1,0 +1,10 @@
+.app-layout {
+    width: 100%;
+    display: flex;
+}
+
+.app-body {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
