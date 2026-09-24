@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
-  imports: [RouterLink],
+  imports: [RouterLink, RouterLinkActive],
   selector: 'app-side-bar-esquerda',
   styleUrl: './side-bar-esquerda.css',
   templateUrl: './side-bar-esquerda.html',
