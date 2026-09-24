@@ -38,58 +38,48 @@
    HEADER DO FEED
 ===================================== */
 
-.feed-header {
+.feed-painel {
 
-  position: relative;
-
-  padding: 36px 28px 48px;
+  padding: 30px 30px 70px;
 
   margin-bottom: 28px;
 
   background:
     linear-gradient(
       135deg,
-      #2a1a4a 0%,
-      #4c1d95 50%,
-      #6b21a8 100%
+      #452f92 25%,
+      #2e1f64 80%,
+      #221452 100%
     );
 
   border-radius: 20px;
 
   overflow: hidden;
-
+  
   box-shadow:
     0 20px 40px
     rgba(0, 0, 0, 0.25);
+}
 
+.feed-painel h1 {
+  font-weight: 900px;
+  
+  color: #f2f2f8;
+}
+
+.feed-painel h4 {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 200;
+  color: #e6e6ec;
+  margin-bottom: 6px;
 }
 
 
 /* =====================================
-   DECORAÇÕES DO HEADER
+   DECORAÇÕES DO PAINEL
 ===================================== */
 
-.feed-header::before,
-.feed-header::after {
-
-  content: '';
-
-  position: absolute;
-
-  border-radius: 50%;
-
-  border: 28px solid transparent;
-
-  border-top-color:
-    rgba(255, 255, 255, 0.12);
-
-  border-right-color:
-    rgba(255, 255, 255, 0.08);
-
-}
-
-
-.feed-header::before {
+.feed-painel::before {
 
   width: 220px;
 
@@ -104,7 +94,7 @@
 }
 
 
-.feed-header::after {
+.feed-painel::after {
 
   width: 160px;
 
@@ -125,7 +115,7 @@
    TEXTO DO HEADER
 ===================================== */
 
-.feed-header span {
+.feed-painel span {
 
   position: relative;
 
@@ -147,29 +137,7 @@
 
 }
 
-
-.feed-header h1 {
-
-  position: relative;
-
-  z-index: 2;
-
-  margin: 0;
-
-  color: #ffffff;
-
-  font-size: 1.85rem;
-
-  font-weight: 800;
-
-  line-height: 1.15;
-
-  letter-spacing: -0.5px;
-
-}
-
-
-.feed-header p {
+.feed-painel p {
 
   position: relative;
 
@@ -224,7 +192,7 @@
 
   margin: 0;
 
-  color: #a1a1aa;
+  color: #e2e2e6;
 
   font-size: 0.7rem;
 

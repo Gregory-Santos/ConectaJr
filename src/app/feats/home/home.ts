@@ -1,10 +1,11 @@
 import { Component, inject, signal } from '@angular/core';
 import { FeedProjeto } from '../../core/service/feed-projeto';
 import { Projeto } from '../../core/models/projeto';
+import { BarraPesquisa } from '../barra-pesquisa/barra-pesquisa';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [BarraPesquisa],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
