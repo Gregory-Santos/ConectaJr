@@ -65,9 +65,42 @@ main {
     padding-top: 5px;
 }
 
-.link-github i{
+.link-github i {
     margin-right: 8px;
     font-size: 21px;
 }
 
+/*numeros de desenvolvimento*/
+.numeros-perfil {
+    justify-content: flex-end;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-top: -80px;
+    margin-right: 207px;
+}
 
+.numeros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.numeros h2 {
+    margin: 0;
+    font-size: 40px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    color: #FFFFFF;
+
+}
+
+.numeros p {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.79);
+    font-family: 'Inter', sans-serif;
+}
