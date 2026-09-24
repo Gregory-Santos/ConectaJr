@@ -3,9 +3,10 @@ import { RouterOutlet } from '@angular/router';
 import { SideBarEsquerda } from './components/side-bar-esquerda/side-bar-esquerda';
 import { Footer } from './components/footer/footer';
 import { Header } from './components/header/header';
+import { Calendario } from './feats/calendario/calendario';
 
 @Component({
-  imports: [SideBarEsquerda, Footer, RouterOutlet, Header],
+  imports: [SideBarEsquerda, Footer, RouterOutlet, Header, Calendario],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',

@@ -1,0 +1,148 @@
+<section class="calendario">
+
+    <div class="calendario-topo">
+
+        <div class="titulo-calendario">
+            <h2>Calendario</h2>
+
+            <div class="navegacao">
+                <button
+                    type="button"
+                    (click)="mesAnterior()"
+                    aria-label="Mês anterior">
+                    ‹
+                </button>
+
+                <span>{{ nomeMes() }}</span>
+
+                <button
+                    type="button"
+                    (click)="proximoMes()"
+                    aria-label="Próximo mês">
+                    ›
+                </button>
+            </div>
+        </div>
+
+        <div class="dias-semana">
+            @for (dia of diasSemana; track dia) {
+                <span>{{ dia }}</span>
+            }
+        </div>
+
+        <div class="grade-calendario">
+
+            @for (dia of dias(); track dia.data.getTime()) {
+
+                <button
+                    type="button"
+                    class="dia"
+                    [class.outro-mes]="!dia.mesAtual"
+                    [class.selecionado]="diaSelecionado(dia)"
+                    [class.hoje]="diaAtual(dia)"
+                    [class.com-evento]="possuiEvento(dia)"
+                    (click)="selecionarDia(dia)">
+
+                    <span>{{ dia.numero }}</span>
+
+                </button>
+
+            }
+
+        </div>
+
+    </div>
+
+
+    <div class="separador"></div>
+
+
+    <div class="agendados">
+
+        <div class="agendados-topo">
+            <h2>Próximos Eventos</h2>
+
+            <button type="button" class="ver-tudo">
+                ver tudo
+            </button>
+        </div>
+
+
+        <div class="data-evento">
+
+            <span>Hoje</span>
+
+            @for (evento of eventosSelecionados(); track evento.id) {
+
+                <article
+                    class="evento"
+                    [class.destaque]="evento.destaque">
+
+                    <small>
+                        {{ evento.data.getDate() }}
+                        de
+                        {{ evento.data.toLocaleDateString('pt-BR', {
+                            month: 'long'
+                        }) }}
+                    </small>
+
+                    <div class="evento-conteudo">
+                        <span class="marcador"></span>
+
+                        <div>
+                            <p>{{ evento.titulo }}</p>
+
+                            @if (evento.subtitulo) {
+                                <p class="subtitulo">
+                                    {{ evento.subtitulo }}
+                                </p>
+                            }
+                        </div>
+                    </div>
+                </article>
+            }
+
+        </div>
+
+        <div class="proximos-eventos">
+    <span>Amanhã</span>
+
+    @for (evento of eventosAmanha(); track evento.id) {
+
+        <article
+            class="evento"
+            [class.destaque]="evento.destaque">
+
+            <small>
+                {{ evento.data.getDate() }}
+                de
+                {{ evento.data.toLocaleDateString('pt-BR', {
+                    month: 'long'
+                }) }}
+            </small>
+
+            <div class="evento-conteudo">
+                <span class="marcador"></span>
+                <div>
+                    <p>{{ evento.titulo }}</p>
+
+                    @if (evento.subtitulo) {
+                        <p class="subtitulo">
+                            {{ evento.subtitulo }}
+                        </p>
+                    }
+                </div>
+            </div>
+        </article>
+
+    }
+
+    @if (eventosAmanha().length === 0) {
+        <div class="evento-vazio"></div>
+    }
+
+</div>
+
+    </div>
+
+</section>

@@ -5,7 +5,17 @@
     <div class="app-body">
         <app-header></app-header>
 
-        <router-outlet />
+        <div class="conteudo-layout">
+
+            <main class="conteudo-principal">
+                <router-outlet></router-outlet>
+            </main>
+
+            <aside class="calendario-lateral">
+                <app-calendario></app-calendario>
+            </aside>
+
+        </div>
         
         <app-footer></app-footer>
     </div>
