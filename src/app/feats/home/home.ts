@@ -1,10 +1,11 @@
 import { Component, inject, signal } from '@angular/core';
 import { FeedProjeto } from '../../core/service/feed-projeto';
 import { Projeto } from '../../core/models/projeto';
+import { Agenda } from '../agenda/agenda';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [Agenda],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
