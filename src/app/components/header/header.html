@@ -9,7 +9,8 @@
   </div>
 
   <div class="chat-suspenso">
-    <i class="fa-regular fa-comments"></i>
+    <a routerLink="/chat-usuario"><i class="fa-regular fa-comments"></i></a>
+
   </div>
 
   <div class="notificacoes-suspenso">
@@ -17,41 +18,37 @@
       <i class="fa-regular fa-bell"></i>
 
       @if (notificacoesNaoLidas > 0) {
-        <span class="contador-notificacao">
-          {{ notificacoesNaoLidas }}
-        </span>
+      <span class="contador-notificacao">
+        {{ notificacoesNaoLidas }}
+      </span>
       }
     </button>
 
     @if (notificacoesAbertas) {
-      <div class="painel-notificacoes">
-        <div class="cabecalho-notificacoes">
-          <h3>Notificações</h3>
+    <div class="painel-notificacoes">
+      <div class="cabecalho-notificacoes">
+        <h3>Notificações</h3>
 
-          <button type="button" class="marcar-lidas" (click)="marcarTodasComoLidas()">
-            Marcar como lidas
-          </button>
-        </div>
-
-        <div class="lista-notificacoes">
-          @for (notificacao of notificacoes; track notificacao.id) {
-            <div
-              class="notificacao"
-              [class.nao-lida]="!notificacao.lida"
-              (click)="marcarComoLida(notificacao.id)"
-            >
-              <div class="icone-notificacao">
-                <i class="fa-solid fa-bell"></i>
-              </div>
-              <div class="conteudo-notificacao">
-                <strong>{{ notificacao.titulo }}</strong>
-                <p>{{ notificacao.mensagem }}</p>
-                <span>{{ notificacao.tempo }}</span>
-              </div>
-            </div>
-          }
-        </div>
+        <button type="button" class="marcar-lidas" (click)="marcarTodasComoLidas()">
+          Marcar como lidas
+        </button>
       </div>
+
+      <div class="lista-notificacoes">
+        @for (notificacao of notificacoes; track notificacao.id) {
+        <div class="notificacao" [class.nao-lida]="!notificacao.lida" (click)="marcarComoLida(notificacao.id)">
+          <div class="icone-notificacao">
+            <i class="fa-solid fa-bell"></i>
+          </div>
+          <div class="conteudo-notificacao">
+            <strong>{{ notificacao.titulo }}</strong>
+            <p>{{ notificacao.mensagem }}</p>
+            <span>{{ notificacao.tempo }}</span>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
     }
   </div>
 
