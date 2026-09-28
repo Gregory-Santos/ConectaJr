@@ -1,0 +1,59 @@
+
+main{
+    margin: 0;
+    height: 100%;
+    background-color: #1B1C30
+}
+.janela-chat{
+    transform: translateY(65px);
+    height: 600px;
+    overflow-y: scroll;
+}
+.card-usuario{
+    display: flex;
+    align-items: center;
+    padding: 13px;
+    margin-bottom: 20px;
+    background-color: #2D2C4E;
+    height: 80px;
+    width: 340px;
+    border-radius: 13px;
+    margin-left: 36px;
+}
+.dados-usuario{
+    display: flex;
+    flex-direction: column;
+}
+
+.usuario{
+    display: flex;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    gap: 15px;
+}
+
+.dados-usuario h1{
+    font-size: 20px;
+    font-weight: 400;
+    color: #FFFFFF;
+    margin: 5px;
+}
+
+.dados-usuario p{
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.79);
+    margin: 5px;
+}
+
+.usuario img{
+    width: 84px;
+    height: 88px;
+    border-radius: 13px;
+}
+
+.dados-usuario i{
+    font-size: 8px;
+    color: #E2891B;
+    margin-left: 18px;
+}
+
