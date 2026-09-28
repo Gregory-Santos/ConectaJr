@@ -1,0 +1,66 @@
+<aside class="calendario-sidebar">
+
+  <!-- CABEÇALHO DO MÊS -->
+  <div class="calendario-header">
+    <button (click)="mesAnterior()">‹</button>
+    <h3>{{ nomeMes() | titlecase }}</h3>
+    <button (click)="proximoMes()">›</button>
+  </div>
+
+  <!-- DIAS DA SEMANA -->
+  <div class="dias-semana">
+    <span>D</span><span>S</span><span>T</span><span>Q</span><span>Q</span><span>S</span><span>S</span>
+  </div>
+
+  <!-- GRID DE DIAS -->
+  <div class="dias-grid">
+    @for (dia of diasDoMes(); track dia.dataCompleta || $index) {
+      <button
+        class="dia"
+        [class.vazio]="!dia.dia"
+        [class.hoje]="dia.isHoje"
+        [class.selecionado]="dia.dataCompleta === dataSelecionada()"
+        [class.tem-evento]="dia.temEvento"
+        (click)="selecionarDia(dia.dataCompleta)"
+        [disabled]="!dia.dia"
+      >
+        {{ dia.dia || '' }}
+      </button>
+    }
+  </div>
+
+  <!-- LISTA DE EVENTOS DO DIA -->
+  <div class="eventos-do-dia">
+    <h4>
+      {{ dataSelecionada() | date:'dd/MM/yyyy' }}
+    </h4>
+
+    @if (eventosDoDia().length === 0) {
+      <p class="vazio-msg">Nenhum evento neste dia</p>
+    }
+
+    @for (evento of eventosDoDia(); track evento.id) {
+      <div class="evento-item" [class.concluido]="evento.concluido">
+        <div class="evento-info">
+          <span class="icone">{{ getIcone(evento.tipo) }}</span>
+          <div>
+            <strong>{{ evento.titulo }}</strong>
+            @if (evento.hora) {
+              <small>{{ evento.hora }}</small>
+            }
+            @if (evento.descricao) {
+              <p>{{ evento.descricao }}</p>
+            }
+          </div>
+        </div>
+
+        @if (evento.tipo === 'tarefa') {
+          <button class="check-btn" (click)="alternarConcluido(evento.id)">
+            {{ evento.concluido ? '✓' : '○' }}
+          </button>
+        }
+      </div>
+    }
+  </div>
+
+</aside>

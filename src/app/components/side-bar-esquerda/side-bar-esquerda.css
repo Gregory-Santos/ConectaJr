@@ -9,7 +9,7 @@
 
 /*logo da conecta gobal*/
 .logo {
-    margin-bottom: 41px;
+    margin-bottom: 40px;
 }
 
 /*config da img da logo*/
@@ -126,14 +126,26 @@
 .card-menu a {
     display: flex;
     align-items: center;
+    width: 100%;
+    height: 100%;
     gap: 19px;
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     text-decoration: none;
     font-weight: 400;
     color: #FFFFFFA8;
-    margin: 10px;
-    margin-top: 8px;
+    margin: 0;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+
+nav a.ativo {
+    display: flex;
+    background-color: #4E1996;
+    width: 100%;
+    height: 100%;
+    border-radius: 13px;
 }
 
 /*card menu style icone*/
@@ -149,14 +161,15 @@
 }
 
 /*cor roxa ao passar o mouse nos cards-menu*/
-.card-menu:hover{
+.card-menu:hover {
     background-color: #4E1996;
 }
 
 
-.card-config:hover{
+.card-config:hover {
     background-color: #4E1996;
 }
+
 /*card configuração titulo*/
 .titulo-config {
     margin-left: 18px;
@@ -231,6 +244,7 @@
     overflow-x: hidden;
     margin-bottom: 30px;
 }
+
 /*o chat em si, nome, avatar usuario e mensagem*/
 .conversa {
     display: flex;
@@ -286,6 +300,7 @@
     color: #909090;
 
 }
+
 /*configuração de barra de rolagem*/
 .lista-conversas {
     width: 216px;
@@ -308,7 +323,7 @@
 .lista-conversas::-webkit-scrollbar-thumb {
     background-color: #D9D9D9;
     border-radius: 10px;
-    
+
 }
 
 .lista-conversas::-webkit-scrollbar-button {

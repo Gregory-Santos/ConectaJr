@@ -1,7 +1,8 @@
 /* =====================================
    RESET
+   Remove margens e paddings padrão do navegador
+   e faz com que padding/border não aumentem a largura dos elementos
 ===================================== */
-
 * {
   margin: 0;
   padding: 0;
@@ -10,32 +11,22 @@
 
 
 /* =====================================
-   HOME
+   HOME CONTAINER
+   Container principal do feed
 ===================================== */
-
 .home-container {
-
-  width: auto;
-  
-  max-width: 1092px;
-
-  margin: auto;
-
-  padding: 30px 40px;
-
-  background-color: #1B1C30;
-
-  font-family:
-    'Segoe UI',
-    system-ui,
-    -apple-system,
-    sans-serif;
-
+  width: auto;                    /* Largura automática */
+  max-width: 800px;              /* Largura máxima do feed (aumente ou diminua aqui) */
+  margin: 0;                   /* Centraliza o container */
+  padding: 30px 40px;             /* Espaçamento interno (cima/baixo | esquerda/direita) */
+  background-color: #1B1C30;      /* Cor de fundo do feed */
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
 
 /* =====================================
    HEADER DO FEED
+   O grande banner roxo no topo
 ===================================== */
 
 .feed-painel {
@@ -77,462 +68,264 @@
 
 /* =====================================
    DECORAÇÕES DO PAINEL
-===================================== */
-
-.feed-painel::before {
-
   width: 220px;
-
   height: 220px;
-
-  top: -60px;
-
-  right: -40px;
-
+  top: -60px;                     /* Posição vertical */
+  right: -40px;                   /* Posição horizontal */
   border-width: 32px;
-
 }
 
 
 .feed-painel::after {
 
   width: 160px;
-
   height: 160px;
-
   top: 20px;
-
   right: -20px;
-
   border-width: 24px;
-
   opacity: 0.7;
-
 }
 
 
 /* =====================================
-   TEXTO DO HEADER
+   TEXTOS DO HEADER
 ===================================== */
 
 .feed-painel span {
 
   position: relative;
-
-  z-index: 2;
-
+  z-index: 2;                     /* Fica acima das decorações */
   display: block;
-
   margin-bottom: 8px;
-
-  color: #c4b5fd;
-
+  color: #c4b5fd;                 /* Cor do texto "FEED" */
   font-size: 0.7rem;
-
   font-weight: 700;
-
   letter-spacing: 1.2px;
-
   text-transform: uppercase;
-
 }
 
 .feed-painel p {
 
   position: relative;
-
   z-index: 2;
-
   margin-top: 12px;
-
-  max-width: 500px;
-
+  max-width: 500px;               /* Largura máxima da descrição */
   color: #ddd6fe;
-
   font-size: 0.85rem;
-
   line-height: 1.5;
-
 }
 
 
 /* =====================================
-   SEÇÃO
+   SEÇÃO DO FEED
 ===================================== */
-
 .feed-section {
-
-  margin-bottom: 30px;
-
+  margin-bottom: 30px;            /* Espaço entre seções */
   padding: 24px 20px 12px;
-
 }
 
 
 /* =====================================
    TÍTULO DA SEÇÃO
 ===================================== */
-
 .section-title {
-
   display: flex;
-
   align-items: center;
-
-  justify-content: space-between;
-
+  justify-content: space-between; /* Título à esquerda, contador à direita */
   margin-bottom: 14px;
-
   padding-left: 4px;
-
 }
 
-
 .section-title h2 {
-
   margin: 0;
 
   color: #e2e2e6;
 
   font-size: 0.7rem;
-
   font-weight: 700;
-
   letter-spacing: 1.2px;
-
   text-transform: uppercase;
-
 }
 
-
 .section-title span {
-
   color: #8f87a8;
-
   font-size: 0.7rem;
-
 }
 
 
 /* =====================================
-   GRID DOS PROJETOS
+   GRID DOS PROJETOS (Sugestões)
 ===================================== */
-
 .feed-grid {
-
   display: grid;
-
-  grid-template-columns:
-    repeat(3, 1fr);
-
-  gap: 10px;
-
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+  gap: 10px;                              /* Espaço entre os cards */
 }
 
 
 /* =====================================
    CARD DO PROJETO
 ===================================== */
-
 .projeto-card {
-
   display: flex;
-
   flex-direction: column;
-
   min-width: 0;
-
-  min-height: 220px;
-
-  background: #2e1b4e;
-
+  min-height: 220px;              /* Altura mínima do card (diminua para cards menores) */
+  background: #2e1b4e;            /* Cor de fundo do card */
   border-radius: 12px;
-
   overflow: hidden;
-
-  
-  box-shadow:
-    0 8px 18px
-    rgba(0, 0, 0, 0.18);
-
-  transition:
-    transform 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
-
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 
 /* =====================================
-   HOVER
+   HOVER DO CARD
 ===================================== */
-
 .projeto-card:hover {
-
-  transform: translateY(-3px);
-
-  border-color:
-    rgba(192, 132, 252, 0.6);
-
-  box-shadow:
-    0 12px 25px
-    rgba(0, 0, 0, 0.3);
-
+  transform: translateY(-3px);    /* Sobe um pouco no hover */
+  border-color: rgba(192, 132, 252, 0.6);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
 }
 
 
 /* =====================================
-   CARD DESTACADO
+   CARD DESTACADO (borda tracejada)
 ===================================== */
-
 .projeto-card.highlight {
-
-  outline:
-    1.5px dashed #c084fc;
-
+  outline: 1.5px dashed #c084fc;
   outline-offset: 3px;
-
 }
 
 
 /* =====================================
-   HEADER DO CARD
+   HEADER DO CARD (faixa laranja)
 ===================================== */
-
 .card-header {
-
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   min-height: 34px;
-
-  padding: 16px 10px;
-
-  background:
-    linear-gradient(
-      90deg,
-      #e28a1d,
-      #f59e0b
-    );
-
+  padding: 16px 10px;             /* Diminua o padding para deixar mais baixo */
+  background: linear-gradient(90deg, #e28a1d, #f59e0b);
 }
 
 
 /* =====================================
-   EMPRESA
+   NOME DA EMPRESA
 ===================================== */
-
 .empresa {
-
   min-width: 0;
-
   overflow: hidden;
-
   color: #1b1c30;
-
-  font-size: 16px;
-
+  font-size: 16px;                /* Tamanho do nome da empresa */
   font-weight: 700;
-
   white-space: nowrap;
-
-  text-overflow: ellipsis;
-
+  text-overflow: ellipsis;        /* Coloca "..." se o texto for muito longo */
 }
 
 
 /* =====================================
    PORCENTAGEM DE MATCH
 ===================================== */
-
 .match {
-
   flex-shrink: 0;
-
   padding: 3px 7px;
-
   border-radius: 20px;
-
   background: rgba(255, 255, 255, 0.25);
-
   color: #1b1c30;
-
   font-size: 0.65rem;
-
   font-weight: 800;
-
 }
 
 
 /* =====================================
-   CONTEÚDO
+   CONTEÚDO DO CARD
 ===================================== */
-
 .card-content {
-
   padding: 10px 8px 0;
-
 }
-
 
 .card-content h3 {
-
   margin: 0 0 6px;
-
   color: #ffffff;
-
-  font-size: 0.78rem;
-
+  font-size: 0.78rem;             /* Título do projeto */
   font-weight: 700;
-
   line-height: 1.3;
-
 }
-
 
 .card-content p {
-
   margin: 0;
-
   color: #d4d4d8;
-
-  font-size: 0.65rem;
-
+  font-size: 0.65rem;             /* Descrição */
   line-height: 1.55;
-
 }
 
 
 /* =====================================
-   SKILLS
+   LISTA DE SKILLS
 ===================================== */
-
 .skills {
-
   display: flex;
-
   flex-direction: column;
-
   gap: 3px;
-
   margin-top: 12px;
-
   padding: 0 8px;
-
 }
-
-
-/* =====================================
-   SKILL
-===================================== */
 
 .skill {
-
   display: flex;
-
   align-items: center;
-
   gap: 5px;
-
   padding: 2px 0;
-
   background: transparent;
-
   color: #e4e4e7;
-
   font-size: 0.65rem;
-
   line-height: 1.4;
-
 }
-
-
-/* =====================================
-   SKILL COMPATÍVEL
-===================================== */
 
 .skill.matched {
-
-  color: #e4e4e7;
-
+  color: #e4e4e7;                 /* Skill compatível */
 }
-
-
-/* =====================================
-   SKILL PENDENTE
-===================================== */
 
 .skill.pending {
-
-  color: #c4b5fd;
-
+  color: #c4b5fd;                 /* Skill pendente */
 }
 
 
 /* =====================================
-   BOTÃO
+   BOTÃO "VER PROJETO"
 ===================================== */
-
 .btn-projeto {
-
   width: calc(100% - 16px);
-
-  margin:
-
-    auto 8px 10px;
-
+  margin: auto 8px 10px;
   padding: 7px 10px;
-
   border: none;
-
   border-radius: 6px;
-
   background: #6d3fc1;
-
   color: #ffffff;
-
   font-family: inherit;
-
   font-size: 0.65rem;
-
   font-weight: 600;
-
   cursor: pointer;
-
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease;
-
+  transition: background 0.2s ease, transform 0.2s ease;
 }
-
 
 .btn-projeto:hover {
-
   background: #7e4dd6;
-
   transform: translateY(-1px);
-
 }
 
 
 /* =====================================
-   SUGESTÕES
+   CARDS DE SUGESTÃO
 ===================================== */
-
 .projeto-card.sugestao {
-
   opacity: 0.85;
-
 }
 
-
 .projeto-card.sugestao:hover {
-
   opacity: 1;
-
 }
 
 
@@ -541,97 +334,64 @@
 ===================================== */
 
 /* Tablets */
-
 @media (max-width: 900px) {
-
   .home-container {
-
     padding: 25px;
-
   }
-
 
   .feed-grid {
-
-    grid-template-columns:
-      repeat(2, 1fr);
-
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
   }
-
 }
-
 
 /* Celular */
-
 @media (max-width: 600px) {
-
   .home-container {
-
     padding: 20px 15px;
-
   }
-
 
   .feed-header {
-
     padding: 28px 20px 35px;
-
     border-radius: 15px;
-
   }
-
 
   .feed-header h1 {
-
     font-size: 1.6rem;
-
   }
-
 
   .feed-section {
-
     padding: 20px 5px 10px;
-
   }
-
 
   .feed-grid {
-
-    grid-template-columns: 1fr;
-
+    grid-template-columns: 1fr; /* 1 coluna */
   }
-
 }
-
 
 /* Celular pequeno */
-
 @media (max-width: 380px) {
-
   .feed-grid {
-
-    grid-template-columns:
-      1fr 1fr;
-
+    grid-template-columns: 1fr 1fr;
   }
-
 
   .feed-header h1 {
-
     font-size: 1.4rem;
-
   }
-
 }
+
+
+/* =====================================
+   CARROSSEL
+===================================== */
 .carousel {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 12px;                      /* Espaço entre botões e cards */
   width: 100%;
 }
 
 .carousel-window {
-  overflow: hidden;
+  overflow: hidden;               /* Esconde os cards que saem da área */
   flex: 1;
   width: 100%;
   height: 100%;
@@ -639,19 +399,19 @@
 }
 
 .carousel .feed-grid {
-  display: flex !important;
+  display: flex !important;       /* Força flex no carrossel */
   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   gap: 16px;
   width: 100%;
 }
 
 .carousel .projeto-card {
-  flex: 0 0 calc((100% - 30px) / 3);
+  flex: 0 0 calc((100% - 30px) / 3); /* Largura de cada card no carrossel (3 cards) */
   min-width: 20%;
-  max-width: calc((100% -44px) / 3);
+  max-width: calc((100% - 44px) / 3);
 }
 
-/* Botões */
+/* Botões do carrossel */
 .carousel-button {
   width: 42px;
   height: 42px;
@@ -668,4 +428,116 @@
 .carousel-button:disabled {
   opacity: 0.4;
   cursor: not-allowed;
+}
+
+
+/* =====================================
+   LAYOUT PRINCIPAL
+===================================== */
+.layout-principal {
+  display: flex;
+  min-height: 100vh;
+  background-color: #12121f;
+}
+
+/* Feed (esquerda) */
+.conteudo-principal {
+  flex: 1 1 auto;
+  min-width: 0;                 /* importante! */
+  max-width: 800px;
+  overflow-y: auto;
+}
+
+/* Calendário (direita) - ocupa o resto */
+
+/* =====================================
+   CALENDÁRIO (ocupa o espaço restante)
+===================================== */
+app-calendario {
+  display: block;
+  flex: 0 0 380px;             /* largura fixa do calendário */
+  max-width: 380px;
+}
+
+/* =====================================
+   SIDEBAR DO CALENDÁRIO - VERSÃO ESTÁVEL
+===================================== */
+.calendario-sidebar {
+  width: 100%;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background: #1e1b2e;
+  border-left: 1px solid #3f3a5a;
+  padding: 16px 14px 20px;
+  color: #e4e4e7;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;               /* impede qualquer barra extra */
+}
+
+/* ===== PARTES FIXAS (não mudam de tamanho) ===== */
+.calendario-header,
+.dias-semana,
+.dias-grid {
+  flex-shrink: 0;
+}
+
+/* ===== LISTA DE EVENTOS COM ALTURA FIXA ===== */
+.eventos-do-dia {
+  flex: 1 1 auto;
+  min-height: 280px;              /* altura mínima garantida */
+  max-height: 380px;              /* altura máxima */
+  overflow-y: auto;
+  margin-top: 12px;
+  padding-right: 6px;
+}
+
+/* Remove a barra preta / scrollbar feia */
+.eventos-do-dia::-webkit-scrollbar {
+  width: 4px;
+}
+
+.eventos-do-dia::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.eventos-do-dia::-webkit-scrollbar-thumb {
+  background: #5b3d8f;
+  border-radius: 10px;
+}
+
+/* =====================================
+   RESPONSIVO
+===================================== */
+@media (max-width: 1200px) {
+  app-calendario {
+    flex: 0 0 300px;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .layout-principal {
+    flex-direction: column;
+  }
+
+  .conteudo-principal {
+    max-width: 100%;
+  }
+
+  app-calendario {
+    flex: none;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .calendario-sidebar {
+    height: auto;
+    position: relative;
+    border-left: none;
+    border-top: 1px solid #3f3a5a;
+  }
 }
