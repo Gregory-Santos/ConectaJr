@@ -1,8 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { form, FormField } from '@angular/forms/signals';
+import { ChatUsuario } from '../../feats/chat-usuario/chat-usuario';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  imports: [FormField],
+  imports: [FormField, RouterLink],
   selector: 'app-header',
   styleUrl: './header.css',
   templateUrl: './header.html',
