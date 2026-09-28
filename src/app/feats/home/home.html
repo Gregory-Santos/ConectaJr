@@ -3,6 +3,8 @@
   <!-- =====================================
        TÍTULO
   ====================================== -->
+  <main>
+     
   <div class="feed-painel">
     <div class="textos-painel">
     <h4>Olá, Henrique!</h4>
@@ -14,7 +16,7 @@
 
   <!-- =====================================
        COMBINA COM SEU PERFIL (COM CARROSSEL)
-  <!-- ====================== FEED (ESQUERDA) ====================== -->
+  ====================== FEED (ESQUERDA) ====================== -->
   <div class="conteudo-principal">
     <div class="home-container">
 
@@ -42,7 +44,7 @@
                   class="projeto-card"
                   [class.highlight]="projeto.percentualMatch >= 75"
                 >
-                  <div class="card-header">
+                  <div class="card-painel">
                     <span class="empresa">{{ projeto.empresa }}</span>
                     <span class="match">{{ projeto.percentualMatch }}%</span>
                   </div>
@@ -105,7 +107,7 @@
 
         <article class="projeto-card sugestao">
 
-          <div class="card-header">
+          <div class="card-painel">
 
             <span class="empresa">
               {{ projeto.empresa }}
@@ -177,6 +179,7 @@
 
     </div>
   </div>
+</main>
 
   <!-- ====================== CALENDÁRIO (DIREITA) ====================== -->
   <app-agenda></app-agenda>

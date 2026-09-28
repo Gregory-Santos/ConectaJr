@@ -28,6 +28,11 @@
    HEADER DO FEED
    O grande banner roxo no topo
 ===================================== */
+main {
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+}
 
 .feed-painel {
 
@@ -68,6 +73,8 @@
 
 /* =====================================
    DECORAÇÕES DO PAINEL
+   ===================================== */
+.feed-painel::before {
   width: 220px;
   height: 220px;
   top: -60px;                     /* Posição vertical */
@@ -201,7 +208,7 @@
 /* =====================================
    HEADER DO CARD (faixa laranja)
 ===================================== */
-.card-header {
+.card-painel {
   display: flex;
   align-items: center;
   justify-content: space-between;
