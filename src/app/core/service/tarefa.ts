@@ -1,10 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Service } from '@angular/core';
 
 import { Tarefa } from '../models/tarefa';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Service()
 export class TarefaService {
 
   private tarefas: Tarefa[] = [
