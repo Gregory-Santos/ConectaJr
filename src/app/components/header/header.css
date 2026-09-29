@@ -6,14 +6,17 @@
 .header-component {
   width: 100%;
   height: 70px;
-
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  
   display: flex;
   align-items: center;
 
   padding: 0 22px;
   box-sizing: border-box;
 
-  background-color: #19192e;
+  background-color: #1B1C30;
   color: #ffffff;
 
   gap: 22px;
