@@ -1,70 +1,54 @@
 /* =====================================
    RESET
-   Remove margens e paddings padrão do navegador
-   e faz com que padding/border não aumentem a largura dos elementos
-===================================== */
+   ===================================== */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+:host {
+    display: block;
+    width: 100%;
+    min-width: 0;
+}
 
-/* =====================================
-   HOME CONTAINER
-   Container principal do feed
-===================================== */
+/* HOME CONTAINER */
 .home-container {
-  width: auto;                    /* Largura automática */
-  max-width: 800px;              /* Largura máxima do feed (aumente ou diminua aqui) */
-  margin: 0;                   /* Centraliza o container */
-  padding: 30px 40px;             /* Espaçamento interno (cima/baixo | esquerda/direita) */
-  background-color: #1B1C30;      /* Cor de fundo do feed */
+  flex: 1 1 0;          /* era 1 1 auto */
+  width: auto;
+  min-width: 0;
+  max-width: 100%;
+  overflow: visible;
+  padding: 30px 40px;
+  background-color: #1B1C30;
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
-
 /* =====================================
    HEADER DO FEED
-   O grande banner roxo no topo
-===================================== */
-main {
-  display:flex;
-  flex-direction: column;
-  width: 100%;
-}
+   ===================================== */
 
 .feed-painel {
-
+  position: relative;
+  width: 100%;
+  max-width: 100%;
   padding: 30px 30px 70px;
-
   margin-bottom: 28px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #452f92 25%,
-      #2e1f64 80%,
-      #221452 100%
-    );
-
+  background: linear-gradient(135deg, #452f92 25%, #2e1f64 80%, #221452 100%);
   border-radius: 20px;
-
   overflow: hidden;
-  
-  box-shadow:
-    0 20px 40px
-    rgba(0, 0, 0, 0.25);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
 
 .feed-painel h1 {
-  font-weight: 900px;
-  
+  font-weight: 900;
   color: #f2f2f8;
 }
 
 .feed-painel h4 {
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 200;
   color: #e6e6ec;
   margin-bottom: 6px;
@@ -74,17 +58,20 @@ main {
 /* =====================================
    DECORAÇÕES DO PAINEL
    ===================================== */
+
 .feed-painel::before {
+  content: "";
+  position: absolute;
   width: 220px;
   height: 220px;
-  top: -60px;                     /* Posição vertical */
-  right: -40px;                   /* Posição horizontal */
+  top: -60px;
+  right: -40px;
   border-width: 32px;
 }
 
-
 .feed-painel::after {
-
+  content: "";
+  position: absolute;
   width: 160px;
   height: 160px;
   top: 20px;
@@ -96,15 +83,14 @@ main {
 
 /* =====================================
    TEXTOS DO HEADER
-===================================== */
+   ===================================== */
 
 .feed-painel span {
-
   position: relative;
-  z-index: 2;                     /* Fica acima das decorações */
+  z-index: 2;
   display: block;
   margin-bottom: 8px;
-  color: #c4b5fd;                 /* Cor do texto "FEED" */
+  color: #c4b5fd;
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 1.2px;
@@ -112,11 +98,10 @@ main {
 }
 
 .feed-painel p {
-
   position: relative;
   z-index: 2;
   margin-top: 12px;
-  max-width: 500px;               /* Largura máxima da descrição */
+  max-width: 500px;
   color: #ddd6fe;
   font-size: 0.85rem;
   line-height: 1.5;
@@ -125,80 +110,93 @@ main {
 
 /* =====================================
    SEÇÃO DO FEED
-===================================== */
+   ===================================== */
+
 .feed-section {
-  margin-bottom: 30px;            /* Espaço entre seções */
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 30px;
   padding: 24px 20px 12px;
 }
 
 
 /* =====================================
    TÍTULO DA SEÇÃO
-===================================== */
+   ===================================== */
+
 .section-title {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Título à esquerda, contador à direita */
+  justify-content: space-between;
+  width: 100%;
+  max-width: 100%;
   margin-bottom: 14px;
   padding-left: 4px;
+  min-width: 0;
 }
 
 .section-title h2 {
   margin: 0;
-
   color: #e2e2e6;
-
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 1.2px;
   text-transform: uppercase;
+  min-width: 0;
 }
 
 .section-title span {
+  flex-shrink: 0;
   color: #8f87a8;
   font-size: 0.7rem;
 }
 
 
 /* =====================================
-   GRID DOS PROJETOS (Sugestões)
-===================================== */
+   GRID DOS PROJETOS
+   ===================================== */
+
 .feed-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 colunas */
-  gap: 10px;                              /* Espaço entre os cards */
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
 }
 
 
 /* =====================================
    CARD DO PROJETO
-===================================== */
+   ===================================== */
+
 .projeto-card {
   display: flex;
   flex-direction: column;
   min-width: 0;
-  min-height: 220px;              /* Altura mínima do card (diminua para cards menores) */
-  background: #2e1b4e;            /* Cor de fundo do card */
+  max-width: 100%;
+  min-height: 220px;
+  background: #2e1b4e;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-
-/* =====================================
-   HOVER DO CARD
-===================================== */
 .projeto-card:hover {
-  transform: translateY(-3px);    /* Sobe um pouco no hover */
+  transform: translateY(-3px);
   border-color: rgba(192, 132, 252, 0.6);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
 }
 
 
 /* =====================================
-   CARD DESTACADO (borda tracejada)
-===================================== */
+   CARD DESTACADO
+   ===================================== */
+
 .projeto-card.highlight {
   outline: 1.5px dashed #c084fc;
   outline-offset: 3px;
@@ -206,35 +204,39 @@ main {
 
 
 /* =====================================
-   HEADER DO CARD (faixa laranja)
-===================================== */
+   HEADER DO CARD
+   ===================================== */
+
 .card-painel {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  min-width: 0;
   min-height: 34px;
-  padding: 16px 10px;             /* Diminua o padding para deixar mais baixo */
+  padding: 16px 10px;
   background: linear-gradient(90deg, #e28a1d, #f59e0b);
 }
 
 
 /* =====================================
    NOME DA EMPRESA
-===================================== */
+   ===================================== */
+
 .empresa {
   min-width: 0;
   overflow: hidden;
   color: #1b1c30;
-  font-size: 16px;                /* Tamanho do nome da empresa */
+  font-size: 16px;
   font-weight: 700;
   white-space: nowrap;
-  text-overflow: ellipsis;        /* Coloca "..." se o texto for muito longo */
+  text-overflow: ellipsis;
 }
 
 
 /* =====================================
    PORCENTAGEM DE MATCH
-===================================== */
+   ===================================== */
+
 .match {
   flex-shrink: 0;
   padding: 3px 7px;
@@ -248,61 +250,70 @@ main {
 
 /* =====================================
    CONTEÚDO DO CARD
-===================================== */
+   ===================================== */
+
 .card-content {
+  min-width: 0;
   padding: 10px 8px 0;
 }
 
 .card-content h3 {
   margin: 0 0 6px;
   color: #ffffff;
-  font-size: 0.78rem;             /* Título do projeto */
+  font-size: 0.78rem;
   font-weight: 700;
   line-height: 1.3;
+  overflow-wrap: break-word;
 }
 
 .card-content p {
   margin: 0;
   color: #d4d4d8;
-  font-size: 0.65rem;             /* Descrição */
+  font-size: 0.65rem;
   line-height: 1.55;
+  overflow-wrap: break-word;
 }
 
 
 /* =====================================
    LISTA DE SKILLS
-===================================== */
+   ===================================== */
+
 .skills {
   display: flex;
   flex-direction: column;
   gap: 3px;
   margin-top: 12px;
   padding: 0 8px;
+  min-width: 0;
 }
 
 .skill {
   display: flex;
   align-items: center;
   gap: 5px;
+  min-width: 0;
   padding: 2px 0;
   background: transparent;
   color: #e4e4e7;
   font-size: 0.65rem;
   line-height: 1.4;
+  overflow-wrap: break-word;
 }
 
 .skill.matched {
-  color: #e4e4e7;                 /* Skill compatível */
+  color: #e4e4e7;
 }
 
 .skill.pending {
-  color: #c4b5fd;                 /* Skill pendente */
+  color: #c4b5fd;
 }
 
 
 /* =====================================
    BOTÃO "VER PROJETO"
-===================================== */
+   ===================================== */
+
 .btn-projeto {
   width: calc(100% - 16px);
   margin: auto 8px 10px;
@@ -315,7 +326,9 @@ main {
   font-size: 0.65rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
 .btn-projeto:hover {
@@ -326,7 +339,8 @@ main {
 
 /* =====================================
    CARDS DE SUGESTÃO
-===================================== */
+   ===================================== */
+
 .projeto-card.sugestao {
   opacity: 0.85;
 }
@@ -337,98 +351,67 @@ main {
 
 
 /* =====================================
-   RESPONSIVIDADE
-===================================== */
+   CARROSSEL
+   ===================================== */
 
-/* Tablets */
-@media (max-width: 900px) {
-  .home-container {
-    padding: 25px;
-  }
-
-  .feed-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
-  }
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
-/* Celular */
-@media (max-width: 600px) {
-  .home-container {
-    padding: 20px 15px;
-  }
 
-  .feed-header {
-    padding: 28px 20px 35px;
-    border-radius: 15px;
-  }
-
-  .feed-header h1 {
-    font-size: 1.6rem;
-  }
-
-  .feed-section {
-    padding: 20px 5px 10px;
-  }
-
-  .feed-grid {
-    grid-template-columns: 1fr; /* 1 coluna */
-  }
+/* CARROSSEL: garante que a janela não empurre a largura */
+.carousel-window {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 10px;
 }
 
-/* Celular pequeno */
-@media (max-width: 380px) {
-  .feed-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+/* =====================================
+   GRID DO CARROSSEL
+   ===================================== */
 
-  .feed-header h1 {
-    font-size: 1.4rem;
-  }
+.carousel .feed-grid {
+  display: flex !important;
+  width: 100%;
+  min-width: 100%;
+  gap: 16px;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 
 /* =====================================
-   CARROSSEL
-===================================== */
-.carousel {
-  display: flex;
-  align-items: center;
-  gap: 12px;                      /* Espaço entre botões e cards */
-  width: 100%;
-}
-
-.carousel-window {
-  overflow: hidden;               /* Esconde os cards que saem da área */
-  flex: 1;
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-}
-
-.carousel .feed-grid {
-  display: flex !important;       /* Força flex no carrossel */
-  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-  gap: 16px;
-  width: 100%;
-}
+   CARDS DO CARROSSEL
+   ===================================== */
 
 .carousel .projeto-card {
-  flex: 0 0 calc((100% - 30px) / 3); /* Largura de cada card no carrossel (3 cards) */
-  min-width: 20%;
-  max-width: calc((100% - 44px) / 3);
+  flex: 0 0 calc((100% - 32px) / 3);
+  width: calc((100% - 32px) / 3);
+  min-width: 0;
+  max-width: calc((100% - 32px) / 3);
 }
 
-/* Botões do carrossel */
+
+/* =====================================
+   BOTÕES DO CARROSSEL
+   ===================================== */
+
 .carousel-button {
   width: 42px;
   height: 42px;
+  flex: 0 0 42px;
   border-radius: 50%;
   border: none;
   background: #6b21a8;
   color: white;
   font-size: 1.5rem;
   cursor: pointer;
-  flex-shrink: 0;
   transition: all 0.2s;
 }
 
@@ -438,40 +421,47 @@ main {
 }
 
 
-/* =====================================
-   LAYOUT PRINCIPAL
-===================================== */
+/* LAYOUT PRINCIPAL */
 .layout-principal {
   display: flex;
+  flex: 1 1 0;          /* ocupa só o espaço que sobrou ao lado da sidebar */
+  width: auto;          /* era 100% */
+  min-width: 0;         /* deixa o flex encolher */
+  max-width: 100%;
+  height: auto;
   min-height: 100vh;
+  overflow-x: clip;     /* evita rolagem horizontal sem quebrar o sticky */
+  align-items: flex-start;
   background-color: #12121f;
 }
 
-/* Feed (esquerda) */
-.conteudo-principal {
-  flex: 1 1 auto;
-  min-width: 0;                 /* importante! */
-  max-width: 800px;
-  overflow-y: auto;
-}
-
-/* Calendário (direita) - ocupa o resto */
-
 /* =====================================
-   CALENDÁRIO (ocupa o espaço restante)
-===================================== */
-app-calendario {
+   AGENDA - COMPONENTE ANGULAR
+   ===================================== */
+
+app-agenda {
   display: block;
-  flex: 0 0 380px;             /* largura fixa do calendário */
-  max-width: 380px;
+  flex: 0 0 300px;
+  width: 300px;
+  min-width: 300px;
+  max-width: 300px;
+
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  height: 100vh;
+  min-height: 0;
 }
 
+
 /* =====================================
-   SIDEBAR DO CALENDÁRIO - VERSÃO ESTÁVEL
-===================================== */
+   SIDEBAR DA AGENDA
+   ===================================== */
+
 .calendario-sidebar {
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  min-height: 0;
   position: sticky;
   top: 0;
   background: #1e1b2e;
@@ -479,30 +469,43 @@ app-calendario {
   padding: 16px 14px 20px;
   color: #e4e4e7;
   box-sizing: border-box;
-
   display: flex;
   flex-direction: column;
-  overflow: hidden;               /* impede qualquer barra extra */
+  overflow: hidden;
 }
 
-/* ===== PARTES FIXAS (não mudam de tamanho) ===== */
+
+/* =====================================
+   PARTES FIXAS DO CALENDÁRIO
+   ===================================== */
+
 .calendario-header,
 .dias-semana,
 .dias-grid {
   flex-shrink: 0;
+  min-width: 0;
 }
 
-/* ===== LISTA DE EVENTOS COM ALTURA FIXA ===== */
+
+/* =====================================
+   LISTA DE EVENTOS
+   ===================================== */
+
 .eventos-do-dia {
   flex: 1 1 auto;
-  min-height: 280px;              /* altura mínima garantida */
-  max-height: 380px;              /* altura máxima */
+  min-height: 0;
+  max-height: 380px;
   overflow-y: auto;
+  overflow-x: hidden;
   margin-top: 12px;
   padding-right: 6px;
 }
 
-/* Remove a barra preta / scrollbar feia */
+
+/* =====================================
+   SCROLLBAR DOS EVENTOS
+   ===================================== */
+
 .eventos-do-dia::-webkit-scrollbar {
   width: 4px;
 }
@@ -516,35 +519,176 @@ app-calendario {
   border-radius: 10px;
 }
 
+
 /* =====================================
-   RESPONSIVO
-===================================== */
+   RESPONSIVIDADE - TABLET
+   ===================================== */
+
 @media (max-width: 1200px) {
-  app-calendario {
-    flex: 0 0 300px;
-    max-width: 300px;
+
+  app-agenda {
+    flex: 0 0 270px;
+    width: 270px;
+    min-width: 270px;
+    max-width: 270px;
+  }
+
+  .home-container {
+    padding: 25px 30px;
   }
 }
 
+
+/* =====================================
+   RESPONSIVIDADE - 1000px
+   ===================================== */
+
 @media (max-width: 1000px) {
+
+  .layout-principal {
+    flex-direction: row;
+  }
+
+  app-agenda {
+    flex: 0 0 240px;
+    width: 240px;
+    min-width: 240px;
+    max-width: 240px;
+  }
+
+  .home-container {
+    padding: 20px;
+  }
+
+  .feed-section {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+
+/* =====================================
+   RESPONSIVIDADE - 900px
+   ===================================== */
+
+@media (max-width: 900px) {
+
+  .home-container {
+    padding: 20px;
+  }
+
+  .feed-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .carousel .projeto-card {
+    flex-basis: calc((100% - 16px) / 2);
+    width: calc((100% - 16px) / 2);
+    max-width: calc((100% - 16px) / 2);
+  }
+}
+
+
+/* =====================================
+   RESPONSIVIDADE - 700px
+   ===================================== */
+
+@media (max-width: 700px) {
+
   .layout-principal {
     flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 
-  .conteudo-principal {
-    max-width: 100%;
-  }
-
-  app-calendario {
-    flex: none;
-    max-width: 100%;
+  .home-container {
     width: 100%;
+    max-width: 100%;
+    height: auto;
+    overflow: visible;
+    padding: 20px 15px;
+  }
+
+  app-agenda {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    height: auto;
+    flex: none;
+    position: static;
+    align-self: auto;
   }
 
   .calendario-sidebar {
     height: auto;
+    min-height: 500px;
     position: relative;
     border-left: none;
     border-top: 1px solid #3f3a5a;
+  }
+}
+
+
+/* =====================================
+   RESPONSIVIDADE - CELULAR
+   ===================================== */
+
+@media (max-width: 600px) {
+
+  .home-container {
+    padding: 20px 15px;
+  }
+
+  .feed-painel {
+    padding: 28px 20px 35px;
+    border-radius: 15px;
+  }
+
+  .feed-painel h1 {
+    font-size: 1.6rem;
+  }
+
+  .feed-section {
+    padding: 20px 5px 10px;
+  }
+
+  .feed-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .carousel-button {
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
+    font-size: 1.3rem;
+  }
+
+  .carousel .projeto-card {
+    flex-basis: 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+
+/* =====================================
+   CELULAR PEQUENO
+   ===================================== */
+
+@media (max-width: 380px) {
+
+  .feed-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feed-painel h1 {
+    font-size: 1.4rem;
+  }
+
+  .home-container {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }

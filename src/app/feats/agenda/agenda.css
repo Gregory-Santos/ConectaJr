@@ -1,5 +1,5 @@
 .calendario-sidebar {
-  width: 290px;                  /* ← mudou de 320px para 290px */
+  width: 100%px;
   height: 100vh;
   position: sticky;
   top: 0;
