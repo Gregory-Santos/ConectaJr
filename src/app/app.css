@@ -7,6 +7,9 @@
 /* a sidebar mantém o tamanho dela e não é espremida */
 app-side-bar-esquerda {
     flex: 0 0 auto;
+    position: sticky;
+    top: 0;
+    height: 100vh;
 }
 
 .app-body {

@@ -1,10 +1,11 @@
 /*config global do side-bar*/
 .side-bar {
-    height: 100%;
+    height: 100% !important; 
     width: 100%;
     background-color: #1B1C30;
-    display: 100%;
     margin-right: 13px;
+    position: sticky;
+    top: 0;
 }
 
 /*logo da conecta gobal*/
@@ -70,10 +71,11 @@
 /*nome do usuario*/
 .info h2 {
     margin: 0;
-    font-size: 16px;
+    font-size: 15px;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     color: #FFFFFF;
+    white-space: nowrap;
 
 }
 
@@ -89,7 +91,9 @@
 /*icone de setinha*/
 .info-perfil i {
     color: #F5F5F5;
-    margin-left: 30px;
+    margin-top: -10px;
+    margin-left: 5px;
+
 }
 
 /*titulo menu global*/
@@ -225,110 +229,3 @@ nav a.ativo {
 }
 
 
-
-/*card chat*/
-
-.chat-side-bar {
-    display: flex;
-    flex-direction: column;
-    width: 232px;
-    height: 270px;
-    background: linear-gradient(to right,
-            rgba(78, 25, 150, 0.93),
-            rgba(78, 25, 150, 0.45));
-
-    border-radius: 13px;
-    margin-left: 14px;
-    margin-top: 147px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    margin-bottom: 30px;
-}
-
-/*o chat em si, nome, avatar usuario e mensagem*/
-.conversa {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 60px;
-    gap: 12px;
-    margin-top: 8px;
-}
-
-.conversa {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 60px;
-    gap: 12px;
-}
-
-.conversa img {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-left: 18px;
-}
-
-.dados-conversa {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
-.conversa h1 {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-    color: #F5F5F5;
-}
-
-.conversa p {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    color: rgba(245, 245, 245, 0.6);
-}
-
-.conversa i {
-    width: 8px;
-    height: 8px;
-    margin-left: 28px;
-    font-size: 8px;
-    color: #909090;
-
-}
-
-/*configuração de barra de rolagem*/
-.lista-conversas {
-    width: 216px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding-right: 2px;
-    box-sizing: border-box;
-
-}
-
-.lista-conversas::-webkit-scrollbar {
-    width: 6px;
-    background: transparent;
-}
-
-.lista-conversas::-webkit-scrollbar-track {
-    background: #151218;
-}
-
-.lista-conversas::-webkit-scrollbar-thumb {
-    background-color: #D9D9D9;
-    border-radius: 10px;
-
-}
-
-.lista-conversas::-webkit-scrollbar-button {
-    display: none !important;
-    width: 0 !important;
-    height: 0 !important;
-    background: transparent !important;
-}
