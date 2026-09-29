@@ -1,10 +1,7 @@
-import { Injectable, signal,computed} from '@angular/core';
+import { signal,computed, Service} from '@angular/core';
 import { Evento } from '../models/evento';
 
-
-@Injectable({
-    providedIn: 'root'
-})
+@Service()
 export class Calendario {
     private readonly _eventos = signal<Evento[]>(this.getMockEventos());
     readonly eventos = this._eventos.asReadonly();
