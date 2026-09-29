@@ -11,7 +11,7 @@
   padding: 0 22px;
   box-sizing: border-box;
 
-  background-color: #19192e;
+  background-color: var(--cor-escuro);
   color: #ffffff;
 
   gap: 22px;
