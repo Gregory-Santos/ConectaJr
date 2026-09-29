@@ -54,6 +54,8 @@ main {
     width: 84px;
     height: 88px;
     border-radius: 13px;
+    object-fit: cover;
+    
 }
 
 /*dados gerais do usuario*/
@@ -117,4 +119,18 @@ main {
     width: 369px;
     font-size: 64px;
     font-size: 800;
+}
+
+/*cabeçalho chat*/
+
+.card-cabecalho{
+    display: flex;
+    align-items: center;
+    padding: 13px;
+    margin-bottom: 20px;
+    background-color: #2D2C4E;
+    height: 80px;
+    width: 340px;
+    border-radius: 13px;
+    margin-left: 36px;
 }
