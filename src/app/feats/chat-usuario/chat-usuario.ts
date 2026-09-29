@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ChatService } from './chat-service';
 
 @Component({
   imports: [],
@@ -6,4 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './chat-usuario.css',
   templateUrl: './chat-usuario.html',
 })
-export class ChatUsuario {}
+export class ChatUsuario {
+
+  protected readonly ChatService= inject(ChatService)
+}
