@@ -55,7 +55,7 @@ main {
     height: 88px;
     border-radius: 13px;
     object-fit: cover;
-    
+
 }
 
 /*dados gerais do usuario*/
@@ -98,7 +98,7 @@ main {
 }
 
 /*escrita do card*/
-.escrita-card{
+.escrita-card {
     display: flex;
     flex-direction: column;
     text-align: start;
@@ -108,13 +108,13 @@ main {
     margin-top: 88px;
 }
 
-.escrita-card h1{
+.escrita-card h1 {
     margin: 1;
     font-size: 24px;
     font-weight: 400;
 }
 
-.escrita-card h2{
+.escrita-card h2 {
     margin: 0;
     width: 369px;
     font-size: 64px;
@@ -123,14 +123,45 @@ main {
 
 /*cabeçalho chat*/
 
-.card-cabecalho{
+.card-cabecalho {
     display: flex;
-    align-items: center;
-    padding: 13px;
-    margin-bottom: 20px;
-    background-color: #2D2C4E;
-    height: 80px;
-    width: 340px;
+    background-color: #4E1996;
     border-radius: 13px;
-    margin-left: 36px;
+    font-family: 'Inter', sans-serif;
+    color: #FFFFFF;
+
+}
+
+.card-cabecalho img {
+    display: flex;
+    width: 88px;
+    height: 88px;
+    object-fit: cover;
+    border-radius: 13px;
+    margin-left: 11px;
+    margin-top: 12px;
+}
+
+.info-usuario {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    height: 111px;
+    gap: 2px;
+}
+
+.info-usuario h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+    margin-left: 10px;
+    margin-top: 35px;
+}
+
+.info-usuario p{
+    margin: 0;
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: 10px;
 }
