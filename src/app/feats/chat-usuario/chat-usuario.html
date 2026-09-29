@@ -28,11 +28,14 @@
     <!--Card de conversa ao lado do chat, sem conversa selecionada-->
     <div class="card-chat">
         <div class="card-cabecalho">
-            @if (ChatService.conversaSelecionada()) {
-            <h1>{{ChatService.conversaSelecionada()?.nome}}</h1>
-            <h1>{{ChatService.conversaSelecionada()?.foto}}</h1>
-            <h1>{{ChatService.conversaSelecionada()?.data}}</h1>
-            }
+            <img [src]="ChatService.conversaSelecionada()?.foto" alt="avatar do usuario"
+                width="90">
+            <div class="info-usuario">
+                @if (ChatService.conversaSelecionada()) {
+                <h1>{{ChatService.conversaSelecionada()?.nome}}</h1>
+                <p>{{ChatService.conversaSelecionada()?.data}}</p>
+                }
+            </div>
         </div>
         <div class="escrita-card">
             <h1>Olá, Henrique!</h1>
