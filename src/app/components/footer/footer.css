@@ -1,0 +1,14 @@
+.footer-component {
+    background-color: var(--cor-escuro);
+}
+
+.logo-component {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.logo {
+    width: 8%;
+    padding: 8px 12px 28px;
+}
