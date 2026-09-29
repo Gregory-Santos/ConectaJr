@@ -1,10 +1,18 @@
 .app-layout {
     width: 100%;
     display: flex;
+    min-height: 100vh;
+}
+
+/* a sidebar mantém o tamanho dela e não é espremida */
+app-side-bar-esquerda {
+    flex: 0 0 auto;
 }
 
 .app-body {
     display: flex;
-    width: 100%;
     flex-direction: column;
+    flex: 1 1 0;      /* pega só o espaço que sobra ao lado da sidebar */
+    min-width: 0;     /* permite encolher em vez de estourar */
+    width: auto;      /* era 100% */
 }
