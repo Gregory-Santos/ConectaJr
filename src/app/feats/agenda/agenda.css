@@ -3,7 +3,7 @@
   height: 100vh;
   position: sticky;
   top: 0;
-  background: #1e1b2e;
+  background: var(--cor-escuro);
  
   padding: 20px;
   

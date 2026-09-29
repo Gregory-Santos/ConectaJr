@@ -117,7 +117,7 @@
 .card-menu {
     display: flex;
     align-items: center;
-    background-color: #2D2C4E;
+    background-color: var(--cor-escuro);
     height: 51px;
     width: 233px;
     margin-top: 20px;
