@@ -1,5 +1,6 @@
 import { Service, signal } from '@angular/core';
 import { ChatInterface } from './chat-interface';
+import { FormsModule } from '@angular/forms';
 
 @Service()
 export class ChatService {
@@ -53,4 +54,16 @@ export class ChatService {
     selecionarConversa(conversa: ChatInterface){
         this.conversaSelecionada.set(conversa);
     };
+
+    mensagens= signal<string[]>([]);
+
+    novaMensagem= signal('');
+
+    enviarMensagem(){
+        this.mensagens.update(mensagens => [
+            ...mensagens,
+            this.novaMensagem()
+        ]);
+        console.log(this.mensagens());
+    }
 }
