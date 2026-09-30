@@ -25,21 +25,34 @@
 
     </div>
 
+
     <!--Card de conversa ao lado do chat, sem conversa selecionada-->
     <div class="card-chat">
+        @if (ChatService.conversaSelecionada()) {
         <div class="card-cabecalho">
-            <img [src]="ChatService.conversaSelecionada()?.foto" alt="avatar do usuario"
-                width="90">
+            <img [src]="ChatService.conversaSelecionada()?.foto" alt="avatar do usuario" width="90">
             <div class="info-usuario">
                 @if (ChatService.conversaSelecionada()) {
                 <h1>{{ChatService.conversaSelecionada()?.nome}}</h1>
                 <p>{{ChatService.conversaSelecionada()?.data}}</p>
                 }
             </div>
+
+
         </div>
+        <div class="campo-mensagem">
+            <button><i class="fa-solid fa-paperclip"></i></button>
+            <input type="text" placeholder="Digite sua mensagem">
+            <button><i class="fa-regular fa-paper-plane"></i></button>
+        </div>}
+
+        @if (!ChatService.conversaSelecionada()) {
+
         <div class="escrita-card">
             <h1>Olá, Henrique!</h1>
             <h2>REÚNA, ORGANIZE, CONECTE</h2>
         </div>
+        }
+
     </div>
 </main>
