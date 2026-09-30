@@ -1,8 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { ChatService } from './chat-service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  imports: [],
+  imports: [FormsModule],
   selector: 'app-chat-usuario',
   styleUrl: './chat-usuario.css',
   templateUrl: './chat-usuario.html',

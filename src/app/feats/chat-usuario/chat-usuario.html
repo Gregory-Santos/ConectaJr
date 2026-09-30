@@ -37,15 +37,22 @@
                 <p>{{ChatService.conversaSelecionada()?.data}}</p>
                 }
             </div>
-
-
+            
         </div>
-        <div class="campo-mensagem">
-            <button><i class="fa-solid fa-paperclip"></i></button>
-            <input type="text" placeholder="Digite sua mensagem">
-            <button><i class="fa-regular fa-paper-plane"></i></button>
-        </div>}
 
+        <div class="mensagens">
+        @for (mensagem of ChatService.mensagens(); track $index) {
+                <p>{{ChatService.mensagens()}}</p>
+            }
+        </div>
+
+        <div class="campo-mensagem">
+
+            
+            <button><i class="fa-solid fa-paperclip"></i></button>
+            <input type="text" placeholder="Digite sua mensagem" [ngModel]="ChatService.novaMensagem()" (ngModelChange)="ChatService.novaMensagem.set($event)">
+            <button  (click)="ChatService.enviarMensagem()"><i class="fa-regular fa-paper-plane"></i></button>
+        </div>}
         @if (!ChatService.conversaSelecionada()) {
 
         <div class="escrita-card">

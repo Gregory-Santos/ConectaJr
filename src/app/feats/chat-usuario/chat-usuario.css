@@ -206,3 +206,7 @@ main {
 .campo-mensagem input::placeholder {
     color: #FFFFFF;
 }
+
+.mensagens {
+    flex: 1;
+}
