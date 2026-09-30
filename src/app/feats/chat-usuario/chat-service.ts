@@ -53,6 +53,8 @@ export class ChatService {
 
     selecionarConversa(conversa: ChatInterface){
         this.conversaSelecionada.set(conversa);
+
+        this.mensagens.set([conversa.mensagem]);
     };
 
     mensagens= signal<string[]>([]);
@@ -64,6 +66,6 @@ export class ChatService {
             ...mensagens,
             this.novaMensagem()
         ]);
-        console.log(this.mensagens());
+        this.novaMensagem.set('');
     }
 }
