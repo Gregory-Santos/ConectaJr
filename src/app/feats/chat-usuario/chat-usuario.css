@@ -12,7 +12,8 @@ main {
     transform: translateY(65px);
     height: 630px;
     width: 420px;
-    overflow-y: scroll;
+    overflow-y: auto;
+    will-change: scroll-position;
 }
 
 .janela-chat::-webkit-scrollbar {
