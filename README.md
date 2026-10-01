@@ -1,59 +1,81 @@
 # ConectaJr
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.8.
+### _Experiência antes da primeira vaga._
 
-## Development server
+Hub de simulação profissional para a área de tecnologia, que conecta estudantes e pessoas em transição de carreira a projetos simulados feitos em equipe, para ganhar experiência prática antes do primeiro emprego.
 
-To start a local development server, run:
+> Projeto final do curso **Entra21** (2026). Em desenvolvimento.
+
+## Sobre o projeto
+
+Quem está começando em tecnologia costuma esbarrar no mesmo problema: as vagas pedem experiência, mas é difícil conseguir experiência sem uma primeira vaga. O **ConectaJr** propõe um caminho no meio: o participante entra em um **time**, trabalha em um **projeto fictício** que espelha a estrutura de empresas parceiras e constrói um histórico real de colaboração.
+
+### Visão do produto
+
+- Projetos fictícios organizados em equipes, inspirados na rotina de empresas parceiras
+- Acompanhamento por um monitor
+- Avaliação por competências
+- Certificado de experiência
+- Dossiê público de desempenho
+
+> Esta seção descreve a proposta completa da plataforma. Nem tudo já está implementado; veja o status abaixo.
+
+## Funcionalidades
+
+**Já disponível**
+
+- [x] Página **Início**, com painel de boas-vindas
+- [x] Carrossel **"Combina com seu perfil"** com sugestões de projetos
+- [x] Agenda lateral
+
+**Em desenvolvimento**
+
+- [ ] **Barra de pesquisa** que encontra projetos compatíveis com as características informadas pelo usuário
+
+## Tecnologias
+
+- [Angular](https://angular.dev/)
+- TypeScript
+- HTML5 e CSS3
+- Git e GitHub
+
+## Como executar
+
+Pré-requisitos: [Node.js](https://nodejs.org/) e o Angular CLI instalados.
 
 ```bash
+# clonar o repositório
+git clone https://github.com/<usuario>/<repositorio>.git
+cd <repositorio>
+
+# instalar as dependências
+npm install
+
+# iniciar o servidor de desenvolvimento
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Depois, abra `http://localhost:4200/` no navegador.
 
-## Code scaffolding
+## Equipe
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Projeto desenvolvido em equipe no Entra21.
 
-```bash
-ng generate component component-name
-```
+| Nome | GitHub |
+|---|---|
+| Gregory dos Santos de Souza | [@Gregory-Santos](https://github.com/Gregory-Santos) |
+| Beatriz Haiana Ferrari | [@beatrizhf](https://github.com/beatrizhf) |
+| Brenda Marcela Silva de Melo | [@Berenda-m](https://github.com/Berenda-m) |
+| Rodrigo de Souza | [@frontenddigo](https://github.com/frontenddigo) |
+| Rafael Vinícius da Rocha | [@Leaf1430](https://github.com/Leaf1430) |
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Minha contribuição
 
-```bash
-ng generate --help
-```
+- Desenvolvimento da barra de pesquisa de projetos compatíveis com as características informadas
+- Construção de partes da interface com Angular, TypeScript e CSS
+- Trabalho em equipe com Git e GitHub
 
-## Building
+## Próximos passos
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Finalizar a barra de pesquisa
+- Evoluir os filtros de compatibilidade entre usuário e projeto
