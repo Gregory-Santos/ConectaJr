@@ -77,15 +77,16 @@ export class ChatService {
 
     selecionarConversa(conversa: ChatInterface) {
         this.conversaSelecionada.set(conversa);
-
+const agora = new Date();
         this.mensagens.set([{
             texto: conversa.mensagem,
-            minha: false
+            minha: false,
+             hora: agora.toLocaleString('pt-BR',{hour: '2-digit', minute: '2-digit'})
         }]);
         this.conversasLidas.add(conversa.nome);
     };
 
-    mensagens = signal<{ texto: string; minha: boolean }[]>([]);
+    mensagens = signal<{ texto: string; minha: boolean; hora:string }[]>([]);
     novaMensagem = signal('');
 
     enviarMensagem() {
@@ -93,10 +94,12 @@ export class ChatService {
         if(!this.novaMensagem().trim()){
             return;
         }
+         const agora = new Date();
         this.mensagens.update(mensagens => [
             ...mensagens, {
                 texto: this.novaMensagem(),
-                minha: true
+                minha: true,
+                 hora: agora.toLocaleString('pt-BR',{hour: '2-digit', minute: '2-digit'})
             }
 
         ]);
