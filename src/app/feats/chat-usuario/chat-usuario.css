@@ -4,7 +4,7 @@ main {
     justify-content: center;
     margin: 0;
     min-height: 100vh;
-    background-color: #1B1C30
+    background-color: #1B1C30;
 }
 
 /*barra de rolagem do chat*/
@@ -61,7 +61,8 @@ main {
     display: block;
 
 }
-.usuario p{
+
+.usuario p {
     flex: 1;
     min-width: 0;
     overflow-wrap: anywhere;
@@ -104,9 +105,11 @@ main {
     background-color: #2D2C4E;
     border-radius: 13px;
     margin-left: 30px;
+    position: sticky;
     transform: translateY(65px);
-    display: flex;
-    flex-direction: column;
+   display: flex;
+   flex-direction: column;
+
 }
 
 /*escrita do card*/
@@ -244,9 +247,10 @@ main {
 .mensagem-chat {
     position: relative;
     width: fit-content;
-    background-color: rgba(255, 255, 255, 0.79);;
+    background-color: rgba(255, 255, 255, 0.79);
+    ;
     color: #2D2C4E;
-    padding: 14px 24px;
+    padding: 10px 50px 10px 14px;
     border-radius: 15px;
     margin-left: 24px;
     font-family: 'Inter', sans-serif;
@@ -267,6 +271,13 @@ main {
     border-right: 15px solid #d9d9d9;
 }
 
+.mensagem-chat small {
+    position: absolute;
+    right: 8px;
+    bottom: 3px;
+    font-size: 10px;
+}
+
 .minha-mensagem {
     margin-left: auto;
     margin-right: 24px;
@@ -280,5 +291,5 @@ main {
 }
 
 .oculto {
-  display: none;
+    display: none;
 }

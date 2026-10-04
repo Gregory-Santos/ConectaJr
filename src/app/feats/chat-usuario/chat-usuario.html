@@ -11,7 +11,8 @@
             <div class="usuario">
                 <img [src]="conversa.foto" width="90"><!--avatar do usuario-->
                 <div class="dados-usuario">
-                    <h1>{{conversa.nome}}<i class="fa-solid fa-circle" [class.oculto]="ChatService.conversasLidas.has(conversa.nome)"></i></h1>
+                    <h1>{{conversa.nome}}<i class="fa-solid fa-circle"
+                            [class.oculto]="ChatService.conversasLidas.has(conversa.nome)"></i></h1>
                     <!--nome do usuario e icone de mensagem não lida-->
                     <div class="mensagem">
                         <p>{{conversa.mensagem}}</p><!--mensagem enviada-->
@@ -37,26 +38,29 @@
                 <p>{{ChatService.conversaSelecionada()?.data}}</p>
                 }
             </div>
-            
+
         </div>
 
         <div class="mensagens">
-        @for (mensagem of ChatService.mensagens(); track $index) { @if (mensagem.texto) {}
-                <p class="mensagem-chat" [class.minha-mensagem]="mensagem.minha">{{mensagem.texto}}</p>
+            @for (mensagem of ChatService.mensagens(); track $index) { @if (mensagem.texto) {}
+            <p class="mensagem-chat" [class.minha-mensagem]="mensagem.minha">
+                {{mensagem.texto}}<small>{{mensagem.hora}}</small></p>
+
             }
         </div>
 
         <div class="campo-mensagem">
 
-            
+
             <button type="button" (click)="arquivo.click()"><i class="fa-solid fa-paperclip"></i></button>
             <input #arquivo type="file" hidden>
 
 
 
 
-            <input type="text" placeholder="Digite sua mensagem" [ngModel]="ChatService.novaMensagem()" (ngModelChange)="ChatService.novaMensagem.set($event)"(keydown.enter)="ChatService.enviarMensagem()">
-            <button  (click)="ChatService.enviarMensagem()"  ><i class="fa-regular fa-paper-plane"></i></button>
+            <input type="text" placeholder="Digite sua mensagem" [ngModel]="ChatService.novaMensagem()"
+                (ngModelChange)="ChatService.novaMensagem.set($event)" (keydown.enter)="ChatService.enviarMensagem()">
+            <button (click)="ChatService.enviarMensagem()"><i class="fa-regular fa-paper-plane"></i></button>
         </div>}
         @if (!ChatService.conversaSelecionada()) {
 
