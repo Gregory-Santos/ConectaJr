@@ -25,33 +25,5 @@ export class Home {
     return Math.max(0, this.projetosMatch.length - this.cardsPorPagina);
   }
 
-  // ==========================================
-  // AVANÇAR (com loop)
-  // ==========================================
-  proximo(): void {
-    if (this.projetosMatch.length <= this.cardsPorPagina) {
-      return; // não faz nada se não tiver cards suficientes
-    }
-
-    if (this.indiceAtual() < this.maxIndice) {
-      this.indiceAtual.update(i => i + 1);
-    } else {
-      this.indiceAtual.set(0); // volta pro início
-    }
-  }
-
-  // ==========================================
-  // VOLTAR (com loop)
-  // ==========================================
-  anterior(): void {
-    if (this.projetosMatch.length <= this.cardsPorPagina) {
-      return;
-    }
-
-    if (this.indiceAtual() > 0) {
-      this.indiceAtual.update(i => i - 1);
-    } else {
-      this.indiceAtual.set(this.maxIndice); // vai pro final
-    }
-  }
+  
 }
