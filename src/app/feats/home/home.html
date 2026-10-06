@@ -2,14 +2,7 @@
 
   <div class="home-container">
 
-    <div class="feed-painel">
-      <div class="textos-painel">
-        <h4>Olá, Henrique!</h4>
-          <h1>REÚNA,</h1>
-          <h1>ORGANIZE,</h1>
-          <h1>CONECTE.</h1>
-      </div>
-    </div>
+    <div class="feed-painel" aria-hidden="true"></div>
 
     <!-- COMBINA COM SEU PERFIL (CARROSSEL) -->
     <section class="feed-section">
@@ -19,17 +12,14 @@
       </div>
 
       <div class="carousel">
-        <!-- BOTÃO ANTERIOR -->
-        <button class="carousel-button prev" (click)="anterior()">
-          ‹
-        </button>
+       
 
         <!-- ÁREA DOS CARDS -->
         <div class="carousel-window">
           <div class="feed-grid" [style.transform]="'translateX(-' + (indiceAtual() * (100 / cardsPorPagina)) + '%)'">
             @for (projeto of projetosMatch; track projeto.id) {
             <article class="projeto-card" [class.highlight]="projeto.percentualMatch >= 75">
-              <div class="card-painel">
+              <div class="card-painel combina">
                 <span class="empresa">{{ projeto.empresa }}</span>
                 <span class="match">{{ projeto.percentualMatch }}%</span>
               </div>
@@ -55,10 +45,7 @@
           </div>
         </div>
 
-        <!-- BOTÃO PRÓXIMO -->
-        <button class="carousel-button next" (click)="proximo()">
-          ›
-        </button>
+        
       </div>
     </section>
 
