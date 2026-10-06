@@ -1,16 +1,37 @@
 main {
     font-family: 'Inter', sans-serif;
+    position: relative;
+    display: flex;
 }
 
 
 .grafico-container {
-    width: 503px;
     padding: 30px;
-    height: 100vh;
+    height: 270px;
+    position: relative;
+    margin-left: 53px;
+    margin-top: 45px;
+}
+
+.grafico-container button {
+    position: absolute;
+    top: 30px;
+    right: -65px;
+    background-color: #2D2C4E;
+    border: none;
+    border-radius: 13px;
+    width: 103px;
+    height: 30px;
+    color: rgba(255, 255, 255, 0.70);
+    font-size: 16px;
+    font-weight: 400;
+    gap: 7px;
 }
 
 .grafico-container h2 {
-    margin-bottom: 30px;
+    margin-top: 0;
+    color: rgba(255, 255, 255, 0.70);
+    font-weight: 400;
 }
 
 /* -----------------------
@@ -18,8 +39,10 @@ main {
 ----------------------- */
 
 .grafico {
+    width: 503px;
     display: flex;
     height: 270px;
+    transform: translateY(45px);
 }
 
 
@@ -28,13 +51,13 @@ main {
 ----------------------- */
 
 .eixo-y {
-    height: 100%;
-    width: 45px;
+    height: 270px;
+    width: 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     font-size: 16px;
-    color: rgba(255, 255, 255, 0.79);;
+    color: rgba(255, 255, 255, 0.70);
 }
 
 
@@ -61,7 +84,7 @@ main {
     left: 0;
     width: 100%;
 
-    border-top: 1px solid #ddd;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .linha-100 {
@@ -95,9 +118,7 @@ main {
 
 .barras {
     position: relative;
-
     height: 100%;
-
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
@@ -109,22 +130,56 @@ main {
 
 .coluna {
     height: 100%;
-
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-
-    gap: 8px;
+    gap: 4px;
 }
 
+.coluna span {
+    position: absolute;
+    top: 100%;
+    margin-top: 8px;
+    color: rgba(255, 255, 255, 0.70);
+}
 
 /* A barra propriamente dita */
 
 .barra {
-    width: 45px;
+    width: 50px;
+    background-color: #E49126;
+    border-radius: 0px 0px 0 0;
+}
 
-    background-color: #ff7a00;
+.barra-voce {
+    background-color: #4E1996;
+    width: 50px;
+    border-radius: 0px 0px 0 0;
+}
 
-    border-radius: 6px 6px 0 0;
+.linha-divisoria {
+    position: absolute;
+    top: 537px;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid rgba(217, 217, 217, 0.14);
+
+}
+
+.linha-vertical {
+    position: absolute;
+    top: 0;
+    right: 5px;
+left: 836px;
+    height: 100vh;
+    border-left: 1px solid rgba(217, 217, 217, 0.14);
+    z-index: 9999;
+}
+
+app-agenda {
+    margin-top: 45px;
+   margin-left: auto;
+   margin-right: 53px;
 }

@@ -2,6 +2,7 @@
     <div class="grafico-container">
 
         <h2>Andamento das tarefas</h2>
+        <button>Filtrar <i class="fa-solid fa-angle-down"></i></button>
 
         <div class="grafico">
 
@@ -9,7 +10,6 @@
             <div class="eixo-y">
                 <span>100%</span>
                 <span>80%</span>
-                <span>60%</span>
                 <span>60%</span>
                 <span>40%</span>
                 <span>20%</span>
@@ -25,7 +25,7 @@
                 <div class="linha linha-60"></div>
                 <div class="linha linha-40"></div>
                 <div class="linha linha-20"></div>
-                <div class="linha linha-10"></div>
+                <div class="linha linha-0"></div>
 
                 <!-- Barras -->
                 <div class="barras">
@@ -36,29 +36,29 @@
                     </div>
 
                     <div class="coluna">
-                        <div class="barra" style="height: 70%;"></div>
+                        <div class="barra-voce" style="height: 80%;"></div>
                         <span>Você</span>
                     </div>
 
                     <div class="coluna">
-                        <div class="barra" style="height: 55%;"></div>
+                        <div class="barra" style="height: 10%;"></div>
                         <span>Evandro</span>
                     </div>
 
                     <div class="coluna">
-                        <div class="barra" style="height: 90%;"></div>
+                        <div class="barra" style="height: 20%;"></div>
                         <span>Vitória</span>
                     </div>
 
 
                     <div class="coluna">
-                        <div class="barra" style="height: 90%;"></div>
+                        <div class="barra" style="height: 65%;"></div>
                         <span>Amanda</span>
                     </div>
 
 
                     <div class="coluna">
-                        <div class="barra" style="height: 90%;"></div>
+                        <div class="barra" style="height: 60%;"></div>
                         <span>Lucas</span>
                     </div>
                 </div>
@@ -67,7 +67,10 @@
 
         </div>
 
+        
     </div>
+    <div class="linha-vertical"></div>
+    <div class="linha-divisoria"></div>
 
 
 
@@ -75,6 +78,5 @@
 
 
 
-
-
+<app-agenda></app-agenda>
 </main>
