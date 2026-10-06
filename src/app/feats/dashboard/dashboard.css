@@ -1,4 +1,130 @@
-main{
-    background-color: #1B1C30;
-    margin: 0;
+main {
+    font-family: 'Inter', sans-serif;
+}
+
+
+.grafico-container {
+    width: 503px;
+    padding: 30px;
+    height: 100vh;
+}
+
+.grafico-container h2 {
+    margin-bottom: 30px;
+}
+
+/* -----------------------
+   ESTRUTURA DO GRÁFICO
+----------------------- */
+
+.grafico {
+    display: flex;
+    height: 270px;
+}
+
+
+/* -----------------------
+   EIXO Y
+----------------------- */
+
+.eixo-y {
+    height: 100%;
+    width: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.79);;
+}
+
+
+/* -----------------------
+   ÁREA DO GRÁFICO
+----------------------- */
+
+.area-grafico {
+    position: relative;
+
+    flex: 1;
+
+    height: 100%;
+}
+
+
+/* -----------------------
+   LINHAS HORIZONTAIS
+----------------------- */
+
+.linha {
+    position: absolute;
+
+    left: 0;
+    width: 100%;
+
+    border-top: 1px solid #ddd;
+}
+
+.linha-100 {
+    top: 0;
+}
+
+.linha-80 {
+    top: 20%;
+}
+
+.linha-60 {
+    top: 40%;
+}
+
+.linha-40 {
+    top: 60%;
+}
+
+.linha-20 {
+    top: 80%;
+}
+
+.linha-0 {
+    bottom: 0;
+}
+
+
+/* -----------------------
+   BARRAS
+----------------------- */
+
+.barras {
+    position: relative;
+
+    height: 100%;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    z-index: 2;
+}
+
+
+/* Cada coluna */
+
+.coluna {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+/* A barra propriamente dita */
+
+.barra {
+    width: 45px;
+
+    background-color: #ff7a00;
+
+    border-radius: 6px 6px 0 0;
 }
