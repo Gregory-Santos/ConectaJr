@@ -2,6 +2,7 @@ main {
     font-family: 'Inter', sans-serif;
     position: relative;
     display: flex;
+    min-height: 100vh;
 }
 
 
@@ -10,7 +11,7 @@ main {
     height: 270px;
     position: relative;
     margin-left: 53px;
-    margin-top: 45px;
+    margin-top: 35px;
 }
 
 .grafico-container button {
@@ -175,14 +176,17 @@ main {
     left: 836px;
     height: 99%;
     border-left: 1px solid rgba(217, 217, 217, 0.14);
-    z-index: 9999;
+    z-index: 0;
 }
 
 app-agenda {
-    margin-top: 45px;
-    margin-left: auto;
-    margin-right: 53px;
+    position: fixed;
+    margin-top: 0;
+    right: 50px;
+    width: 350px;
+    z-index: 99999;
 }
+
 
 /* -----------------------
    TAREFAS
@@ -194,6 +198,7 @@ app-agenda {
     margin-top: 650px;
     color: rgba(255, 255, 255, 0.70);
     padding-bottom: 50px;
+    
 }
 
 .topo-tarefas {

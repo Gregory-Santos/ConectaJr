@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { Agenda } from '../agenda/agenda';
+import { Calendario } from '../../core/service/calendario';
 
 @Component({
   imports: [Agenda],
@@ -7,4 +8,10 @@ import { Agenda } from '../agenda/agenda';
   styleUrl: './dashboard.css',
   templateUrl: './dashboard.html',
 })
-export class Dashboard {}
+export class Dashboard {
+   
+    private Calendario = inject(Calendario);
+    eventos = computed(() => this.Calendario.eventos());
+    
+
+}
