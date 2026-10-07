@@ -179,12 +179,12 @@ main {
 }
 
 app-agenda {
-       margin-top: 45px;
-    margin-left: auto;
-    margin-right: 53px;
-    position: relative;
+   position: fixed;
+    top: 108px;
+    right: -110px;
+    width: 500px;
+    height: 100vh;
     z-index: 99999;
-    flex-shrink: 0;
 }
 
 /* -----------------------
