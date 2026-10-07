@@ -161,9 +161,9 @@ main {
 
 .linha-divisoria {
     position: absolute;
-    top: 537px;
+    top: 580px;
     left: 0;
-    width: 100%;
+    width: 66.4%;
     border-top: 1px solid rgba(217, 217, 217, 0.14);
 
 }
@@ -172,14 +172,195 @@ main {
     position: absolute;
     top: 0;
     right: 5px;
-left: 836px;
-    height: 100vh;
+    left: 836px;
+    height: 99%;
     border-left: 1px solid rgba(217, 217, 217, 0.14);
     z-index: 9999;
 }
 
 app-agenda {
     margin-top: 45px;
-   margin-left: auto;
-   margin-right: 53px;
+    margin-left: auto;
+    margin-right: 53px;
 }
+
+/* -----------------------
+   TAREFAS
+----------------------- */
+
+.tarefas-container {
+    width: 350px;
+    margin-left: -530px;
+    margin-top: 650px;
+    color: rgba(255, 255, 255, 0.70);
+    padding-bottom: 50px;
+}
+
+.topo-tarefas {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 38px;
+}
+
+.topo-tarefas h1 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 400;
+    color: #FFFFFF;
+     white-space: nowrap;
+}
+
+.topo-tarefas h1 i {
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+.barra-progresso {
+    position: relative;
+    font-size: 18px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.90);
+    padding-left: 540px;
+}
+
+.barra-progresso::before {
+    content: "";
+    position: absolute;
+    width: 230px;
+    height: 11px;
+    left: 130px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid rgba(255, 255, 255, 0.70);
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.barra-progresso::after {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 10px;
+    left: 131px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #E49126;
+    border-radius: 10px;
+}
+.barra-progresso::before,
+.barra-progresso::after {
+    transform: translate(170px, -50%);
+}
+
+/* Cada tarefa */
+
+.tarefas {
+    width: 100%;
+}
+
+.detales-tarefas {
+    position: relative;
+    display: grid;
+    grid-template-columns: 23px 1fr;
+    column-gap: 19px;
+    margin-bottom: 27px;
+    min-height: 55px;
+}
+
+
+/* Checkbox */
+
+.detales-tarefas input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    border: 1px solid #FFFFFF;
+    border-radius: 2px;
+    cursor: pointer;
+    grid-column: 1;
+}
+
+.detales-tarefas input[type="checkbox"]:checked {
+    background-color: #6420A5;
+    border-color: #6420A5;
+}
+
+.detales-tarefas input[type="checkbox"]:checked::after {
+    content: "✓";
+    display: block;
+    color: white;
+    font-size: 17px;
+    line-height: 20px;
+    text-align: center;
+}
+
+
+/* Título */
+
+.detales-tarefas h1 {
+    grid-column: 2;
+    margin: 0;
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.90);
+}
+
+
+/* Status / prazo */
+
+.detales-tarefas h2 {
+    position: absolute;
+    right: -340px;
+    top: 4px;
+    margin: 0;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 400;
+    color: #909090;
+}
+
+
+/* Descrição */
+
+.detales-tarefas p {
+    margin: 4px 0 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #909090;
+    
+}
+
+.detales-tarefas p:first-of-type {
+    grid-column: 2;
+}
+
+.detales-tarefas p:last-of-type {
+    grid-column: 2;
+     background-color: rgba(180, 180, 180, 0.55);
+    color: #292929;
+    padding: 1px 7px;
+    border-radius: 6px;
+    width: fit-content;
+    white-space: nowrap;
+}
+
+
+/* Botão */
+
+.tarefas > button {
+    display: block;
+    margin: 48px auto 0;
+    margin-left: 350px;
+    width: 130px;
+    height: 38px;
+    border: none;
+    border-radius: 20px;
+    background-color: #2D2C4E;
+    color: rgba(255, 255, 255, 0.70);
+    font-size: 17px;
+}
+
