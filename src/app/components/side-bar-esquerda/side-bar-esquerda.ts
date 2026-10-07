@@ -7,4 +7,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './side-bar-esquerda.css',
   templateUrl: './side-bar-esquerda.html',
 })
-export class SideBarEsquerda {}
+export class SideBarEsquerda {
+
+  menuAberto = false;
+}

@@ -24,6 +24,7 @@
 /*config global do card perfil*/
 .info-perfil {
     display: flex;
+    position: relative;
     align-items: center;
     background-color: #2D2C4E;
     height: 66px;
@@ -31,6 +32,30 @@
     margin-top: 16px;
     margin-left: 13px;
     border-radius: 13px;
+}
+
+.menu-conta {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 80px;
+    height: 20px;
+    background-color: #2D2C4E;
+    border-radius: 8px;
+    padding: 8px;
+    z-index: 10;
+}
+
+.menu-conta button {
+    width: 100%;
+    border: none;
+    background: none;
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    padding: 2px;
+    cursor: pointer;
 }
 
 
