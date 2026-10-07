@@ -179,9 +179,12 @@ main {
 }
 
 app-agenda {
-    margin-top: 45px;
+       margin-top: 45px;
     margin-left: auto;
     margin-right: 53px;
+    position: relative;
+    z-index: 99999;
+    flex-shrink: 0;
 }
 
 /* -----------------------
@@ -194,6 +197,7 @@ app-agenda {
     margin-top: 650px;
     color: rgba(255, 255, 255, 0.70);
     padding-bottom: 50px;
+    
 }
 
 .topo-tarefas {

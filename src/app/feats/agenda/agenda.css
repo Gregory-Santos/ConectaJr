@@ -1,5 +1,5 @@
 .calendario-sidebar {
-  width: 100%px;
+  width: 350px;
   height: 100vh;
   position: sticky;
   top: 0;
@@ -179,3 +179,4 @@
   border-color: #4ade80;
   color: #4ade80;
 }
+
