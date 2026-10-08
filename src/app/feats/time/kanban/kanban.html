@@ -1,1 +1,89 @@
-<p>kanban works!</p>
+<div class="kanban">
+    <header class="cabecalho-kanban">
+        <h2>Kanban</h2>
+        <button type="button" class="botao-adicionar" aria-label="Adicionar tarefa" (click)="abrirPopupAdicionar()">+</button>
+    </header>
+    <div class="quadro-kanban">
+        @for (coluna of colunas; track coluna.id) {
+            <section class="coluna-kanban">
+                <header class="cabecalho-coluna">
+                    <h3>{{ coluna.titulo }}</h3>
+                    <span class="quantidade-tarefas">{{ tarefasPorStatus(coluna.id).length }}</span>
+                </header>
+                <div class="lista-tarefas">
+                    @for (tarefa of tarefasPorStatus(coluna.id); track tarefa.id) {
+                        <article class="card-tarefa">
+                            <div class="conteudo-tarefa">
+                                <p class="descricao-tarefa">{{ tarefa.descricao }}</p>
+                                <div class="acoes-tarefa">
+                                    <button type="button" class="botao-detalhes" aria-label="Ações da tarefa" (click)="alternarMenu(tarefa.id)">></button>
+                                    @if (menuAberto() === tarefa.id) {
+                                        <div class="menu-tarefa">
+                                            <button type="button" (click)="moverTarefa(tarefa.id)">Mover</button>
+                                            <button type="button" (click)="editarTarefa(tarefa.id)">Editar</button>
+                                            <button type="button" (click)="excluirTarefa(tarefa.id)">Excluir</button>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                            <div class="rodape-tarefa">
+                                @if (participantePorId(tarefa.responsavelId); as responsavel) {
+                                    <img [src]="responsavel.foto" [alt]="responsavel.nome" class="responsavel-tarefa">
+                                }
+                            </div>
+                        </article>
+                    }
+                    @if (tarefasPorStatus(coluna.id).length === 0) {
+                        <div class="coluna-vazia">
+                            <span>Nenhuma tarefa</span>
+                        </div>
+                    }
+                </div>
+            </section>
+        }
+    </div>
+</div>
+
+@if (popupAdicionar()) {
+    <div class="fundo-popup" (click)="fecharPopupAdicionar()">
+        <section class="popup-adicionar" (click)="$event.stopPropagation()">
+            <header class="cabecalho-popup">
+                <h2>Adicionar Cartão Kanban</h2>
+                <button type="button" class="fechar-popup" aria-label="Fechar" (click)="fecharPopupAdicionar()">×</button>
+            </header>
+            <form class="conteudo-popup" (ngSubmit)="adicionarTarefa()">
+                <textarea [(ngModel)]="novaTarefa.descricao" name="descricao" placeholder="Descreva a tarefa..." required></textarea>
+                <div class="opcoes-tarefa">
+                    <label>
+                        <span>Direcionar para:</span>
+                        <select [(ngModel)]="novaTarefa.responsavelId" name="responsavelId">
+                            @for (participante of participantes(); track participante.id) {
+                                <option [value]="participante.id">{{ participante.nome }}</option>
+                            }
+                        </select>
+                    </label>
+                    <label>
+                        <span>Depende de:</span>
+                        <select [(ngModel)]="novaTarefa.dependeDe" name="dependeDe">
+                            <option value="">Nenhuma</option>
+                            @for (tarefa of tarefas(); track tarefa.id) {
+                                <option [value]="tarefa.id">{{ tarefa.titulo }}</option>
+                            }
+                        </select>
+                    </label>
+                    <label class="campo-status">
+                        <span>Status:</span>
+                        <select [(ngModel)]="novaTarefa.status" name="status">
+                            @for (coluna of colunas; track coluna.id) {
+                                <option [value]="coluna.id">{{ coluna.titulo }}</option>
+                            }
+                        </select>
+                    </label>
+                </div>
+                <div class="acoes-popup">
+                    <button type="submit" class="botao-enviar">Enviar</button>
+                </div>
+            </form>
+        </section>
+    </div>
+}

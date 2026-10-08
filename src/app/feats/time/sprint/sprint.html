@@ -1,1 +1,59 @@
-<p>sprint works!</p>
+<section class="sprint">
+    <header class="cabecalho-sprint">
+        <h2>Sprint</h2>
+        <button type="button" class="filtro-sprint">
+            <span>Por pessoa</span>
+            <span class="seta">⌄</span>
+        </button>
+    </header>
+    <div class="lista-participantes">
+        @for (participante of participantes(); track participante.id) {
+            <article class="participante" [class.aberto]="participanteEstaAberto(participante.id)">
+                <div class="resumo-participante">
+                    <div class="informacoes-pessoa">
+                        <img [src]="participante.foto" [alt]="participante.nome" class="foto-participante">
+                        <div class="dados-participante">
+                            <div class="nome-status">
+                                <span class="nome">{{ participante.nome }}</span>
+                                <span
+                                    class="status"
+                                    [class.concluido]="participante.status === 'concluido'"
+                                    [class.andamento]="participante.status === 'andamento'"
+                                    [class.pendente]="participante.status === 'pendente'"
+                                ></span>
+                            </div>
+                            <p>{{ participante.atualizacao }}</p>
+                        </div>
+                    </div>
+                    <div class="data-participante">
+                        @if (participante.atualizacoes.length > 0) {
+                            <span>
+                                {{ participante.atualizacoes[participante.atualizacoes.length - 1].data }}
+                                {{ participante.atualizacoes[participante.atualizacoes.length - 1].horario }}
+                            </span>
+                        }
+                        <button
+                            type="button"
+                            class="botao-expandir"
+                            [attr.aria-label]="'Ver atualizações de ' + participante.nome"
+                            [attr.aria-expanded]="participanteEstaAberto(participante.id)"
+                            (click)="alternarParticipante(participante.id)"
+                        >
+                            {{ participanteEstaAberto(participante.id) ? '⌃' : '⌄' }}
+                        </button>
+                    </div>
+                </div>
+                @if (participanteEstaAberto(participante.id)) {
+                    <div class="atualizacoes-participante">
+                        @for (atualizacao of participante.atualizacoes; track atualizacao.id) {
+                            <div class="item-atualizacao">
+                                <p>{{ atualizacao.descricao }}</p>
+                                <span>{{ atualizacao.data }} {{ atualizacao.horario }}</span>
+                            </div>
+                        }
+                    </div>
+                }
+            </article>
+        }
+    </div>
+</section>
