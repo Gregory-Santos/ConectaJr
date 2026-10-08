@@ -1,1 +1,15 @@
-<p>atualizacoes-time works!</p>
+<section class="atualizacoes">
+    <h2>Últimas atualizações:</h2>
+    <div class="lista-atualizacoes">
+        @for (atualizacao of atualizacoes; track atualizacao.id) {
+            <article class="atualizacao">
+                <span class="marcador"></span>
+                <div class="conteudo-atualizacao">
+                    <p>
+                        <strong>{{atualizacao.nome}}</strong> {{atualizacao.descricao}}</p>
+                    <time>{{atualizacao.data}} · {{atualizacao.horario}}</time>
+                </div>
+            </article>
+        }
+    </div>
+</section>
