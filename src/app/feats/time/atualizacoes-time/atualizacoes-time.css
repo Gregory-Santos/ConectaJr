@@ -1,0 +1,142 @@
+:host {
+    display: block;
+    width: 100%;
+    min-width: 0;
+}
+
+.atualizacoes {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    background: rgba(236, 235, 235, 0.04);
+    border: 1px solid rgba(236, 235, 235, 0.08);
+    border-radius: var(--raio-borda);
+    color: var(--cor-branco);
+    font-family: var(--fonte-principal);
+}
+
+.atualizacoes h2 {
+    margin: 0 0 20px;
+    color: var(--cor-branco);
+    font-size: var(--tamanho-titulo);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.lista-atualizacoes {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-height: 220px;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+.atualizacao {
+    position: relative;
+    display: flex;
+    gap: 12px;
+    min-height: 64px;
+}
+
+.marcador {
+    position: relative;
+    flex-shrink: 0;
+    width: 8px;
+    height: 8px;
+    margin-top: 6px;
+    border-radius: 50%;
+    background: var(--cor-laranja);
+}
+
+.atualizacao:not(:last-child) .marcador::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 3px;
+    width: 1px;
+    height: calc(100% + 56px);
+    background: rgba(236, 235, 235, 0.15);
+}
+
+.conteudo-atualizacao {
+    flex: 1;
+    min-width: 0;
+    padding-bottom: 18px;
+}
+
+.conteudo-atualizacao p {
+    margin: 0;
+    color: rgba(236, 235, 235, 0.82);
+    font-size: var(--tamanho-menor);
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.conteudo-atualizacao strong {
+    color: var(--cor-branco);
+    font-weight: 600;
+}
+
+.conteudo-atualizacao time {
+    display: block;
+    margin-top: 5px;
+    color: rgba(236, 235, 235, 0.45);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.lista-atualizacoes::-webkit-scrollbar {
+    width: 4px;
+}
+
+.lista-atualizacoes::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.lista-atualizacoes::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: rgba(236, 235, 235, 0.2);
+}
+
+.lista-atualizacoes::-webkit-scrollbar-thumb:hover {
+    background: rgba(236, 235, 235, 0.4);
+}
+
+@media (max-width: 900px) {
+    .atualizacoes {
+        padding: 18px;
+    }
+
+    .lista-atualizacoes {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    .atualizacoes {
+        padding: 16px;
+    }
+
+    .atualizacoes h2 {
+        margin-bottom: 16px;
+        font-size: 16px;
+    }
+
+    .atualizacao {
+        min-height: 58px;
+    }
+
+    .conteudo-atualizacao {
+        padding-bottom: 15px;
+    }
+
+    .conteudo-atualizacao p {
+        font-size: 13px;
+    }
+
+    .conteudo-atualizacao time {
+        font-size: 11px;
+    }
+}
