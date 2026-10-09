@@ -61,6 +61,27 @@ export class TarefaService {
             descricao: 'Finalizar versão desktop',
             status: 'done',
             responsavelId: 2
+        },
+        {
+            id: 9,
+            titulo: 'Posts de Lançamento | Instagram',
+            descricao: '3 Posts e 1 Vídeo',
+            status: 'done',
+            responsavelId: 4
+        },
+        {
+            id: 10,
+            titulo: 'Conectar API de registros',
+            descricao: 'Link API no Trello',
+            status: 'todo',
+            responsavelId: 4
+        },
+        {
+            id: 11,
+            titulo: 'Arrumar página de Login',
+            descricao: 'erro 404 no form',
+            status: 'done',
+            responsavelId: 4
         }
     ]);
 

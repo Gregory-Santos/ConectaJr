@@ -1,9 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
-  imports: [],
-  selector: 'app-nav-time',
-  styleUrl: './nav-time.css',
-  templateUrl: './nav-time.html',
+    selector: 'app-nav-time',
+    standalone: true,
+    imports: [],
+    templateUrl: './nav-time.html',
+    styleUrl: './nav-time.css'
 })
-export class NavTime {}
+export class NavTime {
+    abaAtiva = input<'kanban' | 'tarefas' | 'calendario'>('kanban');
+    abaSelecionada = output<'kanban' | 'tarefas' | 'calendario'>();
+    selecionarAba(aba: 'kanban' | 'tarefas' | 'calendario') {
+        this.abaSelecionada.emit(aba);
+    }
+}

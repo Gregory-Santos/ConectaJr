@@ -1,42 +1,26 @@
 <div class="pagina-time">
-
     <header class="cabecalho-time">
-
         <div class="titulo-time">
             <span>Meu Time</span>
             <h1>Sprint | Projeto 1774</h1>
         </div>
-
-        <app-nav-time></app-nav-time>
-
+        <app-nav-time [abaAtiva]="abaAtiva()" (abaSelecionada)="mudarAba($event)"></app-nav-time>
     </header>
-
     <main class="conteudo-time">
-
         <section class="quadro-principal">
-
             @if (abaAtiva() === 'kanban') {
-                <app-kanban></app-kanban>
+            <app-kanban></app-kanban>
             }
-
             @if (abaAtiva() === 'tarefas') {
-                <app-tarefas></app-tarefas>
+            <app-tarefas></app-tarefas>
             }
-
             @if (abaAtiva() === 'calendario') {
-                <app-calendario></app-calendario>
+            <app-calendario></app-calendario>
             }
-
         </section>
-
         <section class="area-sprint">
-
             <app-sprint></app-sprint>
-
             <app-atualizacoes-time></app-atualizacoes-time>
-
         </section>
-
     </main>
-
 </div>
