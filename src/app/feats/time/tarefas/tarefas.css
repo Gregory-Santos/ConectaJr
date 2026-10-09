@@ -1,0 +1,305 @@
+:host {
+    display: block;
+    width: 100%;
+    min-width: 0;
+}
+.tarefas-container {
+    width: 100%;
+    height: 360px;
+    box-sizing: border-box;
+    border: 1px solid rgba(236, 235, 235, 0.45);
+    border-radius: var(--raio-borda);
+    background: transparent;
+    color: var(--cor-branco);
+    font-family: var(--fonte-principal);
+    overflow: hidden;
+}
+.cabecalho-tarefas {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 54px;
+    padding: 0 18px 0 30px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(236, 235, 235, 0.35);
+}
+.cabecalho-tarefas h2 {
+    margin: 0;
+    color: var(--cor-branco);
+    font-size: var(--tamanho-titulo-maior);
+    font-weight: 500;
+}
+.acoes-tarefas {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+.acoes-tarefas button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--cor-branco);
+    font-size: 17px;
+    cursor: pointer;
+    transition: var(--transicao);
+}
+.acoes-tarefas button:hover {
+    color: var(--cor-laranja);
+}
+.acoes-tarefas button:last-child {
+    font-size: 20px;
+}
+.conteudo-tarefas {
+    padding: 18px 30px 15px;
+    box-sizing: border-box;
+}
+.topo-lista {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.filtro-tarefas {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--cor-branco);
+    font-family: var(--fonte-principal);
+    font-size: var(--tamanho-corpo);
+    cursor: pointer;
+}
+.filtro-tarefas i {
+    font-size: 11px;
+    transition: var(--transicao);
+}
+.filtro-tarefas:hover {
+    color: rgba(236, 235, 235, 0.7);
+}
+.progresso-tarefas {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 170px;
+}
+.barra-progresso {
+    width: 128px;
+    height: 7px;
+    box-sizing: border-box;
+    border: 1px solid rgba(236, 235, 235, 0.6);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.barra-progresso span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--cor-laranja);
+    transition: width 0.3s ease;
+}
+.progresso-tarefas > span {
+    min-width: 30px;
+    color: var(--cor-branco);
+    font-size: 12px;
+    text-align: right;
+}
+.lista-tarefas {
+    display: flex;
+    flex-direction: column;
+    max-height: 255px;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+.tarefa {
+    display: grid;
+    grid-template-columns: 14px minmax(0, 1fr) auto;
+    align-items: start;
+    column-gap: 10px;
+    min-height: 48px;
+}
+.tarefa input {
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    margin: 2px 0 0;
+    border: 1px solid rgba(236, 235, 235, 0.75);
+    border-radius: 2px;
+    background: transparent;
+    cursor: pointer;
+}
+.tarefa input:checked {
+    position: relative;
+    border-color: var(--cor-roxo);
+    background: var(--cor-roxo);
+}
+.tarefa input:checked::after {
+    content: '✓';
+    position: absolute;
+    top: -3px;
+    left: 2px;
+    color: var(--cor-branco);
+    font-size: 12px;
+    font-weight: 700;
+}
+.informacoes-tarefa {
+    min-width: 0;
+}
+.informacoes-tarefa h3 {
+    margin: 0;
+    color: var(--cor-branco);
+    font-size: var(--tamanho-menor);
+    font-weight: 400;
+    line-height: 1.3;
+}
+.detalhes-tarefa {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 3px;
+}
+.detalhes-tarefa p {
+    margin: 0;
+    color: rgba(236, 235, 235, 0.42);
+    font-size: 11px;
+    line-height: 1.2;
+}
+.responsavel {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 7px;
+    border-radius: 3px;
+    background: rgba(236, 235, 235, 0.22);
+    color: rgba(236, 235, 235, 0.75);
+    font-size: 10px;
+    line-height: 1;
+    white-space: nowrap;
+}
+.status-tarefa {
+    padding-top: 2px;
+    color: rgba(236, 235, 235, 0.5);
+    font-size: 11px;
+    font-style: italic;
+    white-space: nowrap;
+}
+.status-tarefa.concluida {
+    color: rgba(236, 235, 235, 0.5);
+}
+.lista-vazia {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    color: rgba(236, 235, 235, 0.45);
+    font-size: var(--tamanho-menor);
+}
+.lista-tarefas::-webkit-scrollbar {
+    width: 4px;
+}
+.lista-tarefas::-webkit-scrollbar-track {
+    background: transparent;
+}
+.lista-tarefas::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: rgba(236, 235, 235, 0.25);
+}
+.lista-tarefas::-webkit-scrollbar-thumb:hover {
+    background: rgba(236, 235, 235, 0.45);
+}
+
+.filtro-container {
+    position: relative;
+}
+.filtro-tarefas {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--cor-branco);
+    font-family: var(--fonte-principal);
+    font-size: var(--tamanho-corpo);
+    cursor: pointer;
+}
+.filtro-tarefas i {
+    font-size: 11px;
+    transition: var(--transicao);
+}
+.filtro-tarefas:hover {
+    color: rgba(236, 235, 235, 0.7);
+}
+.menu-filtro {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    min-width: 160px;
+    padding: 6px;
+    border: 1px solid rgba(236, 235, 235, 0.15);
+    border-radius: 8px;
+    background: #25263a;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+.menu-filtro button {
+    padding: 8px 10px;
+    border: 0;
+    border-radius: 5px;
+    background: transparent;
+    color: rgba(236, 235, 235, 0.7);
+    font-family: var(--fonte-principal);
+    font-size: 12px;
+    text-align: left;
+    cursor: pointer;
+}
+.menu-filtro button:hover,
+.menu-filtro button.selecionado {
+    background: rgba(78, 25, 150, 0.35);
+    color: var(--cor-branco);
+}
+
+@media (max-width: 700px) {
+    .tarefas-container {
+        height: auto;
+        min-height: 360px;
+    }
+    .cabecalho-tarefas {
+        padding: 0 18px;
+    }
+    .conteudo-tarefas {
+        padding: 18px;
+    }
+    .progresso-tarefas {
+        min-width: 140px;
+    }
+    .barra-progresso {
+        width: 100px;
+    }
+}
+@media (max-width: 500px) {
+    .topo-lista {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+    }
+    .progresso-tarefas {
+        width: 100%;
+    }
+    .barra-progresso {
+        flex: 1;
+    }
+    .tarefa {
+        grid-template-columns: 14px minmax(0, 1fr);
+    }
+    .status-tarefa {
+        grid-column: 2;
+        padding-top: 0;
+        padding-bottom: 8px;
+    }
+}

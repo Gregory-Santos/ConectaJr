@@ -1,7 +1,14 @@
 <div class="kanban">
     <header class="cabecalho-kanban">
         <h2>Kanban</h2>
-        <button type="button" class="botao-adicionar" aria-label="Adicionar tarefa" (click)="abrirPopupAdicionar()">+</button>
+        <div class="acoes-kanban">
+            <button type="button" aria-label="Editar Kanban">
+                <i class="fa-regular fa-pen-to-square"></i>
+            </button>
+            <button type="button" aria-label="Adicionar tarefa" (click)="abrirPopupAdicionar()">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
     </header>
     <div class="quadro-kanban">
         @for (coluna of colunas; track coluna.id) {

@@ -30,7 +30,8 @@ export class ParticipantesService {
                     descricao: 'Revisou a documentação.',
                     data: '04/08/2026',
                     horario: '09:20'
-                }
+                },
+
             ]
         },
         {
@@ -86,8 +87,28 @@ export class ParticipantesService {
                     horario: '08:45'
                 }
             ]
-        }
-    ]);
+        },
+        {
+            id: 4,
+            nome: 'Junior da Silva',
+            foto: '/img/junior.png',
+            status: 'andamento',
+            atualizacao: 'começou: organizar tarefas do projeto',
+            atualizacoes: [
+                {
+                    id: 10,
+                    descricao: 'Organizou as tarefas da sprint.',
+                    data: '04/08/2026',
+                    horario: '09:30'
+                },
+                {
+                    id: 11,
+                    descricao: 'Iniciou a integração da API.',
+                    data: '04/08/2026',
+                    horario: '11:15'
+                }
+            ]}
+        ]);
 
     listarParticipantes() {
         return this.participantes;

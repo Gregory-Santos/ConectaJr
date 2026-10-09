@@ -302,6 +302,46 @@
     border-color: var(--cor-roxo);
     background: var(--cor-roxo);
 }
+
+.cabecalho-kanban {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 54px;
+    padding: 0 18px 0 30px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(236, 235, 235, 0.35);
+}
+.cabecalho-kanban h2 {
+    margin: 0;
+    color: var(--cor-branco);
+    font-size: var(--tamanho-titulo-maior);
+    font-weight: 500;
+}
+.acoes-kanban {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+.acoes-kanban button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--cor-branco);
+    font-size: 17px;
+    cursor: pointer;
+    transition: var(--transicao);
+}
+.acoes-kanban button:hover {
+    color: var(--cor-laranja);
+}
+.acoes-kanban button:last-child {
+    font-size: 20px;
+}
+
 @media (max-width: 900px) {
     .quadro-kanban {
         overflow-x: auto;
