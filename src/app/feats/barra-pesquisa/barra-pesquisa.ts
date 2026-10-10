@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { PesquisaService } from './pesquisa-service';
 
 @Component({
   imports: [],
@@ -6,4 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './barra-pesquisa.css',
   templateUrl: './barra-pesquisa.html',
 })
-export class BarraPesquisa {}
+export class BarraPesquisa {
+  private pesquisa = inject(PesquisaService);
+
+  aoDigitar(event: Event) {
+    const input = event.target as HTMLInputElement;
+    this.pesquisa.termo.set(input.value);
+}
+}

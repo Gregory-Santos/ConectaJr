@@ -2,14 +2,16 @@ import { Component, signal } from '@angular/core';
 import { form, FormField } from '@angular/forms/signals';
 import { ChatUsuario } from '../../feats/chat-usuario/chat-usuario';
 import { RouterLink } from '@angular/router';
+import { BarraPesquisa } from '../../feats/barra-pesquisa/barra-pesquisa';
 
 @Component({
-  imports: [FormField, RouterLink],
+  imports: [ RouterLink, BarraPesquisa],
   selector: 'app-header',
   styleUrl: './header.css',
   templateUrl: './header.html',
 })
 export class Header {
+  
   pesquisaModel = signal<string>('');
 
   pesquisaForm = form(this.pesquisaModel);

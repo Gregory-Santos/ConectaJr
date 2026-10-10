@@ -1,57 +1,85 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, computed, effect, inject, signal } from '@angular/core';
 import { FeedProjeto } from '../../core/service/feed-projeto';
 import { Projeto } from '../../core/models/projeto';
-import { BarraPesquisa } from '../barra-pesquisa/barra-pesquisa';
+import { PesquisaService } from '../barra-pesquisa/pesquisa-service';
 import { Agenda } from '../agenda/agenda';
 
 @Component({
   selector: 'app-home',
-  imports: [BarraPesquisa, Agenda],
+  imports: [Agenda],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
 export class Home {
 
   private feedService = inject(FeedProjeto);
+  private pesquisa = inject(PesquisaService);
 
-  projetosMatch: Projeto[] = this.feedService.listarMatches();
-  projetosSugestoes: Projeto[] = this.feedService.listarSugestoes();
+  // listas completas (chamadas uma vez só)
+  private todosMatch: Projeto[] = this.feedService.listarMatches();
+  private todasSugestoes: Projeto[] = this.feedService.listarSugestoes();
+
+  // listas filtradas pela busca (é o que o HTML passa a usar)
+  matchesFiltrados = computed(() => this.filtrar(this.todosMatch));
+  sugestoesFiltradas = computed(() => this.filtrar(this.todasSugestoes));
 
   indiceAtual = signal(0);
   cardsPorPagina = 3;
 
-  // Calcula o índice máximo possível
-  private get maxIndice(): number {
-    return Math.max(0, this.projetosMatch.length - this.cardsPorPagina);
+  constructor() {
+    // sempre que o termo mudar, volta o carrossel pro início
+    effect(() => {
+      this.pesquisa.termo();
+      this.indiceAtual.set(0);
+    });
   }
 
-  // ==========================================
-  // AVANÇAR (com loop)
-  // ==========================================
+  private get maxIndice(): number {
+    return Math.max(0, this.matchesFiltrados().length - this.cardsPorPagina);
+  }
+
   proximo(): void {
-    if (this.projetosMatch.length <= this.cardsPorPagina) {
-      return; // não faz nada se não tiver cards suficientes
-    }
+    if (this.matchesFiltrados().length <= this.cardsPorPagina) return;
 
     if (this.indiceAtual() < this.maxIndice) {
       this.indiceAtual.update(i => i + 1);
     } else {
-      this.indiceAtual.set(0); // volta pro início
+      this.indiceAtual.set(0);
     }
   }
 
-  // ==========================================
-  // VOLTAR (com loop)
-  // ==========================================
   anterior(): void {
-    if (this.projetosMatch.length <= this.cardsPorPagina) {
-      return;
-    }
+    if (this.matchesFiltrados().length <= this.cardsPorPagina) return;
 
     if (this.indiceAtual() > 0) {
       this.indiceAtual.update(i => i - 1);
     } else {
-      this.indiceAtual.set(this.maxIndice); // vai pro final
+      this.indiceAtual.set(this.maxIndice);
     }
+  }
+
+  // ==========================================
+  // BUSCA
+  // ==========================================
+  private filtrar(lista: Projeto[]): Projeto[] {
+    const termo = this.normalizar(this.pesquisa.termo());
+    if (!termo) return lista;
+
+    return lista.filter(p =>
+      this.normalizar(p.empresa).includes(termo) ||
+      this.normalizar(p.titulo).includes(termo) ||
+      p.skills.some(
+        s => s.status === 'pending' && this.normalizar(s.name).includes(termo)
+      )
+    );
+  }
+
+  // ignora maiúsculas e acentos
+  private normalizar(texto: string): string {
+    return texto
+      .trim()
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '');
   }
 }

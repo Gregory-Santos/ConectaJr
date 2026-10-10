@@ -693,3 +693,8 @@ app-agenda {
     padding-right: 10px;
   }
 }
+
+.sem-resultado {
+  color: #b9b4d6;
+  padding: 16px 0;
+}

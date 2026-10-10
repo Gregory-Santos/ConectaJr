@@ -1,12 +1,9 @@
 
-import { Injectable } from '@angular/core';
-
+import { Service } from '@angular/core';
 import { Projeto } from '../models/projeto';
 import { Skill } from '../models/skill';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Service()
 export class FeedProjeto  {
 
   /*

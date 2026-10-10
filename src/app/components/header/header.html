@@ -1,10 +1,5 @@
   <div class="barra-pesquisa">
-    <form (submit)="pesquisar($event)">
-      <input type="text" [formField]="pesquisaForm" />
-      <button [disabled]="pesquisaForm().invalid()">
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </button>
-    </form>
+    <app-barra-pesquisa />
   </div>
 
   <div class="chat-suspenso">

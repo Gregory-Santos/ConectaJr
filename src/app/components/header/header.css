@@ -25,9 +25,9 @@
 ========================= */
 
 .barra-pesquisa {
-  flex: 1;
-  display: flex;
-  align-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 1400px; /* era 1170px; aumente ou remova a linha */
 }
 
 .barra-pesquisa form {
