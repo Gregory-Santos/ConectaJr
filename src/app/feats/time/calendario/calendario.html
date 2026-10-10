@@ -1,1 +1,52 @@
-<p>calendario works!</p>
+<div class="calendario">
+    <header class="cabecalho-calendario">
+        <h2>Calendário</h2>
+        <div class="acoes-calendario">
+            <button type="button" aria-label="Editar calendário">
+                <i class="fa-regular fa-pen-to-square"></i>
+            </button>
+            <button type="button" aria-label="Adicionar tarefa">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+    </header>
+    <div class="navegacao-calendario">
+        <button type="button" (click)="semanaAnterior()" aria-label="Semana anterior">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <h3>{{ nomeMes() }}</h3>
+        <button type="button" (click)="proximaSemana()" aria-label="Próxima semana">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+    </div>
+    <div class="cabecalho-semana">
+        <div class="espaco-horario"></div>
+        @for (dia of diasSemanaCalendario(); track dia.data.toISOString()) {
+            <button type="button" class="cabecalho-dia" [class.hoje]="diaAtual(dia.data)" [class.selecionado]="diaSelecionado(dia.data)" (click)="selecionarDia(dia.data)">
+                <span>{{ dia.nome }}</span>
+                <strong>{{ dia.data.getDate() }}</strong>
+            </button>
+        }
+    </div>
+    <div class="grade-calendario">
+        <div class="coluna-horarios">
+            @for (horario of horarios; track horario) {
+                <div class="horario">{{ horario }}</div>
+            }
+        </div>
+        @for (dia of diasSemanaCalendario(); track dia.data.toISOString()) {
+            <div class="coluna-dia" [class.hoje]="diaAtual(dia.data)" [class.selecionado]="diaSelecionado(dia.data)" (click)="selecionarDia(dia.data)">
+                @for (horario of horarios; track horario) {
+                    <div class="linha-horario"></div>
+                }
+                @for (tarefa of tarefasDoDia(dia.data); track tarefa.id) {
+                    <article class="tarefa-calendario" [class]="tarefaCor(tarefa.status)">
+                        <strong>{{ tarefa.titulo }}</strong>
+                        <span>{{ tarefa.descricao }}</span>
+                        <small>{{ tarefa.status }}</small>
+                    </article>
+                }
+            </div>
+        }
+    </div>
+</div>
