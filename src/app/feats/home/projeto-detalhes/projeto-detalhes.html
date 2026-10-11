@@ -1,1 +1,230 @@
-<p>projeto-detalhes works!</p>
+<div class="pagina-projeto">
+    <a routerLink="/home" class="voltar">
+    <span class="voltar-icone">←</span>
+    </a>
+
+    @if (projeto(); as projetoAtual) {
+        <main class="conteudo-projeto">
+            <div class="layout-detalhes">
+                <div class="conteudo-principal">
+                    <section class="hero-projeto">
+                        <div class="cabecalho-projeto">
+                            <div class="empresa-projeto">
+                                <span class="empresa-label">EMPRESA</span>
+                                <h2>{{ projetoAtual.empresa }}</h2>
+                            </div>
+                            <span class="match-projeto">{{ projetoAtual.percentualMatch }}% match</span>
+                        </div>
+
+                        <div class="conteudo-hero">
+                            <span class="tipo-projeto">
+                                {{ projetoAtual.tipo === 'match' ? 'Combina com seu perfil' : 'Sugestão para você' }}
+                            </span>
+
+                            <h1>{{ projetoAtual.titulo }}</h1>
+
+                            <p class="descricao-principal">{{ projetoAtual.descricao }}</p>
+
+                            <div class="avaliacao-projeto">
+                                <span class="estrelas">★★★★☆</span>
+                                <strong>{{ projetoAtual.avaliacao }}</strong>
+                                <span>avaliação do projeto</span>
+                            </div>
+
+                            <div class="informacoes-projeto">
+                                <div>
+                                    <span>INTEGRANTES</span>
+                                    <strong>{{ projetoAtual.participantes }}/{{ projetoAtual.limiteParticipantes }}</strong>
+                                </div>
+                                <div>
+                                    <span>VAGAS</span>
+                                    <strong>{{ projetoAtual.limiteParticipantes - projetoAtual.participantes }} disponíveis</strong>
+                                </div>
+                                <div>
+                                    <span>STATUS</span>
+                                    <strong>{{ projetoAtual.status }}</strong>
+                                </div>
+                            </div>
+
+                            <div class="detalhes-projeto">
+                                <div>
+                                    <span>FERRAMENTA</span>
+                                    <strong>{{ projetoAtual.ferramenta }}</strong>
+                                </div>
+                                <div>
+                                    <span>PRAZO</span>
+                                    <strong>{{ projetoAtual.prazo }}</strong>
+                                </div>
+                                <div>
+                                    <span>MODALIDADE</span>
+                                    <strong>{{ projetoAtual.modalidade }}</strong>
+                                </div>
+                            </div>
+
+                            <div class="tecnologias">
+                                <span class="titulo-tecnologias">TECNOLOGIAS</span>
+                                <div class="lista-skills">
+                                    @for (skill of projetoAtual.skills; track skill.name) {
+                                        <span class="skill" [class.pending]="skill.status === 'pending'">
+                                            {{ skill.status === 'matched' ? '✓' : '?' }} {{ skill.name }}
+                                        </span>
+                                    }
+                                </div>
+                            </div>
+
+                            <button type="button" class="btn-candidatar">
+                                Candidatar-se ao projeto
+                            </button>
+                        </div>
+                    </section>
+
+                    <section class="bloco-detalhes">
+                        <span class="titulo-secao">SOBRE O PROJETO</span>
+                        <h2>O que será desenvolvido</h2>
+                        <p>{{ projetoAtual.descricao }}</p>
+
+                        <div class="proposta-projeto">
+                            <span>PROPOSTA</span>
+                            <p>{{ projetoAtual.proposta }}</p>
+                        </div>
+
+                        <div class="informacoes-extra">
+                            <div>
+                                <span>PARTICIPANTES</span>
+                                <strong>{{ projetoAtual.participantes }} integrantes</strong>
+                            </div>
+                            <div>
+                                <span>VAGAS DISPONÍVEIS</span>
+                                <strong>{{ projetoAtual.limiteParticipantes - projetoAtual.participantes }} vagas</strong>
+                            </div>
+                            <div>
+                                <span>DURAÇÃO ESTIMADA</span>
+                                <strong>{{ projetoAtual.prazo }}</strong>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="avaliacoes">
+                        <div class="cabecalho-secao">
+                            <div>
+                                <span class="titulo-secao">AVALIAÇÕES</span>
+                                <h2>Experiências com este projeto</h2>
+                            </div>
+
+                            <div class="nota-geral">
+                                <strong>{{ projetoAtual.avaliacao }}</strong>
+                                <span>★★★★☆</span>
+                            </div>
+                        </div>
+
+                        <div class="avaliacoes-grid">
+                            <article class="avaliacao-card">
+                                <div class="avaliacao-topo">
+                                    <span class="avatar-avaliacao">B</span>
+                                    <div>
+                                        <strong>Participante do projeto</strong>
+                                        <span>Experiência no projeto</span>
+                                    </div>
+                                </div>
+
+                                <div class="estrelas-avaliacao">★★★★★</div>
+                                <p>Projeto bem organizado, com espaço para aprender, colaborar e desenvolver novas habilidades.</p>
+                            </article>
+
+                            <article class="avaliacao-card">
+                                <div class="avaliacao-topo">
+                                    <span class="avatar-avaliacao">G</span>
+                                    <div>
+                                        <strong>Participante do projeto</strong>
+                                        <span>Experiência no projeto</span>
+                                    </div>
+                                </div>
+
+                                <div class="estrelas-avaliacao">★★★★☆</div>
+                                <p>Uma boa oportunidade para colocar conhecimentos técnicos em prática trabalhando em equipe.</p>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section class="recomendados">
+                        <div class="cabecalho-secao">
+                            <div>
+                                <span class="titulo-secao">CONTINUE EXPLORANDO</span>
+                                <h2>Sugestões para você</h2>
+                            </div>
+                        </div>
+
+                        <div class="projetos-grid">
+                            @for (recomendado of projetosRecomendados(); track recomendado.id) {
+                                <article class="projeto-card">
+                                    <div class="card-painel" [class.combina]="recomendado.tipo === 'match'">
+                                        <span class="empresa">{{ recomendado.empresa }}</span>
+                                        <span class="match">{{ recomendado.percentualMatch }}% match</span>
+                                    </div>
+
+                                    <div class="card-content">
+                                        <h3>{{ recomendado.titulo }}</h3>
+                                        <p>{{ recomendado.descricao }}</p>
+
+                                        <div class="skills">
+                                            @for (skill of recomendado.skills; track skill.name) {
+                                                <span class="skill-card" [class.pending]="skill.status === 'pending'">
+                                                    {{ skill.status === 'matched' ? '✓' : '?' }} {{ skill.name }}
+                                                </span>
+                                            }
+                                        </div>
+                                    </div>
+
+                                    <a class="btn-projeto" [routerLink]="['/', 'projeto', recomendado.id]">
+                                        Ver projeto →
+                                    </a>
+                                </article>
+                            }
+                        </div>
+                    </section>
+                </div>
+
+                <aside class="empresa-card">
+                    <div class="empresa-card-header">
+                        <span>Sobre a empresa</span>
+                        <button type="button">Ver perfil</button>
+                    </div>
+
+                    <div class="empresa-info">
+                        <div class="logo-empresa">{{ projetoAtual.empresa.charAt(0) }}</div>
+
+                        <div>
+                            <h2>{{ projetoAtual.empresa }}</h2>
+                            <div class="avaliacao-empresa">
+                                <span>★★★★☆</span>
+                                <strong>{{ projetoAtual.avaliacaoEmpresa }}</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p>Empresa responsável pelo projeto e pela oportunidade disponível na plataforma.</p>
+
+                    <div class="empresa-dados">
+                        <div>
+                            <span>AVALIAÇÃO</span>
+                            <strong>{{ projetoAtual.avaliacaoEmpresa }} / 5</strong>
+                        </div>
+
+                        <div>
+                            <span>PROJETOS</span>
+                            <strong>Ver oportunidades</strong>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn-empresa">Mais projetos</button>
+                </aside>
+            </div>
+        </main>
+    } @else {
+        <div class="projeto-nao-encontrado">
+            <h1>Projeto não encontrado</h1>
+            <p>Não encontramos o projeto que você está procurando.</p>
+            <a routerLink="/home">Voltar para projetos</a>
+        </div>
+    }
+</div>

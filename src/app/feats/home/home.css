@@ -189,18 +189,19 @@
 }
 
 .btn-projeto {
-  width: calc(100% - 16px);
-  margin: 0 8px 10px;
-  padding: 7px 10px;
-  border: none;
-  border-radius: 6px;
-  background: #6d3fc1;
-  color: #ffffff;
-  font-family: inherit;
-  font-size: 0.62rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 7px;
+    background: #6d3cc2;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .btn-projeto:hover {
