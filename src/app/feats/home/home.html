@@ -31,10 +31,9 @@
                   }
                 </div>
               </div>
-
-              <button type="button" class="btn-projeto">
-                Ver projeto →
-              </button>
+              <a class="btn-projeto" [routerLink]="['/projeto', projeto.id]">
+              Ver projeto →
+              </a>
             </article>
             } @empty {
             <p class="sem-resultado">Nenhum projeto encontrado.</p>
@@ -71,9 +70,9 @@
             </div>
           </div>
 
-          <button type="button" class="btn-projeto">
-            Ver projeto →
-          </button>
+            <a class="btn-projeto" [routerLink]="['/projeto', projeto.id]">
+              Ver projeto →
+              </a>
         </article>
         } @empty {
         <p class="sem-resultado">Nenhuma sugestão encontrada.</p>

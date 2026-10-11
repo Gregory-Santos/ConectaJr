@@ -4,6 +4,7 @@ import { PerfilUsuario } from './feats/perfil-usuario/perfil-usuario';
 import { ChatUsuario } from './feats/chat-usuario/chat-usuario';
 import { Time } from './feats/time/time';
 import { Dashboard } from './feats/dashboard/dashboard';
+import { ProjetoDetalhes } from './feats/home/projeto-detalhes/projeto-detalhes';
 
 export const routes: Routes = [
 
@@ -12,6 +13,7 @@ export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'perfil', component: PerfilUsuario },
     { path: 'chat-usuario', component: ChatUsuario },
-    {path: 'dashboard', component: Dashboard}
+    {path: 'dashboard', component: Dashboard},
+    {path: 'projeto/:id', component: ProjetoDetalhes}
 
 ];
