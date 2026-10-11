@@ -1,1 +1,11 @@
-<p>barra-pesquisa works!</p>
+<div class="barra-pesquisa">
+  <input
+    type="text"
+    placeholder="Buscar projeto ou tecnologia..."
+    (input)="aoDigitar($event)"
+  />
+  <svg class="icone-busca" viewBox="0 0 24 24" aria-hidden="true">
+    <circle cx="11" cy="11" r="7" />
+    <line x1="16.5" y1="16.5" x2="21" y2="21" />
+  </svg>
+</div>

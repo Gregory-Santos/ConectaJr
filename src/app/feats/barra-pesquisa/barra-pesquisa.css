@@ -1,0 +1,42 @@
+.barra-pesquisa {
+  position: relative;
+  width: 100%;
+  max-width: 1400px; /* era 1170px; aumente ou remova a linha */
+}
+
+.barra-pesquisa input {
+  width: 100%;
+  height: 44px;
+  padding: 0 52px 0 20px;
+  border: 1px solid #b9b4d6;
+  border-radius: 999px;
+  background: transparent;
+  color: #ffffff;
+  font-size: 15px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.barra-pesquisa input::placeholder {
+  color: #b9b4d6;
+}
+
+.barra-pesquisa input:focus {
+  border-color: #6b3fc4;
+  box-shadow: 0 0 0 3px rgba(107, 63, 196, 0.35);
+}
+
+.icone-busca {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 2;
+  stroke-linecap: round;
+  pointer-events: none; /* o clique passa pro input */
+}
