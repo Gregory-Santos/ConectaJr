@@ -1,0 +1,14 @@
+<nav class="navegacao-time" aria-label="Navegação do time">
+    <button type="button" class="item-navegacao" [class.ativo]="abaAtiva() === 'kanban'" (click)="selecionarAba('kanban')">
+        <span class="icone">☑</span>
+        <span>Kanban</span>
+    </button>
+    <button type="button" class="item-navegacao" [class.ativo]="abaAtiva() === 'tarefas'" (click)="selecionarAba('tarefas')">
+        <span class="icone">☑</span>
+        <span>Tarefas</span>
+    </button>
+    <button type="button" class="item-navegacao" [class.ativo]="abaAtiva() === 'calendario'" (click)="selecionarAba('calendario')">
+        <span class="icone">□</span>
+        <span>Calendário</span>
+    </button>
+</nav>

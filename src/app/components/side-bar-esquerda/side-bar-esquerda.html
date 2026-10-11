@@ -19,7 +19,14 @@
             <p>Estudante</p>
 
         </div>
-        <i class="fa-solid fa-angle-down"></i>
+        <i class="fa-solid fa-angle-down" (click)="menuAberto = !menuAberto; $event.stopPropagation()">
+        </i>
+
+        <div class="menu-conta" [hidden]="!menuAberto">
+            <button (click)="$event.stopPropagation()">
+                Sair <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            </button>
+        </div>
     </div>
 
 
@@ -37,12 +44,14 @@
                 </a></div>
 
             <div class="card-menu">
-                <a routerLink="/dashboard" routerLinkActive="ativo"> <i class="fa-solid fa-border-all"></i> <span>Dashboard</span>
+                <a routerLink="/dashboard" routerLinkActive="ativo"> <i class="fa-solid fa-border-all"></i>
+                    <span>Dashboard</span>
                 </a>
             </div>
 
             <div class="card-menu">
-                <a routerLink="/buscar" routerLinkActive="ativo"> <i class="fa-solid fa-magnifying-glass"></i> <span>Buscar</span>
+                <a routerLink="/buscar" routerLinkActive="ativo"> <i class="fa-solid fa-magnifying-glass"></i>
+                    <span>Buscar</span>
                 </a>
             </div>
 

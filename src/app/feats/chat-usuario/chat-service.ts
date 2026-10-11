@@ -6,6 +6,30 @@ import { FormsModule } from '@angular/forms';
 export class ChatService {
 
     conversas = signal<ChatInterface[]>([{
+        nome: 'Brenda Melo',
+        foto: 'img/brenda.png',
+        mensagem: 'A conecta é o futuro! 🚀✨',
+        data: 'Hoje'
+    }, {
+        nome: 'Rafael Vinicius',
+        foto: 'img/rafa.png',
+        mensagem: 'Vou postar no instagram da conecta essa nova funcionalidade 😁',
+        data: 'Hoje'
+    }, 
+    {
+        nome: 'Gregory dos Santos',
+        foto: 'img/gregory.png',
+        mensagem: 'Posso criar a pasta no angular?',
+        data: 'Hoje'
+    },
+    {
+        nome: 'Rodrigo de Souza',
+        foto: 'img/rodrigo.png',
+        mensagem: 'Qual o prazo final?',
+        data: 'Hoje'
+    },
+
+    {
         nome: 'Fernando Mendes',
         foto: 'img/fernando.webp',
         mensagem: 'Olá, boa tarde',
@@ -49,23 +73,38 @@ export class ChatService {
     }
     ]);
 
-    conversaSelecionada= signal<ChatInterface | null>(null);
+    conversaSelecionada = signal<ChatInterface | null>(null);
 
-    selecionarConversa(conversa: ChatInterface){
+    selecionarConversa(conversa: ChatInterface) {
         this.conversaSelecionada.set(conversa);
-
-        this.mensagens.set([conversa.mensagem]);
+const agora = new Date();
+        this.mensagens.set([{
+            texto: conversa.mensagem,
+            minha: false,
+             hora: agora.toLocaleString('pt-BR',{hour: '2-digit', minute: '2-digit'})
+        }]);
+        this.conversasLidas.add(conversa.nome);
     };
 
-    mensagens= signal<string[]>([]);
+    mensagens = signal<{ texto: string; minha: boolean; hora:string }[]>([]);
+    novaMensagem = signal('');
 
-    novaMensagem= signal('');
+    enviarMensagem() {
 
-    enviarMensagem(){
+        if(!this.novaMensagem().trim()){
+            return;
+        }
+         const agora = new Date();
         this.mensagens.update(mensagens => [
-            ...mensagens,
-            this.novaMensagem()
+            ...mensagens, {
+                texto: this.novaMensagem(),
+                minha: true,
+                 hora: agora.toLocaleString('pt-BR',{hour: '2-digit', minute: '2-digit'})
+            }
+
         ]);
         this.novaMensagem.set('');
     }
+
+    conversasLidas = new Set<string>();
 }

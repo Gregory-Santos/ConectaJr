@@ -34,78 +34,16 @@
   position: relative;
   width: 100%;
   max-width: 100%;
-  padding: 50px 35px 80px;
+  aspect-ratio: 1920 / 500;
+  min-height: 180px;
   margin-bottom: 28px;
-  background: linear-gradient(135deg, #4E1996 25%, #201840 80%, #140d28 100%);
+  background-color: #201840;
+  background-image: url('/img/banner.png');
+  background-position: center;
+  background-size: cover;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-}
-
-.feed-painel h1 {
-  font-weight: 700;
-  color: #f2f2f8;
-  line-height: 1.1;
-}
-
-.feed-painel h4 {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 400;
-  color: #e6e6ec;
-  margin-bottom: 6px;
-}
-
-
-/* =====================================
-   DECORAÇÕES DO PAINEL
-   ===================================== */
-
-.feed-painel::before {
-  content: "";
-  position: absolute;
-  width: 220px;
-  height: 220px;
-  top: -60px;
-  right: -40px;
-  border-width: 32px;
-}
-
-.feed-painel::after {
-  content: "";
-  position: absolute;
-  width: 160px;
-  height: 160px;
-  top: 20px;
-  right: -20px;
-  border-width: 24px;
-  opacity: 0.7;
-}
-
-
-/* =====================================
-   TEXTOS DO HEADER
-   ===================================== */
-
-.feed-painel span {
-  position: relative;
-  z-index: 2;
-  display: block;
-  margin-bottom: 8px;
-  color: #c4b5fd;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-}
-
-.feed-painel p {
-  position: relative;
-  z-index: 2;
-  margin-top: 12px;
-  max-width: 500px;
-  color: #ddd6fe;
-  font-size: 0.85rem;
-  line-height: 1.5;
 }
 
 
@@ -198,10 +136,6 @@
    CARD DESTACADO
    ===================================== */
 
-.projeto-card.highlight {
-  outline: 1.5px dashed #c084fc;
-  outline-offset: 3px;
-}
 
 
 /* =====================================
@@ -215,13 +149,30 @@
   min-width: 0;
   min-height: 34px;
   padding: 16px 10px;
-  background: linear-gradient(90deg, #e28a1d, #f59e0b);
+  background: linear-gradient(90deg, #F5F5F5, #B6B5B4);
+}
+
+.card-painel.combina {
+  background: linear-gradient(90deg, #E49126, #E07400);
+}
+
+.card-painel.combina .empresa {
+  color: #fff;
 }
 
 
 /* =====================================
    NOME DA EMPRESA
    ===================================== */
+.card-painel {
+  min-width: 0;
+  overflow: hidden;
+  color: #1b1c30;
+  font-size: 16px;
+  font-weight: 700;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 
 .empresa {
   min-width: 0;
@@ -371,7 +322,7 @@
   min-width: 0;
   max-width: 100%;
   overflow: hidden;
-  padding: 10px;
+  padding: 5px 0;
 }
 
 /* =====================================
@@ -382,7 +333,7 @@
   display: flex !important;
   width: 100%;
   min-width: 100%;
-  gap: 16px;
+  gap: 10px;
   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -392,34 +343,13 @@
    ===================================== */
 
 .carousel .projeto-card {
-  flex: 0 0 calc((100% - 32px) / 3);
-  width: calc((100% - 32px) / 3);
+  flex: 0 0 calc((100% - 20px) / 3);
+  width: calc((100% - 20px) / 3);
   min-width: 0;
-  max-width: calc((100% - 32px) / 3);
+  max-width: calc((100% - 20px) / 3);
 }
 
 
-/* =====================================
-   BOTÕES DO CARROSSEL
-   ===================================== */
-
-.carousel-button {
-  width: 42px;
-  height: 42px;
-  flex: 0 0 42px;
-  border-radius: 50%;
-  border: none;
-  background: #6b21a8;
-  color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.carousel-button:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
 
 
 /* LAYOUT PRINCIPAL */
@@ -583,9 +513,9 @@ app-agenda {
   }
 
   .carousel .projeto-card {
-    flex-basis: calc((100% - 16px) / 2);
-    width: calc((100% - 16px) / 2);
-    max-width: calc((100% - 16px) / 2);
+    flex-basis: calc((100% - 10px) / 2);
+    width: calc((100% - 10px) / 2);
+    max-width: calc((100% - 10px) / 2);
   }
 }
 
@@ -643,12 +573,7 @@ app-agenda {
   }
 
   .feed-painel {
-    padding: 28px 20px 35px;
     border-radius: 15px;
-  }
-
-  .feed-painel h1 {
-    font-size: 1.6rem;
   }
 
   .feed-section {
@@ -682,10 +607,6 @@ app-agenda {
 
   .feed-grid {
     grid-template-columns: 1fr;
-  }
-
-  .feed-painel h1 {
-    font-size: 1.4rem;
   }
 
   .home-container {

@@ -18,4 +18,5 @@ app-side-bar-esquerda {
     flex: 1 1 0;      /* pega só o espaço que sobra ao lado da sidebar */
     min-width: 0;     /* permite encolher em vez de estourar */
     width: auto;      /* era 100% */
+    background-color: #1B1C30;
 }

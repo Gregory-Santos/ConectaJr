@@ -1,243 +1,202 @@
-
-.area-inferior {
-
-  display: grid;
-
-  grid-template-columns: 1.25fr 1fr;
-
-  gap: 14px;
-
-  background-color: #1b1c2f;
-
-  font-family: 'Inter', sans-serif;
-}
-
-
-/* =========================================
-   SPRINT
-========================================= */
-
 .sprint {
-
-  min-width: 0;
- 
+    width: 100%;
+    color: var(--cor-branco);
+    font-family: var(--fonte-principal);
 }
 
-.sprint-header {
-
-  height: 27px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  border-bottom: 1px solid #606174;
+.cabecalho-sprint {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
 }
 
-.sprint-header h2 {
-
-  margin: 0;
-
-  font-size: 16px;
-
-  font-weight: 600;
-
-  color: #ffffff
+.cabecalho-sprint h2 {
+    margin: 0;
+    font-size: var(--tamanho-titulo-maior);
+    font-weight: 600;
 }
 
-.sprint-header span {
-
-  font-size: 16px;
-
-  color: #d0d0d5;
+.filtro-sprint {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--cor-branco);
+    font-family: var(--fonte-principal);
+    font-size: 12px;
+    cursor: pointer;
 }
 
-
-/* =========================================
-   PESSOAS
-========================================= */
-
-.pessoa {
-
-  min-height: 30px;
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 7px;
-
-  padding: 10px 14px;
-
-  margin-top: 5px;
-
-  border: 1px solid #606174;
-
-  border-radius: 6px;
-
-  background: #1b1c2f;
+.seta {
+    font-size: 14px;
+    line-height: 1;
 }
 
-
-/* Avatar */
-
-.avatar-pessoa {
-
-  flex-shrink: 0;
-
-  width: 30px;
-
-  height: 30px;
-
-  border-radius: 50%;
-
-  background: #e4e4e7;
+.lista-participantes {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-
-/* Dados */
-
-.dados-pessoa {
-
-  min-width: 0;
-
-  flex: 1;
-
-  display: flex;
-
-  flex-direction: column;
+.participante {
+    overflow: hidden;
+    border: 1px solid rgba(236, 235, 235, 0.65);
+    border-radius: var(--raio-borda);
+    background: transparent;
+    transition: var(--transicao);
 }
 
-.dados-pessoa strong {
-
-  overflow: hidden;
-
-  white-space: nowrap;
-
-  text-overflow: ellipsis;
-
-  font-size: 14px;
-
-  font-weight: 500;
-
-  color: #ffffff;
+.participante.aberto {
+    border-color: rgba(236, 235, 235, 0.8);
 }
 
-.dados-pessoa small {
-
-  overflow: hidden;
-
-  white-space: nowrap;
-
-  text-overflow: ellipsis;
-
-  font-size: 14px;
-
-  color: #9798a4;
+.resumo-participante {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 42px;
+    padding: 5px 10px;
 }
 
-
-/* Data */
-
-.data {
-
-  font-size: 14px;
-
-  color: #858692;
+.informacoes-pessoa {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    min-width: 0;
 }
 
+.foto-participante {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    object-fit: cover;
+}
 
-/* Botão */
+.dados-participante {
+    min-width: 0;
+}
+
+.nome-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 2px;
+}
+
+.nome {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status {
+    width: 7px;
+    height: 7px;
+    flex-shrink: 0;
+    border-radius: 50%;
+}
+
+.status.concluido {
+    background: #6D9348;
+}
+
+.status.andamento {
+    background: var(--cor-laranja);
+}
+
+.status.pendente {
+    background: #B54848;
+}
+
+.dados-participante p {
+    overflow: hidden;
+    max-width: 300px;
+    margin: 0;
+    color: rgba(236, 235, 235, 0.32);
+    font-size: 11px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.data-participante {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 15px;
+    color: rgba(236, 235, 235, 0.3);
+    font-size: 10px;
+    white-space: nowrap;
+}
 
 .botao-expandir {
-
-  border: 0;
-
-  padding: 0;
-
-  background: transparent;
-
-  color: #ffffff;
-
-  font-size: 12px;
-
-  cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--cor-branco);
+    font-size: 17px;
+    line-height: 1;
+    cursor: pointer;
+    transition: var(--transicao);
 }
 
-
-/* =========================================
-   ATUALIZAÇÕES
-========================================= */
-
-.atualizacoes {
-
-  min-height: 125px;
-
-  padding: 10px;
-
-  border: 1px solid #606174;
-
-  border-radius: 6px;
-
-  background: #1b1c2f;
-
-  color: #ffffff;
+.botao-expandir:hover {
+    color: var(--cor-laranja);
 }
 
-.atualizacoes h3 {
-
-  margin: 0 0 7px;
-
-  font-size: 14px;
-
-  font-weight: 600;
+.participante.aberto .botao-expandir {
+    transform: rotate(180deg);
 }
 
-.atualizacoes ul {
-
-  margin: 0;
-
-  padding-left: 12px;
+.atualizacoes-participante {
+    padding: 0 15px 12px 53px;
+    border-top: 1px solid rgba(236, 235, 235, 0.08);
 }
 
-.atualizacoes li {
-
-  margin-bottom: 5px;
-
-  color: #d3d3d8;
-
-  font-size: 14px;
-
-  line-height: 1.4;
+.item-atualizacao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(236, 235, 235, 0.06);
 }
 
-.atualizacoes strong {
-
-  color: #ffffff;
-
-  font-weight: 500;
+.item-atualizacao:last-child {
+    border-bottom: 0;
 }
 
-
-/* =========================================
-   SCROLL DAS COLUNAS
-========================================= */
-
-.coluna::-webkit-scrollbar {
-
-  width: 3px;
+.item-atualizacao p {
+    margin: 0;
+    color: rgba(236, 235, 235, 0.65);
+    font-size: 11px;
+    line-height: 1.4;
 }
 
-.coluna::-webkit-scrollbar-track {
-
-  background: transparent;
+.item-atualizacao span {
+    flex-shrink: 0;
+    color: rgba(236, 235, 235, 0.3);
+    font-size: 10px;
+    white-space: nowrap;
 }
 
-.coluna::-webkit-scrollbar-thumb {
+@media (max-width: 700px) {
+    .data-participante > span {
+        display: none;
+    }
 
-  background: rgba(255, 255, 255, 0.35);
+    .dados-participante p {
+        max-width: 180px;
+    }
 
-  border-radius: 10px;
+    .atualizacoes-participante {
+        padding-left: 15px;
+    }
 }

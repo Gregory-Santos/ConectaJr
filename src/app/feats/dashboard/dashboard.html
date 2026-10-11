@@ -1,0 +1,131 @@
+<main>
+    <div class="grafico-container">
+
+        <h2>Andamento das tarefas</h2>
+        <button>Filtrar <i class="fa-solid fa-angle-down"></i></button>
+
+        <div class="grafico">
+
+            <!-- Eixo Y -->
+            <div class="eixo-y">
+                <span>100%</span>
+                <span>80%</span>
+                <span>60%</span>
+                <span>40%</span>
+                <span>20%</span>
+                <span>0%</span>
+            </div>
+
+            <!-- Área onde o gráfico acontece -->
+            <div class="area-grafico">
+
+                <!-- Linhas horizontais -->
+                <div class="linha linha-100"></div>
+                <div class="linha linha-80"></div>
+                <div class="linha linha-60"></div>
+                <div class="linha linha-40"></div>
+                <div class="linha linha-20"></div>
+                <div class="linha linha-0"></div>
+
+                <!-- Barras -->
+                <div class="barras">
+
+                    <div class="coluna">
+                        <div class="barra" style="height: 40%;"></div>
+                        <span>Winicius</span>
+                    </div>
+
+                    <div class="coluna">
+                        <div class="barra-voce" style="height: 80%;"></div>
+                        <span>Você</span>
+                    </div>
+
+                    <div class="coluna">
+                        <div class="barra" style="height: 10%;"></div>
+                        <span>Evandro</span>
+                    </div>
+
+                    <div class="coluna">
+                        <div class="barra" style="height: 20%;"></div>
+                        <span>Vitória</span>
+                    </div>
+
+
+                    <div class="coluna">
+                        <div class="barra" style="height: 65%;"></div>
+                        <span>Amanda</span>
+                    </div>
+
+
+                    <div class="coluna">
+                        <div class="barra" style="height: 60%;"></div>
+                        <span>Lucas</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="linha-vertical"></div>
+    <div class="linha-divisoria"></div>
+
+    <div class="tarefas-container">
+
+        <div class="topo-tarefas">
+            <h1>Tarefas <i class="fa-solid fa-angle-down"></i></h1>
+            <span class="barra-progresso">75%</span>
+        </div>
+        <div class="tarefas">
+            <div class="detales-tarefas">
+                <input type="checkbox">
+                <h1>Posts de Lançamento | Instagram</h1>
+                <h2>Finalizado</h2>
+                <p>3 Posts e 1 Vídeo</p>
+                <p>Maria S.</p>
+            </div>
+
+            <div class="detales-tarefas">
+                <input type="checkbox" >
+                <h1>Conectar API de registros</h1>
+                <h2>Prazo: 04/10</h2>
+                <p>Link API no trello</p>
+                <p>Junior C.</p>
+            </div>
+
+            <div class="detales-tarefas">
+                <input type="checkbox">
+                <h1>Arrumar página de Login</h1>
+                <h2>Finalizado</h2>
+                <p>erro 404 no form</p>
+                <p>Junior C.</p>
+            </div>
+
+            <div class="detales-tarefas">
+                <input type="checkbox" >
+                <h1>Reunião - Pesquisa com Usuários</h1>
+                <h2>Prazo: 05/10</h2>
+                <p>Link no trello</p>
+                <p>Amanda V.</p>
+            </div>
+
+            <div class="detales-tarefas">
+                <input type="checkbox">
+                <h1>Elaborar wireframe tela do mapa</h1>
+                <h2>Prazo: 15/10</h2>
+                <p>Pegar referência</p>
+                <p>Amanda V.</p>
+            </div>
+            <button>Ver mais</button>
+
+
+        </div>
+
+    </div>
+
+
+
+    <app-agenda></app-agenda>
+</main>

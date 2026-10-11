@@ -1,19 +1,21 @@
-import { Component, inject } from '@angular/core';
-import { Tarefa } from '../../core/models/tarefa';
-import { TarefaService } from '../../core/service/tarefa';
+import { Component, signal } from '@angular/core';
+import { NavTime } from './nav-time/nav-time';
 import { Kanban } from './kanban/kanban';
+import { Tarefas } from './tarefas/tarefas';
+import { Calendario } from './calendario/calendario';
 import { Sprint } from './sprint/sprint';
+import { AtualizacoesTime } from './atualizacoes-time/atualizacoes-time';
 
 @Component({
-  imports: [Kanban, Sprint],
-  selector: 'app-time',
-  styleUrl: './time.css',
-  templateUrl: './time.html',
+    selector: 'app-time',
+    standalone: true,
+    imports: [NavTime, Kanban, Tarefas, Calendario, Sprint, AtualizacoesTime],
+    templateUrl: './time.html',
+    styleUrl: './time.css'
 })
 export class Time {
-  
-  private tarefaService = inject(TarefaService);
-
-  tarefas: Tarefa[] =
-  this.tarefaService.listarTarefas();
+    abaAtiva = signal<'kanban' | 'tarefas' | 'calendario'>('kanban');
+    mudarAba(aba: 'kanban' | 'tarefas' | 'calendario') {
+        this.abaAtiva.set(aba);
+    }
 }

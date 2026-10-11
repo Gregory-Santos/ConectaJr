@@ -4,6 +4,7 @@ import { Calendario } from '../../core/service/calendario';
 import { Evento } from '../../core/models/evento';
 
 @Component({
+  standalone: true,
   imports: [CommonModule],
   selector: 'app-agenda',
   styleUrl: './agenda.css',

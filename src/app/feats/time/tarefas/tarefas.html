@@ -1,0 +1,67 @@
+<div class="tarefas-container">
+    <header class="cabecalho-tarefas">
+        <h2>Tarefas</h2>
+        <div class="acoes-tarefas">
+            <button type="button" aria-label="Editar tarefas">
+                <i class="fa-regular fa-pen-to-square"></i>
+            </button>
+            <button type="button" aria-label="Adicionar tarefa">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+    </header>
+    <div class="conteudo-tarefas">
+        <div class="topo-lista">
+            <div class="filtro-container">
+                <button type="button" class="filtro-tarefas" (click)="alternarMenuFiltro()">
+                    <span>{{ filtroAtivo() === 'minhas' ? 'Minhas Tarefas' : 'Meu Time' }}</span>
+                    <i class="fa-solid fa-angle-down"></i>
+                </button>
+                @if (menuFiltroAberto()) {
+                    <div class="menu-filtro">
+                        <button type="button" [class.selecionado]="filtroAtivo() === 'minhas'" (click)="selecionarFiltro('minhas')">
+                            Minhas Tarefas
+                        </button>
+                        <button type="button" [class.selecionado]="filtroAtivo() === 'time'" (click)="selecionarFiltro('time')">
+                            Meu Time
+                        </button>
+                    </div>
+                }
+            </div>
+            <div class="progresso-tarefas">
+                <div class="barra-progresso">
+                    <span [style.width.%]="progresso()"></span>
+                </div>
+                <span>{{ progresso() }}%</span>
+            </div>
+        </div>
+        <div class="lista-tarefas">
+            @for (tarefa of tarefasExibidas(); track tarefa.id) {
+                <article class="tarefa">
+                    <input type="checkbox" [checked]="tarefa.status === 'done'">
+                    <div class="informacoes-tarefa">
+                        <h3>{{ tarefa.titulo }}</h3>
+                        <div class="detalhes-tarefa">
+                            <p>{{ tarefa.descricao }}</p>
+                            <span class="responsavel">
+                                @if (filtroAtivo() === 'time') {
+                                    {{ tarefa.responsavelId === 4 ? 'Júnior da Silva' : 'Integrante do time' }}
+                                } @else {
+                                    Júnior da Silva
+                                }
+                            </span>
+                        </div>
+                    </div>
+                    <span class="status-tarefa" [class.concluida]="tarefa.status === 'done'">
+                        {{ statusTarefa(tarefa) }}
+                    </span>
+                </article>
+            }
+            @if (tarefasExibidas().length === 0) {
+                <div class="lista-vazia">
+                    <span>Nenhuma tarefa encontrada.</span>
+                </div>
+            }
+        </div>
+    </div>
+</div>
