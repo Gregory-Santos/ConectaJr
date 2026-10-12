@@ -42,7 +42,6 @@
     @for (evento of eventosDoDia(); track evento.id) {
       <div class="evento-item" [class.concluido]="evento.concluido">
         <div class="evento-info">
-          <span class="icone">{{ getIcone(evento.tipo) }}</span>
           <div>
             <strong>{{ evento.titulo }}</strong>
             @if (evento.hora) {

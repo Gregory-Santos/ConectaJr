@@ -4,8 +4,8 @@ export interface Evento {
   id: string;
   titulo: string;
   descricao: string;
-  data: string;     //formato: dia/mes/ano
-  hora: string;     // '13:00'
+  data: string;     
+  hora: string;     
   tipo: TipoEvento;
   concluido: boolean;
   

@@ -13,7 +13,7 @@ main {
             rgba(25, 8, 48, 0) 100%);
     border-radius: 7px;
     width: 100%;
-    height: 202px;
+    height: 190px;
     gap: 26px;
 }
 
@@ -23,11 +23,12 @@ main {
     border-radius: 50%;
     margin-top: 111px;
     margin-left: 68px;
+    object-fit: cover;
 }
 
 .info-perfil h1 {
     font-family: 'Inter', sans-serif;
-    font-size: 36px;
+    font-size: 28px;
     color: #FFFFFF;
     font-weight: 800;
     margin-top: 150px;
@@ -37,8 +38,9 @@ main {
 
 .avaliacao-usuario {
     display: flex;
-    margin-top: 20px;
+    margin-top: 12px;
     margin-left: 286px;
+    font-size: 14px;
 }
 
 .avaliacao-usuario span {
@@ -50,7 +52,10 @@ main {
 .link-github {
     display: flex;
     margin-top: 26px;
+    cursor: pointer;
+    
 }
+
 
 .link-github a {
     text-align: center;
@@ -65,6 +70,13 @@ main {
     font-size: 16px;
     font-weight: 400;
     padding-top: 5px;
+    cursor: pointer;
+    
+}
+
+.link-github a:hover {
+    background-color: #5e1eb8;
+    color: #FFFFFF;
 }
 
 .link-github i {
@@ -90,13 +102,17 @@ main {
     gap: 5px;
 }
 
+.numeros h2:hover {
+    color: #E49126;
+}
+
 .numeros h2 {
     margin: 0;
-    font-size: 40px;
+    font-size: 36px;
     font-family: 'Inter', sans-serif;
     font-weight: 800;
     color: #FFFFFF;
-
+    cursor: pointer;
 }
 
 .numeros p {
@@ -108,38 +124,50 @@ main {
 }
 
 /*card de avaliações de empresas*/
+/* conteúdo inferior do perfil */
+.conteudo-perfil {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 80px;
+    margin: 83px 24px 60px 12px;
+    align-items: start;
+}
+
+/* cards de avaliações */
 .review-empresas {
     display: flex;
     flex-direction: column;
     gap: 21px;
-    margin-top: 83px;
-    margin-left: 12px;
-}
-
-.conteudo-avaliacao {
-    display: flex;
-    flex-direction: column;
-    gap: 29px;
-    align-items: self-start;
+    margin: 0;
 }
 
 .card-avaliacao {
     display: flex;
     flex-direction: row;
-    width: 50%;
-    height: 155px;
+    width: 100%;
+    min-height: 120px;
     background-color: rgba(255, 255, 255, 0.100);
     gap: 12px;
     font-family: 'Inter', sans-serif;
+    border-radius: 13px;
 }
 
 .card-avaliacao img {
+    flex-shrink: 0;
     width: 52px;
     height: 52px;
     object-fit: cover;
     border-radius: 50%;
     margin-left: 16px;
     margin-top: 17px;
+}
+
+.conteudo-avaliacao {
+    display: flex;
+    flex-direction: column;
+    gap: 29px;
+    align-items: flex-start;
+    min-width: 0;
 }
 
 .dados-avaliador {
@@ -149,7 +177,7 @@ main {
 
 .dados-avaliador h2 {
     color: #FFFFFF;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 400;
     white-space: nowrap;
     margin: 20px 0 0;
@@ -158,11 +186,12 @@ main {
 .avaliacao {
     display: flex;
     flex-direction: column;
-    font-family: 'Inter', sans-serif;
     margin-top: -20px;
     color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    width: 95%;
 }
-
 
 .avaliacao p {
     margin: 5px 0 0;
@@ -170,87 +199,96 @@ main {
 
 .estrelas {
     display: flex;
-    flex-wrap: nowrap;
     flex-direction: row;
+    flex-wrap: nowrap;
     color: #E49126;
     white-space: nowrap;
 }
 
-
-/*descrição do usuario*/
-
+/* descrição do usuário */
 .descricao-usuario {
-    width: 450px;
-    height: 526px;
+    width: 100%;
+    min-height: 526px;
     background-color: rgba(255, 255, 255, 0.100);
-    position: absolute;
-    left: 62%;
-    top: 449px;
+    border-radius: 13px;
+    box-sizing: border-box;
+    padding: 1px 0 30px;
 }
 
 .descricao-usuario h1 {
-    font-size: 16px;
-    color: rgba(255, 255, 255, 0.60);
-    font-family: 'Inter', sans-serif;
+    width: 80%;
     margin-left: 27px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
     font-weight: 500;
+    color: rgba(255, 255, 255, 0.60);
 }
 
 .descricao p {
+    width: 80%;
+    margin: 8px 0 0 25px;
+    font-family: 'Inter', sans-serif;
     font-size: 16px;
     font-weight: 500;
-    color: #FFFFFF;
-    font-family: 'Inter', sans-serif;
-    margin-left: 25px;
     line-height: 1.2;
+    color: #FFFFFF;
     text-align: start;
-    margin-top: 8px;
 }
-/*formação do usuario*/
 
-.formacao p{
+/* formação do usuário */
+.formacao p {
+    width: 80%;
+    margin: 8px 0 0 25px;
+    font-family: 'Inter', sans-serif;
     font-size: 16px;
     font-weight: 500;
-    color: #FFFFFF;
-    font-family: 'Inter', sans-serif;
-    margin-left: 25px;
     line-height: 1.2;
+    color: #FFFFFF;
     text-align: start;
-    margin-top: 8px;
 }
 
-.conhecimento{
+/* conhecimentos técnicos */
+.conhecimento {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
-    text-align: center;
     justify-content: center;
+    gap: 15px;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
 }
 
-.conhecimento span{
+.conhecimento span {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Inter', sans-serif;
-    color: #D9D9D9;
-    background-color: #4E1996;
     width: 95px;
     height: 40px;
     border-radius: 13px;
+    background-color: #4E1996;
+    color: #D9D9D9;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    padding: 2px 5px;
 }
 
-/*linguas*/
+.conhecimento span:hover {
+    background-color: #5e1eb8;
+    color: #FFFFFF;
+}
 
-.linguas h1{
+/* línguas */
+.linguas h1 {
     margin-top: 30px;
 }
-.lingua p{
+
+.lingua p {
+    width: 80%;
+    margin: 8px 0 0 25px;
+    font-family: 'Inter', sans-serif;
     font-size: 16px;
     font-weight: 500;
-    color: #FFFFFF;
-    font-family: 'Inter', sans-serif;
-    margin-left: 25px;
     line-height: 1.2;
+    color: #FFFFFF;
     text-align: start;
-    margin-top: 8px;
 }

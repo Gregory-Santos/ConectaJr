@@ -87,12 +87,4 @@ export class Agenda {
     return data.toISOString().split('T')[0];
   }
 
-  getIcone(tipo: string): string {
-    switch (tipo) {
-      case 'reuniao': return '👥';
-      case 'tarefa': return '✅';
-      case 'lembrete': return '🔔';
-      default: return '📌';
-    }
-  }
 }
