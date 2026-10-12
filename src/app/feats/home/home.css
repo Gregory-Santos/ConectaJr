@@ -16,7 +16,8 @@
 
 /* HOME CONTAINER */
 .home-container {
-  flex: 1 1 0;          /* era 1 1 auto */
+  flex: 1 1 0;
+  align-self: stretch; /* ocupa a altura toda do layout */
   width: auto;
   min-width: 0;
   max-width: 100%;
@@ -315,6 +316,24 @@
   min-width: 0;
 }
 
+.carousel-button {
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: #6d3fc1;
+  color: #ffffff;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.carousel-button:hover {
+  background: #7e4dd6;
+  transform: scale(1.08);
+}
 
 /* CARROSSEL: garante que a janela não empurre a largura */
 .carousel-window {

@@ -1,4 +1,4 @@
-import { Component, computed, effect, inject, signal } from '@angular/core';
+import { Component, computed, inject, linkedSignal } from '@angular/core';
 import { FeedProjeto } from '../../core/service/feed-projeto';
 import { Projeto } from '../../core/models/projeto';
 import { PesquisaService } from '../barra-pesquisa/pesquisa-service';
@@ -19,20 +19,17 @@ export class Home {
   private todosMatch: Projeto[] = this.feedService.listarMatches();
   private todasSugestoes: Projeto[] = this.feedService.listarSugestoes();
 
-  // listas filtradas pela busca (é o que o HTML passa a usar)
+  // listas filtradas pela busca (é o que o HTML usa)
   matchesFiltrados = computed(() => this.filtrar(this.todosMatch));
   sugestoesFiltradas = computed(() => this.filtrar(this.todasSugestoes));
 
-  indiceAtual = signal(0);
-  cardsPorPagina = 3;
+  // volta pra 0 sempre que o termo da busca mudar
+  indiceAtual = linkedSignal({
+    source: this.pesquisa.termo,
+    computation: () => 0,
+  });
 
-  constructor() {
-    // sempre que o termo mudar, volta o carrossel pro início
-    effect(() => {
-      this.pesquisa.termo();
-      this.indiceAtual.set(0);
-    });
-  }
+  cardsPorPagina = 3;
 
   private get maxIndice(): number {
     return Math.max(0, this.matchesFiltrados().length - this.cardsPorPagina);

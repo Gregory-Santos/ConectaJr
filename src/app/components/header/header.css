@@ -104,8 +104,23 @@
   color: #ffffff;
 
   font-size: 18px;
+
+  cursor: pointer;
+  transition: 0.2s;
 }
 
+.chat-suspenso:hover {
+  color: #cfcfdc;
+}
+
+.chat-suspenso a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.chat-suspenso a.ativo {
+  color: #a855f7;
+}
 
 /* =========================
    NOTIFICAÇÕES
