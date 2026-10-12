@@ -7,7 +7,7 @@ import { RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-home',
-    imports: [Agenda, RouterLink],
+    imports: [Agenda],
     templateUrl: './home.html',
     styleUrl: './home.css'
 })
@@ -36,17 +36,6 @@ export class Home {
     return Math.max(0, this.matchesFiltrados().length - this.cardsPorPagina);
   }
 
-  proximo(): void {
-    if (this.matchesFiltrados().length <= this.cardsPorPagina) return;
-
-    if (this.indiceAtual() < this.maxIndice) {
-      this.indiceAtual.update(i => i + 1);
-    } else {
-      this.indiceAtual.set(0);
-    }
-    private get maxIndice(): number {
-        return Math.max(0, this.matchesFiltrados().length - this.cardsPorPagina);
-    }
     proximo(): void {
         if (this.matchesFiltrados().length <= this.cardsPorPagina) return;
         if (this.indiceAtual() < this.maxIndice) {
