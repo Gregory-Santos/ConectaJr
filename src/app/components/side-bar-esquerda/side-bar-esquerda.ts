@@ -10,4 +10,6 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 export class SideBarEsquerda {
 
   menuAberto = false;
+
+  configuracoesAbertas = false;
 }

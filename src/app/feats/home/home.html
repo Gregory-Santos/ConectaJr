@@ -1,10 +1,7 @@
 <div class="layout-principal">
-
   <div class="home-container">
-
     <div class="feed-painel" aria-hidden="true"></div>
 
-    <!-- COMBINA COM SEU PERFIL (CARROSSEL) -->
     <section class="feed-section">
       <div class="section-title">
         <h2>Combina com seu perfil</h2>
@@ -45,7 +42,6 @@
             } @empty {
             <p class="sem-resultado">Nenhum projeto encontrado.</p>
             }
-
           </div>
         </div>
 
@@ -54,10 +50,10 @@
       </div>
     </section>
 
-    <!-- SUGESTÕES -->
     <section class="feed-section">
       <div class="section-title">
         <h2>Sugestões para você</h2>
+        <span>{{ sugestoesFiltradas().length }} projetos</span>
       </div>
 
       <div class="feed-grid">
@@ -90,10 +86,7 @@
         }
       </div>
     </section>
-
   </div>
 
-  <!-- CALENDÁRIO (DIREITA) -->
   <app-agenda></app-agenda>
-
 </div>

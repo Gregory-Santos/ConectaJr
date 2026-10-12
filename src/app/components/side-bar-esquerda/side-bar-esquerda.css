@@ -11,6 +11,7 @@
 /*logo da conecta gobal*/
 .logo {
     margin-bottom: 40px;
+    cursor: pointer;
 }
 
 /*config da img da logo*/
@@ -32,6 +33,15 @@
     margin-top: 16px;
     margin-left: 13px;
     border-radius: 13px;
+    cursor: pointer;
+}
+
+.info-perfil > i {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    font-size: 20px;
+    cursor: pointer;
 }
 
 .menu-conta {
@@ -57,6 +67,7 @@
     padding: 2px;
     cursor: pointer;
 }
+
 
 
 /*titulo perfil global*/
@@ -142,27 +153,26 @@
 .card-menu {
     display: flex;
     align-items: center;
-    background-color: var(--cor-escuro);
-    height: 51px;
+    background-color: #2d2c4e21;
+    height: 48px;
     width: 233px;
-    margin-top: 20px;
+    margin-top: 14px;
     margin-left: 13px;
     border-radius: 13px;
 
 }
 
-/*card menu texto e icone style*/
 .card-menu a {
     display: flex;
     align-items: center;
     width: 100%;
     height: 100%;
-    gap: 19px;
+    gap: 14px;
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     text-decoration: none;
     font-weight: 400;
-    color: #FFFFFFA8;
+    color: #ffffff9b;
     margin: 0;
     padding: 0 10px;
     box-sizing: border-box;
@@ -177,19 +187,12 @@ nav a.ativo {
     border-radius: 13px;
 }
 
-/*card menu style icone*/
 .card-menu i {
-    width: 32px;
-    height: 32px;
-    font-size: 32px;
+    width: 24px;
+    height: 22px;
+    font-size: 23px;
 }
 
-/*card menu escritas, início, dashboard, buscar, meu time*/
-.card-menu a span {
-    transform: translateY(4px);
-}
-
-/*cor roxa ao passar o mouse nos cards-menu*/
 .card-menu:hover {
     background-color: #4E1996;
 }
@@ -219,38 +222,120 @@ nav a.ativo {
 .card-config {
     display: flex;
     align-items: center;
-    background-color: #2D2C4E;
-    height: 51px;
+    background-color: #2d2c4e6c;
+    height: 52px;
     width: 233px;
-    margin-top: 20px;
+    margin-top: 24px;
     margin-left: 13px;
     border-radius: 13px;
+    padding-bottom: 4px;
 }
 
-/*card configuração icone e escrita*/
-.card-config a {
+/* card configuração */
+.outros-config {
+    width: 100%;
+}
+
+/* título configurações */
+.titulo-config h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+/* card configuração */
+.card-config {
+    position: relative;
     display: flex;
     align-items: center;
-    gap: 19px;
+    width: calc(100% - 24px);
+    height: 56px;
+    margin: 0 12px;
+    padding: 0 14px;
+    border-radius: 13px;
+    background-color: #24243F;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.card-config > i:first-child {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    font-size: 23px;
+    color: #FFFFFFA8;
+}
+
+.card-config span {
+    margin-left: 14px;
     font-family: 'Inter', sans-serif;
     font-size: 16px;
-    text-decoration: none;
     font-weight: 400;
     color: #FFFFFFA8;
-    margin: 10px;
-    margin-top: 8px;
 }
 
-/*card configuração icone*/
-.card-config i {
-    width: 32px;
-    height: 32px;
-    font-size: 32px;
+/* seta */
+.card-config .seta-config {
+    flex-shrink: 0;
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    font-size: 16px;
+    color: #FFFFFFA8;
+    transition: transform 0.2s ease;
 }
 
-/*card configuração escrita*/
-.card-config a span {
-    transform: translateY(4px);
+/* seta aberta */
+.card-config .seta-config.aberta {
+    transform: rotate(180deg);
+}
+.menu-config {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 24px);
+    margin: 6px 12px 0;
+    padding: 6px 0;
+    border-radius: 13px;
+    background-color: #24243F;
+    box-sizing: border-box;
 }
 
+.menu-config[hidden] {
+    display: none;
+}
 
+/* opções do menu */
+.menu-config a,
+.menu-config button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 42px;
+    padding: 0 14px;
+    border: none;
+    background: transparent;
+    color: #FFFFFFA8;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    text-decoration: none;
+    text-align: left;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+/* hover */
+.menu-config a:hover,
+.menu-config button:hover {
+    background-color: #2D2C4E;
+    border-radius: var(--border-radius);
+    color: #FFFFFF;
+}
+
+/* ícone do botão sair */
+.menu-config button i {
+    margin-left: auto;
+    font-size: 15px;
+}

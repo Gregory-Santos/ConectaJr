@@ -1,8 +1,24 @@
+:root {
+    --cor-branco: #ECEBEB;
+    --cor-roxo: #4E1996;
+    --cor-laranja: #E49126;
+    --cor-escuro: #1B1C30;
+    --fonte-principal: 'Inter', sans-serif;
+    --tamanho-corpo: 16px;
+    --tamanho-menor: 14px;
+    --tamanho-titulo: 18px;
+    --tamanho-titulo-maior: 20px;
+    --raio-borda: 13px;
+    --desfoque-brilho: 2px;
+    --transicao: 0.3s ease;
+}
+
 main {
     font-family: 'Inter', sans-serif;
     position: relative;
     display: flex;
     min-height: 100vh;
+    cursor: default;
 }
 
 
@@ -27,12 +43,19 @@ main {
     font-size: 16px;
     font-weight: 400;
     gap: 7px;
+    cursor: pointer;
+}
+
+.grafico-container button:hover {
+    background-color: #5e1eb8;
+    color: #FFFFFF;
 }
 
 .grafico-container h2 {
     margin-top: 0;
     color: rgba(255, 255, 255, 0.70);
     font-weight: 400;
+    font-size: 18px;
 }
 
 /* -----------------------
@@ -40,7 +63,7 @@ main {
 ----------------------- */
 
 .grafico {
-    width: 503px;
+    width: 460px;
     display: flex;
     height: 270px;
     transform: translateY(45px);
@@ -57,8 +80,9 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    font-size: 16px;
+    font-size: 14px;
     color: rgba(255, 255, 255, 0.70);
+    cursor: default;
 }
 
 
@@ -68,9 +92,7 @@ main {
 
 .area-grafico {
     position: relative;
-
     flex: 1;
-
     height: 100%;
 }
 
@@ -81,10 +103,8 @@ main {
 
 .linha {
     position: absolute;
-
     left: 0;
     width: 100%;
-
     border-top: 1px solid rgba(255, 255, 255, 0.14);
 }
 
@@ -152,18 +172,28 @@ main {
     width: 50px;
     background-color: #E49126;
     border-radius: 0px 0px 0 0;
+    cursor: pointer;
+}
+
+.barra:hover {
+    background-color: #F5A623;
 }
 
 .barra-voce {
     background-color: #4E1996;
     width: 50px;
     border-radius: 0px 0px 0 0;
+    cursor: pointer;
+}
+
+.barra-voce:hover {
+    background-color: #5e1eb8;
 }
 
 .linha-divisoria {
     position: absolute;
-    top: 580px;
-    left: 0;
+    top: 500px;
+    left: 10px;
     width: 66.4%;
     border-top: 1px solid rgba(217, 217, 217, 0.14);
 
@@ -183,7 +213,7 @@ app-agenda {
     position: fixed;
     margin-top: 0;
     right: 50px;
-    width: 350px;
+    width: 330px;
     z-index: 99999;
 }
 
@@ -193,9 +223,9 @@ app-agenda {
 ----------------------- */
 
 .tarefas-container {
-    width: 350px;
+    width: 300px;
     margin-left: -530px;
-    margin-top: 650px;
+    margin-top: 550px;
     color: rgba(255, 255, 255, 0.70);
     padding-bottom: 50px;
     
@@ -210,29 +240,29 @@ app-agenda {
 
 .topo-tarefas h1 {
     margin: 0;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 400;
     color: #FFFFFF;
      white-space: nowrap;
 }
 
 .topo-tarefas h1 i {
-    font-size: 20px;
+    font-size: 14px;
     margin-left: 5px;
 }
 
 .barra-progresso {
     position: relative;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.90);
-    padding-left: 540px;
+    padding-left: 530px;
 }
 
 .barra-progresso::before {
     content: "";
     position: absolute;
-    width: 230px;
+    width: 210px;
     height: 11px;
     left: 130px;
     top: 50%;
@@ -245,9 +275,9 @@ app-agenda {
 .barra-progresso::after {
     content: "";
     position: absolute;
-    width: 120px;
+    width: 140px;
     height: 10px;
-    left: 131px;
+    left: 130px;
     top: 50%;
     transform: translateY(-50%);
     background-color: #E49126;
@@ -278,8 +308,8 @@ app-agenda {
 
 .detales-tarefas input[type="checkbox"] {
     appearance: none;
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     margin: 0;
     border: 1px solid #FFFFFF;
     border-radius: 2px;
@@ -307,8 +337,8 @@ app-agenda {
 .detales-tarefas h1 {
     grid-column: 2;
     margin: 0;
-    font-size: 16px;
-    line-height: 25px;
+    font-size: 14px;
+    line-height: 16px;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.90);
 }
@@ -324,7 +354,7 @@ app-agenda {
     font-size: 14px;
     font-style: italic;
     font-weight: 400;
-    color: #909090;
+    color: #ffffff53;
 }
 
 
@@ -332,10 +362,10 @@ app-agenda {
 
 .detales-tarefas p {
     margin: 4px 0 0;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
-    line-height: 20px;
-    color: #909090;
+    line-height: 16px;
+    color: #ffffff63;
     
 }
 
@@ -345,8 +375,8 @@ app-agenda {
 
 .detales-tarefas p:last-of-type {
     grid-column: 2;
-     background-color: rgba(180, 180, 180, 0.55);
-    color: #292929;
+     background-color: rgba(180, 180, 180, 0.445);
+    color: var(--cor-escuro);
     padding: 1px 7px;
     border-radius: 6px;
     width: fit-content;
@@ -366,6 +396,12 @@ app-agenda {
     border-radius: 20px;
     background-color: #2D2C4E;
     color: rgba(255, 255, 255, 0.70);
-    font-size: 17px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.tarefas > button:hover {
+    background-color: #5e1eb8;
+    color: #FFFFFF;
 }
 

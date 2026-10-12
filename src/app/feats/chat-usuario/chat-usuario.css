@@ -36,11 +36,17 @@ main {
     padding: 13px;
     margin-bottom: 20px;
     background-color: #2D2C4E;
-    height: 80px;
+    height: 46px;
     width: 340px;
     border-radius: 13px;
     margin-left: 36px;
+    cursor: pointer;
 }
+
+.card-usuario:hover {
+    background-color: #4E1996;
+}
+
 
 /*config de cada conversa*/
 .usuario {
@@ -52,10 +58,10 @@ main {
 
 /*avatar do usuario*/
 .usuario img {
-    width: 85px;
-    height: 85px;
+    width: 58px;
+    height: 58px;
     flex-shrink: 0;
-    border-radius: 13px;
+    border-radius: 50px;
     object-fit: cover;
     object-position: center 23%;
     display: block;
@@ -76,7 +82,7 @@ main {
 
 /*nome usuario*/
 .dados-usuario h1 {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 400;
     color: #FFFFFF;
     margin: 5px;
@@ -84,9 +90,9 @@ main {
 
 /*mensagem usuario*/
 .dados-usuario p {
-    font-size: 16px;
+    font-size: 14px;
     color: rgba(255, 255, 255, 0.79);
-    margin: 5px;
+    margin: 4px;
 
 }
 
@@ -101,7 +107,7 @@ main {
 
 .card-chat {
     width: 676px;
-    height: 610px;
+    height: 510px;
     background-color: #2D2C4E;
     border-radius: 13px;
     margin-left: 30px;
@@ -120,19 +126,19 @@ main {
     font-family: 'Inter', sans-serif;
     color: #F5F5F5;
     margin-left: 46px;
-    margin-top: 88px;
+    margin-top: 60px;
 }
 
 .escrita-card h1 {
     margin: 1;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 400;
 }
 
 .escrita-card h2 {
     margin: 0;
     width: 369px;
-    font-size: 64px;
+    font-size: 52px;
     font-size: 800;
 }
 
@@ -142,6 +148,7 @@ main {
     display: flex;
     background-color: #4E1996;
     border-radius: 13px;
+    padding-bottom: 8px;
     font-family: 'Inter', sans-serif;
     color: #FFFFFF;
 
@@ -149,10 +156,10 @@ main {
 
 .card-cabecalho img {
     display: flex;
-    width: 88px;
-    height: 88px;
+    width: 64px;
+    height: 64px;
     object-fit: cover;
-    border-radius: 13px;
+    border-radius: 50px;
     margin-left: 11px;
     margin-top: 12px;
 }
@@ -162,16 +169,16 @@ main {
     flex-direction: column;
     align-items: start;
     width: 100%;
-    height: 111px;
+    height: 70px;
     gap: 2px;
 }
 
 .info-usuario h1 {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 600;
     margin: 0;
     margin-left: 10px;
-    margin-top: 35px;
+    margin-top: 20px;
 }
 
 .info-usuario p {

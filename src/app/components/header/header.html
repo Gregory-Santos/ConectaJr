@@ -47,7 +47,20 @@
     }
   </div>
 
-  <div class="menu-projeto-atual">
-    <span>1774 | SENIOR SISTEMAS</span>
-    <i class="fa-solid fa-chevron-down"></i>
-  </div>
+<div class="seletor-projeto">
+    <div class="menu-projeto-atual" (click)="projetoAberto = !projetoAberto">
+        <span>1774 | SENIOR SISTEMAS</span>
+        <p>o</p>
+        <i
+            class="fa-solid fa-chevron-down"
+            [class.aberta]="projetoAberto">
+        </i>
+    </div>
+
+    <div class="opcoes-projeto" [hidden]="!projetoAberto">
+        <div class="opcao-projeto">
+            <span>1774 | SENIOR SISTEMAS</span>
+            <i class="fa-solid fa-check"></i>
+        </div>
+    </div>
+</div>
