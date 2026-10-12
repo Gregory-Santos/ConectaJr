@@ -2,6 +2,7 @@
   <input
     type="text"
     placeholder="Buscar projeto ou tecnologia..."
+    [value]="termo()"
     (input)="aoDigitar($event)"
   />
   <svg class="icone-busca" viewBox="0 0 24 24" aria-hidden="true">
