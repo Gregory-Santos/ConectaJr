@@ -4,5 +4,5 @@ export interface ChatInterface {
     foto: string;
     mensagem: string;
     data: string;
-
+    
 }

@@ -11,7 +11,7 @@ main {
 .janela-chat {
     transform: translateY(65px);
     height: 630px;
-    width: 420px;
+    width: 520px;
     overflow-y: auto;
     will-change: scroll-position;
 }
@@ -33,11 +33,11 @@ main {
 .card-usuario {
     display: flex;
     align-items: center;
-    padding: 13px;
+    padding: 18px;
     margin-bottom: 20px;
     background-color: #2D2C4E;
     height: 46px;
-    width: 340px;
+    width: 440px;
     border-radius: 13px;
     margin-left: 36px;
     cursor: pointer;
@@ -101,6 +101,8 @@ main {
     font-size: 8px;
     color: #E2891B;
     margin-left: 18px;
+    margin-top: 8px;
+    position: absolute;
 }
 
 /*card de decoração sem conversa selecionada*/
