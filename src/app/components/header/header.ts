@@ -20,6 +20,8 @@ export class Header {
     event.preventDefault();
   }
 
+  projetoAberto = false;
+
   notificacoesAbertas = false;
 
   notificacoes = [

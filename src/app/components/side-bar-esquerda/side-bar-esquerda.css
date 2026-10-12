@@ -11,6 +11,7 @@
 /*logo da conecta gobal*/
 .logo {
     margin-bottom: 40px;
+    cursor: pointer;
 }
 
 /*config da img da logo*/
