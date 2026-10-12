@@ -14,8 +14,8 @@ export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'busca', component: Busca },
     { path: 'chat-usuario', component: ChatUsuario },
-    { path: 'dashboard', component: Dashboard},
-    
-    { path: 'projeto/:id', component: ProjetoDetalhes}
+    { path: 'dashboard', component: Dashboard },
+    { path: 'perfil-usuario', component: PerfilUsuario },
+    { path: 'projeto/:id', component: ProjetoDetalhes }
 
 ];
