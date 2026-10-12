@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { PesquisaService } from '../../feats/barra-pesquisa/pesquisa-service';
 
 @Component({
   imports: [RouterLink, RouterLinkActive],
@@ -12,4 +13,11 @@ export class SideBarEsquerda {
   menuAberto = false;
 
   configuracoesAbertas = false;
+
+  private pesquisa = inject(PesquisaService);
+
+  limparBusca(): void {
+  console.log('limpando busca');
+  this.pesquisa.limpar();
+}
 }

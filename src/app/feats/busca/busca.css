@@ -1,0 +1,179 @@
+:host {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+
+.buscar-container {
+  min-height: 100vh;
+  padding: 30px 40px;
+  background-color: #1B1C30;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* TÍTULO */
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  padding-left: 4px;
+}
+
+.section-title h2 {
+  margin: 0;
+  color: #e2e2e6;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.section-title span {
+  color: #8f87a8;
+  font-size: 0.75rem;
+}
+
+/* GRADE RESPONSIVA */
+.feed-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+/* CARD */
+.projeto-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 220px;
+  background: #2e1b4e;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.projeto-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* CABEÇALHO DO CARD */
+.card-painel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 0;
+  min-height: 34px;
+  padding: 16px 10px;
+  background: linear-gradient(90deg, #F5F5F5, #B6B5B4);
+}
+
+.card-painel.combina {
+  background: linear-gradient(90deg, #E49126, #E07400);
+}
+
+.card-painel.combina .empresa {
+  color: #fff;
+}
+
+.empresa {
+  min-width: 0;
+  overflow: hidden;
+  color: #1b1c30;
+  font-size: 16px;
+  font-weight: 700;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.match {
+  flex-shrink: 0;
+  padding: 3px 7px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.25);
+  color: #1b1c30;
+  font-size: 0.65rem;
+  font-weight: 800;
+}
+
+/* CONTEÚDO */
+.card-content {
+  min-width: 0;
+  padding: 10px 8px 0;
+}
+
+.card-content h3 {
+  margin: 0 0 6px;
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.3;
+  overflow-wrap: break-word;
+}
+
+.card-content p {
+  margin: 0;
+  color: #d4d4d8;
+  font-size: 0.65rem;
+  line-height: 1.55;
+  overflow-wrap: break-word;
+}
+
+/* SKILLS */
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 12px;
+  min-width: 0;
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 0;
+  color: #e4e4e7;
+  font-size: 0.65rem;
+  line-height: 1.4;
+}
+
+.skill.pending {
+  color: #c4b5fd;
+}
+
+/* BOTÃO */
+.btn-projeto {
+  display: block;
+  width: calc(100% - 16px);
+  margin: auto 8px 10px;
+  padding: 7px 10px;
+  border-radius: 6px;
+  background: #6d3fc1;
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-projeto:hover {
+  background: #7e4dd6;
+  transform: translateY(-1px);
+}
+
+.sem-resultado {
+  grid-column: 1 / -1;
+  padding: 16px 0;
+  color: #b9b4d6;
+}
+
+@media (max-width: 600px) {
+  .buscar-container {
+    padding: 20px 15px;
+  }
+}
