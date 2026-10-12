@@ -96,16 +96,22 @@
 .chat-suspenso {
   width: 25px;
   height: 40px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   color: #ffffff;
-
   font-size: 18px;
 }
 
+.chat-suspenso a{
+  color: var(--cor-clara);
+  text-decoration: none;
+}
+
+.chat-suspenso a:hover {
+  color: var(--cor-roxo);
+  text-decoration: none;
+}
 
 /* =========================
    NOTIFICAÇÕES
@@ -368,21 +374,25 @@
 
 .menu-projeto-atual {
   height: 32px;
-
   display: flex;
   align-items: center;
-
-  padding: 0 15px;
-
+  justify-content: space-between;
+  padding: 0 18px;
   border-radius: 18px;
-
   background-color: #4d16a3;
   color: #ffffff;
-
   font-size: 11px;
   font-weight: 600;
-
   white-space: nowrap;
+  cursor: pointer;
+}
+
+.menu-projeto-atual:hover {
+  background-color: #3e1186;
+}
+
+.menu-projeto-atual p {
+color: transparent;
 }
 
 
