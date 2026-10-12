@@ -101,16 +101,22 @@
   justify-content: center;
   color: #ffffff;
   font-size: 18px;
+
+  cursor: pointer;
+  transition: 0.2s;
 }
 
-.chat-suspenso a{
-  color: var(--cor-clara);
+.chat-suspenso:hover {
+  color: #cfcfdc;
+}
+
+.chat-suspenso a {
+  color: inherit;
   text-decoration: none;
 }
 
-.chat-suspenso a:hover {
-  color: var(--cor-roxo);
-  text-decoration: none;
+.chat-suspenso a.ativo {
+  color: #a855f7;
 }
 
 /* =========================

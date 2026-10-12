@@ -1,4 +1,4 @@
-import { Component, computed, effect, inject, signal } from '@angular/core';
+import { Component, computed, inject, linkedSignal } from '@angular/core';
 import { FeedProjeto } from '../../core/service/feed-projeto';
 import { Projeto } from '../../core/models/projeto';
 import { PesquisaService } from '../barra-pesquisa/pesquisa-service';
@@ -12,19 +12,37 @@ import { RouterLink } from '@angular/router';
     styleUrl: './home.css'
 })
 export class Home {
-    private feedService = inject(FeedProjeto);
-    private pesquisa = inject(PesquisaService);
-    private todosMatch: Projeto[] = this.feedService.listarMatches();
-    private todasSugestoes: Projeto[] = this.feedService.listarSugestoes();
-    matchesFiltrados = computed(() => this.filtrar(this.todosMatch));
-    sugestoesFiltradas = computed(() => this.filtrar(this.todasSugestoes));
-    indiceAtual = signal(0);
-    cardsPorPagina = 3;
-    constructor() {
-        effect(() => {
-            this.pesquisa.termo();
-            this.indiceAtual.set(0);
-        });
+
+  private feedService = inject(FeedProjeto);
+  private pesquisa = inject(PesquisaService);
+
+  // listas completas (chamadas uma vez só)
+  private todosMatch: Projeto[] = this.feedService.listarMatches();
+  private todasSugestoes: Projeto[] = this.feedService.listarSugestoes();
+
+  // listas filtradas pela busca (é o que o HTML usa)
+  matchesFiltrados = computed(() => this.filtrar(this.todosMatch));
+  sugestoesFiltradas = computed(() => this.filtrar(this.todasSugestoes));
+
+  // volta pra 0 sempre que o termo da busca mudar
+  indiceAtual = linkedSignal({
+    source: this.pesquisa.termo,
+    computation: () => 0,
+  });
+
+  cardsPorPagina = 3;
+
+  private get maxIndice(): number {
+    return Math.max(0, this.matchesFiltrados().length - this.cardsPorPagina);
+  }
+
+  proximo(): void {
+    if (this.matchesFiltrados().length <= this.cardsPorPagina) return;
+
+    if (this.indiceAtual() < this.maxIndice) {
+      this.indiceAtual.update(i => i + 1);
+    } else {
+      this.indiceAtual.set(0);
     }
     private get maxIndice(): number {
         return Math.max(0, this.matchesFiltrados().length - this.cardsPorPagina);

@@ -9,37 +9,44 @@
       </div>
 
       <div class="carousel">
-        <div class="carousel-window">
-          <div class="feed-grid" [style.transform]="'translateX(-' + (indiceAtual() * (100 / cardsPorPagina)) + '%)'">
-            @for (projeto of matchesFiltrados(); track projeto.id) {
-            <article class="projeto-card">
 
+        <button class="carousel-button prev" (click)="anterior()" aria-label="Anterior">‹</button>
+
+        <div class="carousel-window">
+          <div class="feed-grid" [style.transform]="'translateX(calc(-1 * ' + indiceAtual() + ' * (100% + 10px) / 3))'">
+
+            @for (projeto of matchesFiltrados(); track projeto.id) {
+            <article class="projeto-card" [class.highlight]="projeto.percentualMatch >= 75">
               <div class="card-painel combina">
                 <span class="empresa">{{ projeto.empresa }}</span>
-                <span class="match">{{ projeto.percentualMatch }}% match</span>
+                <span class="match">{{ projeto.percentualMatch }}%</span>
               </div>
 
               <div class="card-content">
                 <h3>{{ projeto.titulo }}</h3>
                 <p>{{ projeto.descricao }}</p>
-
-                <div class="skills">
-                  @for (skill of projeto.skills; track skill.name) {
-                  <span class="skill" [class.pending]="skill.status === 'pending'">
-                    {{ skill.status === 'matched' ? '✓' : '?' }} {{ skill.name }}
-                  </span>
-                  }
-                </div>
               </div>
-              <a class="btn-projeto" [routerLink]="['/projeto', projeto.id]">
-              Ver projeto →
-              </a>
+
+              <div class="skills">
+                @for (skill of projeto.skills; track skill.name) {
+                <span class="skill" [class.matched]="skill.status === 'matched'"
+                  [class.pending]="skill.status === 'pending'">
+                  {{ skill.status === 'matched' ? '✓' : '?' }}
+                  {{ skill.name }}
+                </span>
+                }
+              </div>
+
+              <button class="btn-projeto">Ver projeto</button>
             </article>
             } @empty {
             <p class="sem-resultado">Nenhum projeto encontrado.</p>
             }
           </div>
         </div>
+
+        <button class="carousel-button next" (click)="proximo()" aria-label="Próximo">›</button>
+
       </div>
     </section>
 
@@ -54,25 +61,25 @@
         <article class="projeto-card sugestao">
           <div class="card-painel">
             <span class="empresa">{{ projeto.empresa }}</span>
-            <span class="match">{{ projeto.percentualMatch }}% match</span>
+            <span class="match">{{ projeto.percentualMatch }}%</span>
           </div>
 
           <div class="card-content">
             <h3>{{ projeto.titulo }}</h3>
             <p>{{ projeto.descricao }}</p>
-
-            <div class="skills">
-              @for (skill of projeto.skills; track skill.name) {
-              <span class="skill" [class.pending]="skill.status === 'pending'">
-                {{ skill.status === 'matched' ? '✓' : '?' }} {{ skill.name }}
-              </span>
-              }
-            </div>
           </div>
 
-            <a class="btn-projeto" [routerLink]="['/projeto', projeto.id]">
-              Ver projeto →
-              </a>
+          <div class="skills">
+            @for (skill of projeto.skills; track skill.name) {
+            <span class="skill" [class.matched]="skill.status === 'matched'"
+              [class.pending]="skill.status === 'pending'">
+              {{ skill.status === 'matched' ? '✓' : '?' }}
+              {{ skill.name }}
+            </span>
+            }
+          </div>
+
+          <button class="btn-projeto">Ver projeto</button>
         </article>
         } @empty {
         <p class="sem-resultado">Nenhuma sugestão encontrada.</p>

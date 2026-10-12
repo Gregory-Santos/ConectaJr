@@ -2,10 +2,11 @@
     <app-barra-pesquisa />
   </div>
 
-  <div class="chat-suspenso">
-    <a routerLink="/chat-usuario"><i class="fa-regular fa-comments"></i></a>
-
-  </div>
+<div class="chat-suspenso">
+  <a routerLink="/chat-usuario" routerLinkActive="ativo">
+    <i class="fa-regular fa-comments"></i>
+  </a>
+</div>
 
   <div class="notificacoes-suspenso">
     <button class="botao-notificacao" type="button" (click)="alternarNotificacoes()">
