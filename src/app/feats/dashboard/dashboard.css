@@ -405,3 +405,289 @@ app-agenda {
     color: #FFFFFF;
 }
 
+
+
+/* DASHBOARD — RESPONSIVIDADE MOBILE */
+
+@media (max-width: 700px) {
+  main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+    width: 100%;
+    min-width: 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+    margin: 0;
+    padding: 16px 14px calc(100px + env(safe-area-inset-bottom));
+    overflow-x: clip;
+    overflow-y: visible;
+    box-sizing: border-box;
+  }
+
+  main > * {
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  /* GRÁFICO */
+  .grafico-container {
+    position: relative;
+    flex: 0 0 auto;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 8px;
+  }
+
+  .grafico-container h2 {
+    margin: 0 0 12px;
+    color: var(--cor-branco);
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  .grafico-container button {
+    position: static;
+    display: block;
+    width: fit-content;
+    height: 30px;
+    margin: 0 0 14px auto;
+    padding: 0 12px;
+    border-radius: 10px;
+    font-size: 13px;
+  }
+
+  .grafico {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    height: 215px;
+    min-width: 0;
+    transform: none;
+  }
+
+  .eixo-y {
+    flex: 0 0 32px;
+    width: 32px;
+    height: 185px;
+    font-size: 10px;
+  }
+
+  .area-grafico {
+    position: relative;
+    flex: 1 1 0;
+    width: 0;
+    min-width: 0;
+    height: 185px;
+  }
+
+  .barras {
+    display: flex;
+    justify-content: space-between;
+    gap: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .coluna {
+    position: relative;
+    flex: 1 1 0;
+    min-width: 0;
+    height: 100%;
+    align-items: center;
+  }
+
+  .coluna span {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    max-width: calc(100vw / 6);
+    margin-top: 7px;
+    font-size: clamp(7px, 2.2vw, 9px);
+    line-height: 1.2;
+    white-space: nowrap;
+    transform: translateX(-50%);
+  }
+
+  .barra,
+  .barra-voce {
+    width: min(22px, 65%);
+  }
+
+  /* SEPARADORES DO DESKTOP */
+  .linha-divisoria,
+  .linha-vertical {
+    display: none;
+  }
+
+  
+  /* TAREFAS — MOBILE COMPACTO */
+  main > .tarefas-container {
+    position: relative;
+    align-self: center;
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 440px;
+    min-width: 0;
+    margin: 0 auto;
+    padding: 0 8px 12px;
+    box-sizing: border-box;
+  }
+
+  .topo-tarefas {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .topo-tarefas h1 {
+    min-width: 0;
+    margin: 0;
+    font-size: 17px;
+    white-space: nowrap;
+  }
+
+  .barra-progresso {
+    position: relative;
+    display: flex;
+    flex: 0 1 125px;
+    align-items: center;
+    justify-content: flex-end;
+    width: 125px;
+    max-width: 52%;
+    min-width: 0;
+    padding: 0;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .barra-progresso::before {
+    left: 0;
+    right: 32px;
+    width: auto;
+    height: 8px;
+    transform: translateY(-50%);
+  }
+
+  .barra-progresso::after {
+    left: 0;
+    right: auto;
+    width: calc((100% - 32px) * 0.75);
+    height: 7px;
+    transform: translateY(-50%);
+  }
+
+  .tarefas {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .detales-tarefas {
+    position: relative;
+    display: grid;
+    grid-template-columns: 15px minmax(0, 1fr);
+    column-gap: 10px;
+    width: 96%;
+    min-width: 0;
+    min-height: 0;
+    margin-bottom: 18px;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 6px 8px;
+    border-radius: 10px;
+  }
+
+  .detales-tarefas input[type="checkbox"] {
+    grid-column: 1;
+    grid-row: 1 / span 4;
+    width: 15px;
+    height: 15px;
+    margin-top: 2px;
+  }
+
+  .detales-tarefas h1 {
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+    font-size: 12px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+  }
+
+  .detales-tarefas h2 {
+    position: static;
+    grid-column: 2;
+    grid-row: 2;
+    margin: 3px 0 0;
+    font-size: 11px;
+    overflow-wrap: anywhere;
+  }
+
+  .detales-tarefas p {
+    grid-column: 2;
+    min-width: 0;
+    margin: 3px 0 0;
+    font-size: 11px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+  }
+
+  .detales-tarefas p:first-of-type {
+    grid-row: 3;
+  }
+
+  .detales-tarefas p:last-of-type {
+    grid-row: 4;
+    padding: 2px 6px;
+  }
+
+  .tarefas > button {
+    display: block;
+    width: 115px;
+    height: 33px;
+    margin: 20px auto 0;
+    font-size: 13px;
+  }
+
+
+  /* AGENDA: o componente deve ocupar seu lugar no fluxo */
+  main > app-agenda {
+    position: relative ;
+    inset: auto ;
+    display: block;
+    flex: 0 0 auto;
+    align-self: stretch;
+    width: 100% ;
+    max-width: 100% ;
+    min-width: 0 ;
+    height: auto ;
+    min-height: 0;
+    margin: 0 ;
+    padding: 0;
+    transform: none;
+    z-index: 1;
+    box-sizing: border-box;
+  }
+
+  /* NAVEGAÇÃO INFERIOR */
+  app-nav-inferior,
+  .navegacao-inferior,
+  .bottom-nav {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    padding-bottom: env(safe-area-inset-bottom);
+    box-sizing: border-box;
+  }
+}
+
+

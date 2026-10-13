@@ -21,3 +21,14 @@ body {
     --transicao: 0.3s ease;
 }
 
+@media (max-width: 700px) {
+  .menu-mobile {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999;
+    width: 100%;
+    margin: 0;
+  }
+}
