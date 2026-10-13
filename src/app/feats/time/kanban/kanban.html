@@ -23,7 +23,8 @@
                             <div class="conteudo-tarefa">
                                 <p class="descricao-tarefa">{{ tarefa.descricao }}</p>
                                 <div class="acoes-tarefa">
-                                    <button type="button" class="botao-detalhes" aria-label="Ações da tarefa" (click)="alternarMenu(tarefa.id)">></button>
+                                    <button type="button" class="botao-detalhes" aria-label="Ações da tarefa" (click)="alternarMenu(tarefa.id)"><i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </button>                                    
                                     @if (menuAberto() === tarefa.id) {
                                         <div class="menu-tarefa">
                                             <button type="button" (click)="moverTarefa(tarefa.id)">Mover</button>

@@ -151,9 +151,6 @@
     color: var(--cor-laranja);
 }
 
-.participante.aberto .botao-expandir {
-    transform: rotate(180deg);
-}
 
 .atualizacoes-participante {
     padding: 0 15px 12px 53px;

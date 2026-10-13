@@ -9,7 +9,7 @@ export class ParticipantesService {
         {
             id: 1,
             nome: 'Brenda Melo',
-            foto: '/img/brenda.png',
+            foto: '/img/perfil_brenda.png',
             status: 'concluido',
             atualizacao: 'concluiu: entregar design system',
             atualizacoes: [
@@ -37,7 +37,7 @@ export class ParticipantesService {
         {
             id: 2,
             nome: 'Gregory Santos',
-            foto: '/img/gregory.png',
+            foto: '/img/perfil_gregory.png',
             status: 'andamento',
             atualizacao: 'começou: corrigir bug página do carrinho',
             atualizacoes: [
@@ -64,7 +64,7 @@ export class ParticipantesService {
         {
             id: 3,
             nome: 'Beatriz Ferrari',
-            foto: '/img/beatriz.png',
+            foto: '/img/perfil_beatriz.png',
             status: 'pendente',
             atualizacao: 'depende: corrigir bug página do carrinho',
             atualizacoes: [
@@ -91,7 +91,7 @@ export class ParticipantesService {
         {
             id: 4,
             nome: 'Junior da Silva',
-            foto: '/img/junior.png',
+            foto: '/img/perfil_junior.png',
             status: 'andamento',
             atualizacao: 'começou: organizar tarefas do projeto',
             atualizacoes: [
