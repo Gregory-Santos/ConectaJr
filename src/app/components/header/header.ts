@@ -69,4 +69,6 @@ export class Header {
   marcarTodasComoLidas() {
     this.notificacoes.forEach((notificacao) => (notificacao.lida = true));
   }
+
+  mensagemLida = false;
 }

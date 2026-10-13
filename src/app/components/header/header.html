@@ -3,8 +3,12 @@
   </div>
 
 <div class="chat-suspenso">
-  <a routerLink="/chat-usuario" routerLinkActive="ativo">
+  <a routerLink="/chat-usuario" routerLinkActive="ativo" (click)="mensagemLida = true">
+    
     <i class="fa-regular fa-comments"></i>
+      @if (!mensagemLida) {
+      <span class="contador-chat">5</span>
+    }
   </a>
 </div>
 
