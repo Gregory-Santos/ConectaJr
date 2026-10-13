@@ -55,10 +55,10 @@ app-atualizacoes-time {
 }
 @media (max-width: 600px) {
     .pagina-time {
-        padding: 16px 10px 20px;
+        padding: 16px 18px 20px;
     }
     .titulo-time h1 {
-        font-size: 16px;
+        font-size: 18px;
     }
     .quadro-principal {
         margin-top: 10px;

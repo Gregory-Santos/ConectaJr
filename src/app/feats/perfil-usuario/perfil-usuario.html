@@ -1,19 +1,49 @@
 <!--Informaçoes de usuario, nome, estrela de avaliaçao, link git hub, numeros-->
 <main>
-    <div class="info-perfil">
-        <div class="avatar-perfil">
-            <img src="/img/perfil_junior.png" alt="Júnior Silva">
-        </div>
-        <h1>Júnior da Silva</h1>
-    </div>
+    
+<div class="info-perfil">
+  <div class="avatar-perfil">
+    <img src="/img/perfil_junior.png" alt="Júnior Silva">
+  </div>
 
-    <div class="avaliacao-usuario">
+  <div class="dados-principais-perfil">
+    <h1>Júnior da Silva</h1>
+
+    <div class="acoes-perfil">
+      <div class="avaliacao-usuario">
         <span><i class="fa-solid fa-star"></i></span>
         <span><i class="fa-solid fa-star"></i></span>
         <span><i class="fa-solid fa-star"></i></span>
         <span><i class="fa-solid fa-star"></i></span>
         <span><i class="fa-solid fa-star-half"></i></span>
+      </div>
+
+      <div class="container-menu-perfil">
+        <button
+          class="botao-editar-perfil"
+          type="button"
+          aria-label="Opções do perfil"
+          [attr.aria-expanded]="menuPerfilAberto()"
+          (click)="alternarMenuPerfil()">
+          <i class="fa-solid fa-ellipsis"></i>
+        </button>
+
+        @if (menuPerfilAberto()) {
+          <div class="menu-opcoes-perfil">
+            <button type="button" (click)="editarPerfil()">
+              <i class="fa-solid fa-pen"></i>
+              <span>Editar perfil</span>
+            </button>
+            <button type="button" (click)="compartilharPerfil()">
+              <i class="fa-solid fa-share-nodes"></i>
+              <span>Compartilhar perfil</span>
+            </button>
+          </div>
+        }
+      </div>
     </div>
+  </div>
+</div>
 
     <div class="link-github">
         <a href="https://github.com/" target="_blank"> <i class="fa-brands fa-github"> </i>GitHub</a>

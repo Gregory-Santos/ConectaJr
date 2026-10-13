@@ -1,73 +1,99 @@
-<main>
 
-    <!--Janela de chat inteira-->
-    <div class="janela-chat">
-
-        @for (conversa of ChatService.conversas(); track conversa.nome) {
-        <!--cada conversa-->
-        <div class="card-usuario" (click)="ChatService.selecionarConversa(conversa)">
-
-            <!--dado do usuario que enviou mensagem-->
-            <div class="usuario">
-                <img [src]="conversa.foto" width="90"><!--avatar do usuario-->
-                <div class="dados-usuario">
-                    <h1>{{conversa.nome}}<i class="fa-solid fa-circle"
-                            [class.oculto]="ChatService.conversasLidas.has(conversa.nome)"></i></h1>
-                    <!--nome do usuario e icone de mensagem não lida-->
-                    <div class="mensagem">
-                        <p>{{conversa.mensagem}}</p><!--mensagem enviada-->
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-        }
-
+<main [class.conversa-aberta]="!!ChatService.conversaSelecionada()">
+  <!-- Lista de conversas -->
+  <div class="janela-chat lista-conversas">
+    <div class="titulo-lista-chat">
+      <h1>Mensagens</h1>
+      <p>Suas conversas</p>
     </div>
 
+    @for (conversa of ChatService.conversas(); track conversa.nome) {
+      <button
+        type="button"
+        class="card-usuario"
+        [class.conversa-ativa]="ChatService.conversaSelecionada()?.nome === conversa.nome"
+        (click)="ChatService.selecionarConversa(conversa)"
+      >
+        <div class="usuario">
+          <img [src]="conversa.foto" [alt]="'Foto de ' + conversa.nome">
 
-    <!--Card de conversa ao lado do chat, sem conversa selecionada-->
-    <div class="card-chat">
-        @if (ChatService.conversaSelecionada()) {
-        <div class="card-cabecalho">
-            <img [src]="ChatService.conversaSelecionada()?.foto" alt="avatar do usuario" width="90">
-            <div class="info-usuario">
-                @if (ChatService.conversaSelecionada()) {
-                <h1>{{ChatService.conversaSelecionada()?.nome}}</h1>
-                <p>{{ChatService.conversaSelecionada()?.data}}</p>
-                }
-            </div>
+          <div class="dados-usuario">
+            <h2>
+              {{ conversa.nome }}
+              <i
+                class="fa-solid fa-circle indicador-nao-lida"
+                [class.oculto]="ChatService.conversasLidas.has(conversa.nome)"
+              ></i>
+            </h2>
 
+            <p class="ultima-mensagem">{{ conversa.mensagem }}</p>
+          </div>
         </div>
+      </button>
+    }
+  </div>
 
-        <div class="mensagens">
-            @for (mensagem of ChatService.mensagens(); track $index) { @if (mensagem.texto) {}
+  <!-- Área da conversa -->
+  <section class="card-chat">
+    @if (ChatService.conversaSelecionada(); as conversa) {
+      <header class="card-cabecalho">
+        <button type="button" class="botao-voltar-chat"
+  aria-label="Voltar para as conversas"
+  (click)="ChatService.voltarParaConversas()">
+  <i class="fa-solid fa-arrow-left"></i>
+</button>
+
+        <img [src]="conversa.foto" [alt]="'Foto de ' + conversa.nome">
+
+        <div class="info-usuario">
+          <h2>{{ conversa.nome }}</h2>
+          <p>{{ conversa.data }}</p>
+        </div>
+      </header>
+
+      <div class="mensagens">
+        @for (mensagem of ChatService.mensagens(); track $index) {
+          @if (mensagem.texto) {
             <p class="mensagem-chat" [class.minha-mensagem]="mensagem.minha">
-                {{mensagem.texto}}<small>{{mensagem.hora}}</small></p>
-
-            }
-        </div>
-
-        <div class="campo-mensagem">
-
-
-            <button type="button" (click)="arquivo.click()"><i class="fa-solid fa-paperclip"></i></button>
-            <input #arquivo type="file" hidden>
-
-
-
-
-            <input type="text" placeholder="Digite sua mensagem" [ngModel]="ChatService.novaMensagem()"
-                (ngModelChange)="ChatService.novaMensagem.set($event)" (keydown.enter)="ChatService.enviarMensagem()">
-            <button (click)="ChatService.enviarMensagem()"><i class="fa-regular fa-paper-plane"></i></button>
-        </div>}
-        @if (!ChatService.conversaSelecionada()) {
-
-        <div class="mensagem-inicial">
-            <img src="/img/imagem_chat.jpeg" alt="Imagem inicial do chat">
-        </div>
+              {{ mensagem.texto }}
+              <small>{{ mensagem.hora }}</small>
+            </p>
+          }
         }
+      </div>
 
-    </div>
+      <div class="campo-mensagem">
+        <button
+          type="button"
+          aria-label="Anexar arquivo"
+          (click)="arquivo.click()"
+        >
+          <i class="fa-solid fa-paperclip"></i>
+        </button>
+
+        <input #arquivo type="file" hidden>
+
+        <input
+          type="text"
+          placeholder="Digite sua mensagem..."
+          aria-label="Digite sua mensagem"
+          [ngModel]="ChatService.novaMensagem()"
+          (ngModelChange)="ChatService.novaMensagem.set($event)"
+          (keydown.enter)="ChatService.enviarMensagem()"
+        >
+
+        <button
+          type="button"
+          aria-label="Enviar mensagem"
+          (click)="ChatService.enviarMensagem()"
+        >
+          <i class="fa-regular fa-paper-plane"></i>
+        </button>
+      </div>
+    } @else {
+      <div class="mensagem-inicial">
+        <img src="/img/imagem_chat.jpeg" alt="Imagem de chat">
+      </div>
+    }
+  </section>
 </main>

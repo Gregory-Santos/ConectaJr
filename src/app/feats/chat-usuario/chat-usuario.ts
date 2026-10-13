@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { ChatService } from './chat-service';
 import { FormsModule } from '@angular/forms';
 
@@ -11,4 +11,5 @@ import { FormsModule } from '@angular/forms';
 export class ChatUsuario {
 
   protected readonly ChatService= inject(ChatService)
+  
 }

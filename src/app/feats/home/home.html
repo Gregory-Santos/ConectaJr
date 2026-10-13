@@ -1,6 +1,7 @@
+
 <div class="layout-principal">
   <div class="home-container">
-    <div class="feed-painel" aria-hidden="true"></div>
+    <div class="feed-painel"></div>
 
     <section class="feed-section">
       <div class="section-title">
@@ -13,7 +14,7 @@
         <button class="carousel-button prev" (click)="anterior()" aria-label="Anterior">‹</button>
 
         <div class="carousel-window">
-          <div class="feed-grid" [style.transform]="'translateX(calc(-1 * ' + indiceAtual() + ' * (100% + 10px) / 3))'">
+          <div class="feed-grid" [style.transform]="'translateX(calc(-1 * ' + indiceAtual() + ' * (100% + 18px)))'">
 
             @for (projeto of matchesFiltrados(); track projeto.id) {
             <article class="projeto-card" [class.highlight]="projeto.percentualMatch >= 75">
@@ -88,5 +89,6 @@
     </section>
   </div>
 
-  <app-agenda></app-agenda>
+<app-agenda id="agenda"></app-agenda>
+
 </div>

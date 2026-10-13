@@ -12,8 +12,8 @@
   </a>
 </div>
 
-  <div class="notificacoes-suspenso">
-    <button class="botao-notificacao" type="button" (click)="alternarNotificacoes()">
+
+<div class="notificacoes-suspenso" #popupNotificacoes>    <button class="botao-notificacao" type="button" (click)="alternarNotificacoes()">
       <i class="fa-regular fa-bell"></i>
 
       @if (notificacoesNaoLidas > 0) {

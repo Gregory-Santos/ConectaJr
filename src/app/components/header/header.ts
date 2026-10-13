@@ -1,5 +1,4 @@
-import { Component, signal } from '@angular/core';
-import { form, FormField } from '@angular/forms/signals';
+import { Component, signal, HostListener, ElementRef, ViewChild } from '@angular/core';import { form, FormField } from '@angular/forms/signals';
 import { ChatUsuario } from '../../feats/chat-usuario/chat-usuario';
 import { RouterLink } from '@angular/router';
 import { BarraPesquisa } from '../../feats/barra-pesquisa/barra-pesquisa';
@@ -23,6 +22,19 @@ export class Header {
   projetoAberto = false;
 
   notificacoesAbertas = false;
+
+  @ViewChild('popupNotificacoes') popupNotificacoes!: ElementRef;
+
+@HostListener('document:click', ['$event'])
+fecharAoClicarFora(event: MouseEvent) {
+  if (
+    this.notificacoesAbertas &&
+    this.popupNotificacoes &&
+    !this.popupNotificacoes.nativeElement.contains(event.target)
+  ) {
+    this.notificacoesAbertas = false;
+  }
+}
 
   notificacoes = [
     {

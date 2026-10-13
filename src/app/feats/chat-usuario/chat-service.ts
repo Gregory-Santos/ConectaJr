@@ -38,6 +38,10 @@ export class ChatService {
 
     conversaSelecionada = signal<ChatInterface | null>(null);
 
+voltarParaConversas() {
+  this.conversaSelecionada.set(null);
+}
+
     selecionarConversa(conversa: ChatInterface) {
         this.conversaSelecionada.set(conversa);
 const agora = new Date();

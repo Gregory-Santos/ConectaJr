@@ -1,4 +1,5 @@
-/*config global do side-bar*/
+
+/* SIDEBAR DESKTOP */
 .side-bar {
     height: 100% !important;
     width: 100%;
@@ -8,13 +9,12 @@
     top: 0;
 }
 
-/*logo da conecta gobal*/
+/* LOGO */
 .logo {
     margin-bottom: 40px;
     cursor: pointer;
 }
 
-/*config da img da logo*/
 .logo img {
     height: 35px;
     width: 203px;
@@ -22,7 +22,7 @@
     margin-top: 32px;
 }
 
-/*config global do card perfil*/
+/* PERFIL */
 .info-perfil {
     display: flex;
     position: relative;
@@ -36,7 +36,7 @@
     cursor: pointer;
 }
 
-.info-perfil>i {
+.info-perfil > i {
     position: absolute;
     right: 16px;
     top: 50%;
@@ -68,16 +68,14 @@
     cursor: pointer;
 }
 
-
-
-/*titulo perfil global*/
 .titulo-perfil {
     margin-left: 18px;
     margin-bottom: -9px;
 }
 
-/*titulo perfil h1*/
-.titulo-perfil h1 {
+.titulo-perfil h1,
+.titulo-menu h1,
+.titulo-config h1 {
     margin: 0;
     line-height: 17px;
     font-family: 'Inter', sans-serif;
@@ -86,8 +84,6 @@
     font-size: 14px;
 }
 
-
-/*avatar do usuario*/
 .avatar-perfil {
     height: 44px;
     width: 44px;
@@ -97,15 +93,12 @@
     object-position: center top;
 }
 
-/*informaçoes do usuario global*/
 .info {
     display: flex;
     flex-direction: column;
     margin-left: 13px;
-
 }
 
-/*nome do usuario*/
 .info h2 {
     margin: 0;
     font-size: 15px;
@@ -113,44 +106,29 @@
     font-weight: 400;
     color: #FFFFFF;
     white-space: nowrap;
-
 }
 
-/*estudante*/
 .info p {
-    margin: 2px 0 0 0;
+    margin: 2px 0 0;
     font-size: 11px;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.6);
 }
 
-/*icone de setinha*/
 .info-perfil i {
     color: #F5F5F5;
     margin-top: -10px;
     margin-left: 5px;
-
 }
 
-/*titulo menu global*/
+/* MENU DESKTOP */
 .titulo-menu {
     margin-left: 18px;
     margin-bottom: -9px;
     margin-top: 44px;
 }
 
-/*titulo menu */
-.titulo-menu h1 {
-    margin: 0;
-    line-height: 17px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    color: #FFFFFF;
-    font-size: 14px;
-}
-
-/*card menu global*/
 .card-menu {
     display: flex;
     align-items: center;
@@ -160,7 +138,6 @@
     margin-top: 14px;
     margin-left: 13px;
     border-radius: 13px;
-
 }
 
 .card-menu a {
@@ -179,7 +156,6 @@
     box-sizing: border-box;
 }
 
-
 nav a.ativo {
     display: flex;
     background-color: #4E1996;
@@ -194,16 +170,12 @@ nav a.ativo {
     font-size: 23px;
 }
 
-.card-menu:hover {
-    background-color: #4E1996;
-}
-
-
+.card-menu:hover,
 .card-config:hover {
     background-color: #4E1996;
 }
 
-/*card configuração titulo*/
+/* CONFIGURAÇÕES */
 .titulo-config {
     margin-left: 18px;
     margin-bottom: -9px;
@@ -211,42 +183,13 @@ nav a.ativo {
 }
 
 .titulo-config h1 {
-    margin: 0;
-    line-height: 17px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    color: #FFFFFF;
-    font-size: 14px;
+    margin-bottom: 20px;
 }
 
-/*card configuração global*/
-.card-config {
-    display: flex;
-    align-items: center;
-    background-color: #2d2c4e6c;
-    height: 52px;
-    width: 233px;
-    margin-top: 24px;
-    margin-left: 13px;
-    border-radius: 13px;
-    padding-bottom: 4px;
-}
-
-/* card configuração */
 .outros-config {
     width: 100%;
 }
 
-/* título configurações */
-.titulo-config h1 {
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    color: #FFFFFF;
-    margin-bottom: 20px;
-}
-
-/* card configuração */
 .card-config {
     position: relative;
     display: flex;
@@ -261,7 +204,7 @@ nav a.ativo {
     box-sizing: border-box;
 }
 
-.card-config>i:first-child {
+.card-config > i:first-child {
     flex-shrink: 0;
     width: 24px;
     height: 24px;
@@ -277,7 +220,6 @@ nav a.ativo {
     color: #FFFFFFA8;
 }
 
-/* seta */
 .card-config .seta-config {
     flex-shrink: 0;
     width: auto;
@@ -288,7 +230,6 @@ nav a.ativo {
     transition: transform 0.2s ease;
 }
 
-/* seta aberta */
 .card-config .seta-config.aberta {
     transform: rotate(180deg);
 }
@@ -308,7 +249,6 @@ nav a.ativo {
     display: none;
 }
 
-/* opções do menu */
 .menu-config a,
 .menu-config button {
     display: flex;
@@ -328,16 +268,116 @@ nav a.ativo {
     cursor: pointer;
 }
 
-/* hover */
 .menu-config a:hover,
 .menu-config button:hover {
     background-color: #2D2C4E;
-    border-radius: var(--border-radius);
+    border-radius: 8px;
     color: #FFFFFF;
 }
 
-/* ícone do botão sair */
 .menu-config button i {
     margin-left: auto;
     font-size: 15px;
+}
+
+/* NAVEGAÇÃO MOBILE: OCULTA NO DESKTOP */
+.navegacao-mobile {
+    display: none;
+}
+
+/* NAVEGAÇÃO INFERIOR FLUTUANTE */
+@media screen and (max-width: 768px) {
+    .side-bar {
+        display: none !important;
+    }
+
+    
+.navegacao-mobile {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: calc(32px + env(safe-area-inset-bottom));
+    width: auto;
+    max-width: 420px;
+    min-height: 70px;
+    margin: 0 auto;
+    padding: 8px 10px;
+    box-sizing: border-box;
+    background-color: #25253cf0;
+    border: 1px solid #FFFFFF20;
+    border-radius: 22px;
+    box-shadow: 0 8px 30px #00000055;
+    z-index: 99999;
+}
+
+
+    .navegacao-mobile a {
+        position: relative;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        min-width: 0;
+        padding: 8px 2px;
+        border-radius: 14px;
+        color: #A6A2BA;
+        font-family: 'Inter', sans-serif;
+        font-size: 10px;
+        font-weight: 400;
+        text-decoration: none;
+        transition: color 0.2s ease, background-color 0.2s ease;
+    }
+
+    .navegacao-mobile a i {
+        font-size: 20px;
+        line-height: 22px;
+    }
+
+    .navegacao-mobile a span {
+        overflow: hidden;
+        max-width: 100%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .navegacao-mobile a.ativo {
+        color: #FFFFFF;
+        background-color: #4E1996;
+    }
+
+    .navegacao-mobile a.ativo::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 20px;
+        height: 3px;
+        border-radius: 0 0 4px 4px;
+        background-color: #E49126;
+        transform: translateX(-50%);
+    }
+}
+
+/* AJUSTES PARA CELULARES PEQUENOS */
+@media screen and (max-width: 380px) {
+    .navegacao-mobile {
+        left: 12px;
+        right: 12px;
+        min-height: 66px;
+        padding: 6px;
+        border-radius: 19px;
+    }
+
+    .navegacao-mobile a {
+        font-size: 9px;
+    }
+
+    .navegacao-mobile a i {
+        font-size: 18px;
+    }
 }
