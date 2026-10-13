@@ -7,25 +7,31 @@ export class ChatService {
 
     conversas = signal<ChatInterface[]>([{
         nome: 'Brenda Melo',
-        foto: 'img/brenda.png',
+        foto: 'img/perfil_brenda.png',
         mensagem: 'A conecta é o futuro! 🚀✨',
         data: 'Hoje'
     }, {
         nome: 'Rafael Vinicius',
-        foto: 'img/rafa.png',
+        foto: 'img/perfil_rafael.png',
         mensagem: 'Vou postar no instagram da conecta essa nova funcionalidade 😁',
         data: 'Hoje'
     }, 
     {
         nome: 'Gregory dos Santos',
-        foto: 'img/gregory.png',
+        foto: 'img/perfil_gregory.png',
         mensagem: 'Posso criar a pasta no angular?',
         data: 'Hoje'
     },
     {
         nome: 'Rodrigo de Souza',
-        foto: 'img/rodrigo.png',
+        foto: 'img/perfil_rodrigo.png',
         mensagem: 'Qual o prazo final?',
+        data: 'Hoje'
+    },
+    {
+        nome: 'Beatriz Haiana',
+        foto: 'img/perfil_beatriz.png',
+        mensagem: 'Finalzei as telas no figma',
         data: 'Hoje'
     }
     ]);

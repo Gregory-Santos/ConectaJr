@@ -107,6 +107,20 @@ main {
 
 /*card de decoração sem conversa selecionada*/
 
+
+.mensagem-inicial {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 13px;
+}
+
+.mensagem-inicial img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
 .card-chat {
     width: 676px;
     height: 510px;

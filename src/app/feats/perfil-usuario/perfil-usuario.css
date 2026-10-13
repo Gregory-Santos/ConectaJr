@@ -139,6 +139,7 @@ main {
     flex-direction: column;
     gap: 21px;
     margin: 0;
+    margin-left: 36px;
 }
 
 .card-avaliacao {
@@ -160,6 +161,7 @@ main {
     border-radius: 50%;
     margin-left: 16px;
     margin-top: 17px;
+    cursor: pointer;
 }
 
 .conteudo-avaliacao {
@@ -207,17 +209,18 @@ main {
 
 /* descrição do usuário */
 .descricao-usuario {
-    width: 100%;
+    width: 90%;
     min-height: 526px;
     background-color: rgba(255, 255, 255, 0.100);
     border-radius: 13px;
-    box-sizing: border-box;
     padding: 1px 0 30px;
+    margin-right: 36px;
 }
 
 .descricao-usuario h1 {
     width: 80%;
     margin-left: 27px;
+    margin-top: 20px;
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     font-weight: 500;
@@ -252,8 +255,8 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
-    width: 90%;
+    gap: 10px;
+    width: 80%;
     margin: 0 auto;
     text-align: center;
 }
@@ -262,14 +265,15 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 95px;
-    height: 40px;
+    width: 70px;
+    height: 30px;
     border-radius: 13px;
     background-color: #4E1996;
     color: #D9D9D9;
     font-family: 'Inter', sans-serif;
     cursor: pointer;
     padding: 2px 5px;
+    font-size: 14px;
 }
 
 .conhecimento span:hover {
