@@ -38,7 +38,7 @@
   width: 100%;
   max-width: 100%;
   aspect-ratio: 1920 / 500;
-  height: 220px;
+  height: 180px;
   margin-bottom: 28px;
   background-color: #201840;
   background-image: url('/img/banner.png');
@@ -392,6 +392,7 @@
     min-width: 0;
     max-width: 100%;
     padding: 16px 14px 100px;
+    
   }
 
   .feed-painel {
@@ -401,6 +402,8 @@
     margin-bottom: 28px;
     border-radius: 14px;
     background-position: center;
+    background-image: url('/img/heromobile.jpg.jpeg');
+
   }
 
   .feed-section {
