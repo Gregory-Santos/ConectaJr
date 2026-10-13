@@ -223,7 +223,7 @@
     }
     .cabecalho-semana,
     .grade-calendario {
-        grid-template-columns: 38px repeat(7, minmax(70px, 1fr));
+        grid-template-columns: 38px repeat(7, minmax(120px, 1fr));
     }
     .grade-calendario {
         overflow-x: auto;

@@ -346,10 +346,10 @@
 @media (max-width: 900px) {
     .quadro-kanban {
         overflow-x: auto;
-        grid-template-columns: repeat(5, 140px);
+        grid-template-columns: repeat(5, 176px);
     }
     .coluna-kanban {
-        min-width: 140px;
+        min-width: 176px;
     }
 }
 @media (max-width: 600px) {
