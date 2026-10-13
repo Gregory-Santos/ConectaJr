@@ -68,14 +68,3 @@ Projeto desenvolvido em equipe no Entra21.
 | Brenda Marcela Silva de Melo | [@Berenda-m](https://github.com/Berenda-m) |
 | Rodrigo de Souza | [@frontenddigo](https://github.com/frontenddigo) |
 | Rafael Vinícius da Rocha | [@Leaf1430](https://github.com/Leaf1430) |
-
-## Minha contribuição
-
-- Desenvolvimento da barra de pesquisa de projetos compatíveis com as características informadas
-- Construção de partes da interface com Angular, TypeScript e CSS
-- Trabalho em equipe com Git e GitHub
-
-## Próximos passos
-
-- Finalizar a barra de pesquisa
-- Evoluir os filtros de compatibilidade entre usuário e projeto
