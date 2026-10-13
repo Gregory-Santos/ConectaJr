@@ -113,6 +113,34 @@
 .chat-suspenso a {
   color: inherit;
   text-decoration: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contador-chat {
+  position: absolute;
+  top: -7px;
+  right: -9px;
+
+  min-width: 15px;
+  height: 15px;
+  padding: 0 3px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+  border-radius: 50%;
+
+  background-color: #6d24d9;
+  color: #ffffff;
+
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1;
 }
 
 .chat-suspenso a.ativo {

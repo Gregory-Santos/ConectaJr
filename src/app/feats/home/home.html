@@ -37,7 +37,7 @@
                 }
               </div>
 
-              <button class="btn-projeto">Ver projeto</button>
+              <button class="btn-projeto" [routerLink]="['/projeto', projeto.id]">Ver projeto</button>
             </article>
             } @empty {
             <p class="sem-resultado">Nenhum projeto encontrado.</p>
@@ -79,7 +79,7 @@
             }
           </div>
 
-          <button class="btn-projeto">Ver projeto</button>
+          <button class="btn-projeto"  [routerLink]="['/projeto', projeto.id]">Ver projeto</button>
         </article>
         } @empty {
         <p class="sem-resultado">Nenhuma sugestão encontrada.</p>
