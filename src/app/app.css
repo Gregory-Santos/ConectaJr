@@ -1,11 +1,12 @@
+
 .app-layout {
     width: 100%;
     display: flex;
     min-height: 100vh;
 }
 
-/* a sidebar mantém o tamanho dela e não é espremida */
 app-side-bar-esquerda {
+    display: block;
     flex: 0 0 auto;
     position: sticky;
     top: 0;
@@ -15,8 +16,41 @@ app-side-bar-esquerda {
 .app-body {
     display: flex;
     flex-direction: column;
-    flex: 1 1 0;      /* pega só o espaço que sobra ao lado da sidebar */
-    min-width: 0;     /* permite encolher em vez de estourar */
-    width: auto;      /* era 100% */
+    flex: 1 1 0;
+    min-width: 0;
+    width: auto;
     background-color: #1B1C30;
+}
+
+@media (max-width: 768px) {
+    .app-layout {
+        display: block;
+        width: 100%;
+        min-height: 100vh;
+        min-height: 100dvh;
+        overflow: visible;
+    }
+
+    app-side-bar-esquerda {
+        display: contents;
+    }
+
+    .app-body {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-width: 0;
+        min-height: 100vh;
+        min-height: 100dvh;
+        overflow: visible;
+    }
+
+    app-side-bar-esquerda .navegacao-mobile {
+        position: fixed !important;
+        z-index: 999999 !important;
+    }
+
+    body {
+        padding-bottom: 0;
+    }
 }

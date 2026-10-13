@@ -1,84 +1,105 @@
-<!--Construção do side bar inteiro-->
-<div class="side-bar">
 
-    <!--logo da conecta-->
+<!-- SIDEBAR DESKTOP -->
+<div class="side-bar">
+    <!-- Logo -->
     <div class="logo">
-        <img src="/img/logo-conectajr.png" alt="logo do Conecta Júnior" routerLink="home">
+        <img src="/img/logo-conectajr.png" alt="Logo do Conecta Júnior" routerLink="/home">
     </div>
 
-    <!--card de perfil, titulo perfil, avatar usuario, estudante, seta e nome de usuario-->
+    <!-- Perfil -->
     <div class="titulo-perfil">
         <h1>Perfil</h1>
     </div>
-    <div class="info-perfil" routerLink="perfil-usuario" routerLinkActive="ativo">
 
-        <img class="avatar-perfil" src="img/perfil_junior.png" alt="Júnior da Silva" width="90">
+    <div class="info-perfil" routerLink="/perfil-usuario" routerLinkActive="ativo">
+        <img class="avatar-perfil" src="/img/perfil_junior.png" alt="Júnior da Silva" width="90">
 
         <div class="info">
             <h2>Júnior da Silva</h2>
             <p>Estudante</p>
-
         </div>
-        <i class="fa-solid fa-angle-down" (click)="menuAberto = !menuAberto; $event.stopPropagation()">
-        </i>
+
+        <i class="fa-solid fa-angle-down" (click)="menuAberto = !menuAberto; $event.stopPropagation()"></i>
 
         <div class="menu-conta" [hidden]="!menuAberto">
-            <button (click)="$event.stopPropagation()">
+            <button type="button" (click)="$event.stopPropagation()">
                 Sair <i class="fa-solid fa-arrow-right-from-bracket"></i>
             </button>
         </div>
     </div>
 
-
-    <!--mini menu, inicio, dashboard, buscar e meu time-->
+    <!-- Menu principal -->
     <div class="mini-menu">
         <div class="titulo-menu">
             <h1>Menu</h1>
         </div>
 
-
         <nav class="icones">
-
-            <div class="card-menu"> <a routerLink="/home" routerLinkActive="ativo"> <i class="fa-solid fa-house"></i>
+            <div class="card-menu">
+                <a routerLink="/home" routerLinkActive="ativo">
+                    <i class="fa-solid fa-house"></i>
                     <span>Início</span>
-                </a></div>
+                </a>
+            </div>
 
             <div class="card-menu">
-                <a routerLink="/dashboard" routerLinkActive="ativo"> <i class="fa-solid fa-border-all"></i>
+                <a routerLink="/dashboard" routerLinkActive="ativo">
+                    <i class="fa-solid fa-border-all"></i>
                     <span>Dashboard</span>
                 </a>
             </div>
 
             <div class="card-menu">
-                <a routerLink="/time" routerLinkActive="ativo"> <i class="fa-solid fa-globe"></i> <span>Meu time</span>
+                <a routerLink="/time" routerLinkActive="ativo">
+                    <i class="fa-solid fa-globe"></i>
+                    <span>Meu time</span>
                 </a>
             </div>
-
         </nav>
     </div>
 
-    <!--card de configuração-->
+    <!-- Configurações -->
     <div class="outros-config">
-    <div class="titulo-config">
-        <h1>Configurações</h1>
-    </div>
+        <div class="titulo-config">
+            <h1>Configurações</h1>
+        </div>
 
-    <div class="card-config" (click)="configuracoesAbertas = !configuracoesAbertas">
-        <i class="fa-solid fa-gear"></i>
-        <span>Configurações</span>
+        <div class="card-config" (click)="configuracoesAbertas = !configuracoesAbertas">
+            <i class="fa-solid fa-gear"></i>
+            <span>Configurações</span>
+            <i class="fa-solid fa-angle-down seta-config" [class.aberta]="configuracoesAbertas"></i>
+        </div>
 
-        <i
-            class="fa-solid fa-angle-down seta-config"
-            [class.aberta]="configuracoesAbertas">
-        </i>
-    </div>
-
-    <div class="menu-config" [hidden]="!configuracoesAbertas">
-        <a routerLink="/termos">Termos e serviços</a>
-
-        <button type="button">
-            Sair
-            <i class="fa-solid fa-arrow-right-from-bracket"></i>
-        </button>
+        <div class="menu-config" [hidden]="!configuracoesAbertas">
+            <a routerLink="/termos">Termos e serviços</a>
+            <button type="button">
+                Sair
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            </button>
+        </div>
     </div>
 </div>
+<!-- FIM DA SIDEBAR DESKTOP -->
+
+<!-- NAVEGAÇÃO INFERIOR MOBILE -->
+<nav class="navegacao-mobile" aria-label="Navegação principal">
+    <a routerLink="/home" routerLinkActive="ativo" [routerLinkActiveOptions]="{exact: true}">
+        <i class="fa-solid fa-house"></i>
+        <span>Início</span>
+    </a>
+
+    <a routerLink="/dashboard" routerLinkActive="ativo">
+        <i class="fa-solid fa-border-all"></i>
+        <span>Dashboard</span>
+    </a>
+
+    <a routerLink="/time" routerLinkActive="ativo">
+        <i class="fa-solid fa-users"></i>
+        <span>Meu time</span>
+    </a>
+
+    <a routerLink="/perfil-usuario" routerLinkActive="ativo">
+        <i class="fa-solid fa-user"></i>
+        <span>Perfil</span>
+    </a>
+</nav>
