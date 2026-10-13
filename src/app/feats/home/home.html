@@ -1,3 +1,16 @@
+<a class="atalho-calendario"
+   href="#agenda"
+   aria-label="Ir para o calendário"
+   title="Ir para o calendário">
+  <svg viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="2"
+       stroke-linecap="round" stroke-linejoin="round"
+       aria-hidden="true">
+    <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+    <path d="M16 3v4M8 3v4M3 11h18"></path>
+  </svg>
+</a>
+
 <div class="layout-principal">
   <div class="home-container">
     <div class="feed-painel" aria-hidden="true"></div>
@@ -13,7 +26,7 @@
         <button class="carousel-button prev" (click)="anterior()" aria-label="Anterior">‹</button>
 
         <div class="carousel-window">
-          <div class="feed-grid" [style.transform]="'translateX(calc(-1 * ' + indiceAtual() + ' * (100% + 10px) / 3))'">
+          <div class="feed-grid" [style.transform]="'translateX(calc(-1 * ' + indiceAtual() + ' * (100% + 18px)))'">
 
             @for (projeto of matchesFiltrados(); track projeto.id) {
             <article class="projeto-card" [class.highlight]="projeto.percentualMatch >= 75">
@@ -87,6 +100,8 @@
       </div>
     </section>
   </div>
+
+<app-agenda id="agenda"></app-agenda>
 
   <app-agenda></app-agenda>
 </div>

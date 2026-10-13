@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -24,7 +25,7 @@
 
 .home-container {
   flex: 1 1 0;
-  align-self: stretch; /* ocupa a altura toda do layout */
+  align-self: stretch;
   width: auto;
   min-width: 0;
   max-width: 100%;
@@ -193,21 +194,21 @@
 }
 
 .btn-projeto {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 95%;
-    margin-left: 6px;
-    padding: 8px 12px;
-    border-radius: 7px;
-    background: #6d3cc2;
-    color: #fff;
-    font-size: 13px;
-    font-weight: 600;
-    text-decoration: none;
-    cursor: pointer;
-    transition: 0.3s;
-    margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% - 12px);
+  margin: 0 6px 6px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 7px;
+  background: #6d3cc2;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
 }
 
 .btn-projeto:hover {
@@ -250,7 +251,6 @@
   transform: scale(1.08);
 }
 
-/* CARROSSEL: garante que a janela não empurre a largura */
 .carousel-window {
   flex: 1 1 0;
   min-width: 0;
@@ -264,7 +264,8 @@
   width: 100%;
   min-width: 100%;
   gap: 12px;
-  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: transform 0.35s ease;
+  will-change: transform;
 }
 
 .carousel .projeto-card {
@@ -288,6 +289,8 @@ app-agenda {
 }
 
 .calendario-sidebar {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
   min-height: 0;
@@ -297,9 +300,6 @@ app-agenda {
   border-left: 1px solid #3f3a5a;
   padding: 16px 14px 20px;
   color: #e4e4e7;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
   overflow: hidden;
 }
 
@@ -338,22 +338,19 @@ app-agenda {
   color: #b9b4d6;
 }
 
-@media (max-width: 1200px) {
-  app-agenda {
-    flex: 0 0 270px;
-    width: 270px;
-    min-width: 270px;
-    max-width: 270px;
-  }
-
-  .home-container {
-    padding: 25px 30px;
-  }
+.card-painel.combina {
+  background: linear-gradient(90deg, #E49126, #E07400);
 }
 
-@media (max-width: 1000px) {
+.card-painel.combina .empresa {
+  color: #ffffff;
+}
+
+
+/* TABLET */
+@media (max-width: 900px) {
   app-agenda {
-    flex: 0 0 240px;
+    flex-basis: 240px;
     width: 240px;
     min-width: 240px;
     max-width: 240px;
@@ -367,9 +364,7 @@ app-agenda {
     padding-left: 10px;
     padding-right: 10px;
   }
-}
 
-@media (max-width: 900px) {
   .feed-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -381,66 +376,320 @@ app-agenda {
   }
 }
 
+/* MOBILE */
 @media (max-width: 700px) {
   .layout-principal {
+    display: flex;
     flex-direction: column;
+    width: 100%;
     min-height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
+    min-height: 100dvh;
+    overflow-x: clip;
   }
 
   .home-container {
     width: 100%;
+    min-width: 0;
     max-width: 100%;
-    padding: 20px 15px;
+    padding: 16px 14px 100px;
   }
 
+  /* Banner */
+  .feed-painel {
+    width: 100%;
+    min-height: 125px;
+    aspect-ratio: 2.6 / 1;
+    margin-bottom: 28px;
+    border-radius: 14px;
+    background-position: center;
+  }
+
+  /* Separação das seções */
+  .feed-section {
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 30px;
+    padding: 0;
+  }
+
+  .section-title {
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+    padding: 0 2px;
+  }
+
+  .section-title h2 {
+    font-size: 0.72rem;
+    line-height: 1.4;
+    letter-spacing: 0.7px;
+  }
+
+  .section-title span {
+    font-size: 0.65rem;
+    white-space: nowrap;
+  }
+
+  /* Sugestões: dois cards por linha */
+  .feed-section > .feed-grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 10px;
+  }
+
+  .projeto-card,
+  .projeto-card.sugestao {
+    min-width: 0;
+    min-height: 0;
+    border-radius: 11px;
+  }
+
+  .projeto-card .card-painel {
+    min-height: 42px;
+    padding: 8px;
+    gap: 5px;
+  }
+
+  .projeto-card .empresa {
+    min-width: 0;
+    font-size: 0.68rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .projeto-card .match {
+    flex-shrink: 0;
+    padding: 4px 6px;
+    font-size: 0.55rem;
+  }
+
+  
+/* Requisitos e tecnologias dos cards no mobile */
+@media (max-width: 700px) {
+  .projeto-card .skills {
+    width: 100%;
+    gap: 8px;
+    margin: 0 0 14px;
+    padding: 10px 12px 0;
+  }
+
+  .projeto-card .skill {
+    font-size: 0.7rem;
+    line-height: 1;
+    color: #d5c9eb;
+  }
+
+  .projeto-card .skill.pending {
+    color: #bda1ef;
+  }
+}
+
+
+  .projeto-card .card-content {
+    min-width: 0;
+    padding: 11px 9px 8px;
+  }
+
+  .projeto-card .card-content h3 {
+    margin-bottom: 6px;
+    font-size: 0.88rem;
+    line-height: 1.4;
+  }
+
+  .projeto-card .card-content p {
+    min-height: 0;
+    font-size: 0.68rem;
+    line-height: 1.5;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
+
+  .projeto-card .btn-projeto {
+    width: calc(100% - 12px);
+    margin: auto 6px 6px;
+    padding: 9px 5px;
+    font-size: 0.7rem;
+    text-align: center;
+  }
+
+  /* Carrossel: um card por vez */
+  .carousel {
+    gap: 7px;
+    min-width: 0;
+  }
+
+  .carousel-button {
+    flex: 0 0 30px;
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+  }
+
+  .carousel-window {
+    flex: 1 1 0;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .carousel .feed-grid {
+    display: flex;
+    width: 100%;
+    min-width: 100%;
+    gap: 18px;
+  }
+
+  .carousel .projeto-card {
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .carousel .card-painel .empresa {
+    font-size: 0.90rem;
+  }
+}
+
+
+  /* Agenda abaixo do conteúdo no mobile */
   app-agenda {
+    position: static;
+    flex: none;
     width: 100%;
     min-width: 0;
     max-width: 100%;
     height: auto;
-    flex: none;
-    position: static;
   }
 
   .calendario-sidebar {
-    height: auto;
-    min-height: 500px;
     position: relative;
-    border-left: none;
-    border-top: 1px solid #3f3a5a;
-  }
-}
-
-@media (max-width: 600px) {
-  .feed-section {
-    padding: 15px 5px 10px;
-  }
-
-  .feed-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .carousel .projeto-card {
-    flex-basis: 100%;
     width: 100%;
-    max-width: 100%;
+    height: auto;
+    min-height: 0;
+    padding: 18px 15px 100px;
+    border-top: 1px solid #3f3a5a;
+    border-left: none;
+    overflow: visible;
   }
-}
 
+  .eventos-do-dia {
+    flex: none;
+    max-height: 280px;
+    overflow-y: auto;
+  }
+
+/* CELULARES PEQUENOS */
 @media (max-width: 380px) {
   .home-container {
-    padding-left: 10px;
     padding-right: 10px;
-    padding-bottom: 110px;
+    padding-left: 10px;
+  }
+
+  .feed-section > .feed-grid {
+    gap: 10px 8px;
+  }
+
+  .section-title h2 {
+    font-size: 0.66rem;
+  }
+
+  .projeto-card .card-content {
+    padding: 9px 7px 7px;
+  }
+
+  .projeto-card .card-content h3 {
+    font-size: 0.71rem;
+  }
+
+  .projeto-card .card-content p {
+    font-size: 0.63rem;
+  }
+
+  .projeto-card .btn-projeto {
+    font-size: 0.65rem;
   }
 }
 
-.card-painel.combina {
-  background: linear-gradient(90deg, #E49126, #E07400);
+
+@media (max-width: 700px) {
+  .projeto-card .card-content p {
+    display: none;
+  }
+
+  .projeto-card .card-content h3 {
+    margin-bottom: 8px;
+    font-size: 0.82rem;
+    line-height: 1.4;
+  }
+
 }
 
-.card-painel.combina .empresa {
-  color: #ffffff;
+
+/* Atalho e título do calendário: somente mobile */
+.atalho-calendario,
+.titulo-calendario-mobile {
+  display: none;
 }
+
+@media (max-width: 700px) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  app-agenda {
+    scroll-margin-top: 20px;
+  }
+
+  .titulo-calendario-mobile {
+    display: block;
+    width: 100%;
+    margin: 8px 0 20px;
+    padding: 20px 12px 0;
+    text-align: center;
+  }
+
+  .titulo-calendario-mobile h2 {
+    margin: 0 0 7px;
+    color: #ECEBEB;
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
+
+  .titulo-calendario-mobile p {
+    margin: 0;
+    color: #aaa4bd;
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .atalho-calendario {
+    position: fixed;
+    z-index: 1000;
+    top: 90px;
+    right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    background: #4E1996;
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .atalho-calendario svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .atalho-calendario:active {
+    background: #6d3fc1;
+    transform: scale(0.95);
+  }
+}
+
