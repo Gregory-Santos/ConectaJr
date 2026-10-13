@@ -33,6 +33,7 @@
 .seta {
     font-size: 14px;
     line-height: 1;
+    margin-bottom: 8px;
 }
 
 .lista-participantes {
@@ -74,6 +75,7 @@
     flex-shrink: 0;
     border-radius: 50%;
     object-fit: cover;
+    object-position: center top;
 }
 
 .dados-participante {
@@ -145,6 +147,7 @@
     line-height: 1;
     cursor: pointer;
     transition: var(--transicao);
+    margin-bottom: 12px;
 }
 
 .botao-expandir:hover {

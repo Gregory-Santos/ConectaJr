@@ -29,4 +29,6 @@ export class PesquisaService {
     limpar(): void {
         this.termo.set('');
     }
+
+    
 }

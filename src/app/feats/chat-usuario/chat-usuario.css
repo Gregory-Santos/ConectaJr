@@ -120,6 +120,7 @@ main {
     height: 100%;
     object-fit: contain;
     display: block;
+    object-position: center top;
 }
 .card-chat {
     width: 676px;
@@ -178,6 +179,7 @@ main {
     border-radius: 50px;
     margin-left: 11px;
     margin-top: 12px;
+    object-position: center top;
 }
 
 .info-usuario {

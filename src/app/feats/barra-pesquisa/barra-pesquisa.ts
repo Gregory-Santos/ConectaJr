@@ -15,4 +15,5 @@ export class BarraPesquisa {
     const input = event.target as HTMLInputElement;
     this.pesquisa.termo.set(input.value);
   }
+  
 }

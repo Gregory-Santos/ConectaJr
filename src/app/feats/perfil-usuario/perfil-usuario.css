@@ -24,6 +24,7 @@ main {
     margin-top: 111px;
     margin-left: 68px;
     object-fit: cover;
+    object-position: center top;
 }
 
 .info-perfil h1 {
@@ -162,6 +163,7 @@ main {
     margin-left: 16px;
     margin-top: 17px;
     cursor: pointer;
+    object-position: center top;
 }
 
 .conteudo-avaliacao {

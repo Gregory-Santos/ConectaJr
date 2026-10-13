@@ -164,10 +164,11 @@
     margin-top: 4px;
 }
 .responsavel-tarefa {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     object-fit: cover;
+    object-position: center top;
 }
 .fundo-popup {
     position: fixed;

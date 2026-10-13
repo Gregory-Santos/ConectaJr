@@ -190,21 +190,21 @@
 .tarefa-calendario strong {
     display: block;
     margin-bottom: 3px;
-    font-size: 9px;
+    font-size: 11px;
     font-weight: 600;
     line-height: 1.2;
 }
 .tarefa-calendario span {
     display: block;
     color: rgba(236, 235, 235, 0.75);
-    font-size: 8px;
+    font-size: 10px;
     line-height: 1.2;
 }
 .tarefa-calendario small {
     display: block;
     margin-top: 5px;
     color: rgba(236, 235, 235, 0.55);
-    font-size: 7px;
+    font-size: 8px;
     text-transform: capitalize;
 }
 .grade-calendario::-webkit-scrollbar {
