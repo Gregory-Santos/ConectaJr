@@ -1,6 +1,6 @@
 /*config global do side-bar*/
 .side-bar {
-    height: 100% !important; 
+    height: 100% !important;
     width: 100%;
     background-color: #1B1C30;
     margin-right: 13px;
@@ -36,7 +36,7 @@
     cursor: pointer;
 }
 
-.info-perfil > i {
+.info-perfil>i {
     position: absolute;
     right: 16px;
     top: 50%;
@@ -94,6 +94,7 @@
     border-radius: 13%;
     object-fit: cover;
     margin-left: 9px;
+    object-position: center top;
 }
 
 /*informaçoes do usuario global*/
@@ -260,7 +261,7 @@ nav a.ativo {
     box-sizing: border-box;
 }
 
-.card-config > i:first-child {
+.card-config>i:first-child {
     flex-shrink: 0;
     width: 24px;
     height: 24px;
@@ -291,6 +292,7 @@ nav a.ativo {
 .card-config .seta-config.aberta {
     transform: rotate(180deg);
 }
+
 .menu-config {
     display: flex;
     flex-direction: column;

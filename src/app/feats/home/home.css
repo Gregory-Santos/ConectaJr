@@ -166,6 +166,7 @@
   line-height: 1.5;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
 }
 
 .skills {
@@ -174,6 +175,8 @@
   gap: 5px;
   margin-top: auto;
   padding-top: 14px;
+  margin-bottom: 10px;
+  margin-left: 8px;
 }
 
 .skill {
@@ -193,7 +196,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 95%;
+    margin-left: 6px;
     padding: 8px 12px;
     border-radius: 7px;
     background: #6d3cc2;
@@ -203,6 +207,7 @@
     text-decoration: none;
     cursor: pointer;
     transition: 0.3s;
+    margin-bottom: 6px;
 }
 
 .btn-projeto:hover {
