@@ -1,320 +1,623 @@
-/*Config global da page*/
+
+/* CONFIGURAÇÃO GLOBAL */
+:host {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  color: #ECEBEB;
+  font-family: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 main {
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    min-height: 100vh;
-    background-color: #1B1C30;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+  min-width: 0;
+  min-height: 100vh;
+  padding: 40px 24px;
+  background-color: #1B1C30;
 }
 
-/*barra de rolagem do chat*/
+/* LISTA DE CONVERSAS */
 .janela-chat {
-    transform: translateY(65px);
-    height: 630px;
-    width: 520px;
-    overflow-y: auto;
-    will-change: scroll-position;
+  display: flex;
+  flex: 0 1 440px;
+  flex-direction: column;
+  width: 440px;
+  min-width: 0;
+  max-width: 100%;
+  max-height: 630px;
+  padding: 12px;
+  overflow-y: auto;
+  transform: translateY(25px);
 }
 
-.janela-chat::-webkit-scrollbar {
-    width: 8px;
-}
-
-.janela-chat::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.janela-chat::-webkit-scrollbar-thumb {
-    background-color: #6A1BDB;
-    border-radius: 10px;
-}
-
-/*Config global do card-usuario*/
-.card-usuario {
-    display: flex;
-    align-items: center;
-    padding: 18px;
-    margin-bottom: 20px;
-    background-color: #2D2C4E;
-    height: 46px;
-    width: 440px;
-    border-radius: 13px;
-    margin-left: 36px;
-    cursor: pointer;
-}
-
-.card-usuario:hover {
-    background-color: #4E1996;
-}
-
-
-/*config de cada conversa*/
-.usuario {
-    display: flex;
-    align-items: center;
-    font-family: 'Inter', sans-serif;
-    gap: 15px;
-}
-
-/*avatar do usuario*/
-.usuario img {
-    width: 58px;
-    height: 58px;
-    flex-shrink: 0;
-    border-radius: 50px;
-    object-fit: cover;
-    object-position: center 23%;
-    display: block;
-
-}
-
-.usuario p {
-    flex: 1;
-    min-width: 0;
-    overflow-wrap: anywhere;
-}
-
-/*dados gerais do usuario*/
-.dados-usuario {
-    display: flex;
-    flex-direction: column;
-}
-
-/*nome usuario*/
-.dados-usuario h1 {
-    font-size: 18px;
-    font-weight: 400;
-    color: #FFFFFF;
-    margin: 5px;
-}
-
-/*mensagem usuario*/
-.dados-usuario p {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.79);
-    margin: 4px;
-
-}
-
-/*icone de conversa não lida*/
-.dados-usuario i {
-    font-size: 8px;
-    color: #E2891B;
-    margin-left: 18px;
-    margin-top: 8px;
-    position: absolute;
-}
-
-/*card de decoração sem conversa selecionada*/
-
-
-.mensagem-inicial {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    border-radius: 13px;
-}
-
-.mensagem-inicial img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-    object-position: center top;
-}
-.card-chat {
-    width: 676px;
-    height: 510px;
-    background-color: #2D2C4E;
-    border-radius: 13px;
-    margin-left: 30px;
-    position: sticky;
-    transform: translateY(65px);
-   display: flex;
-   flex-direction: column;
-
-}
-
-/*escrita do card*/
-.escrita-card {
-    display: flex;
-    flex-direction: column;
-    text-align: start;
-    font-family: 'Inter', sans-serif;
-    color: #F5F5F5;
-    margin-left: 46px;
-    margin-top: 60px;
-}
-
-.escrita-card h1 {
-    margin: 1;
-    font-size: 20px;
-    font-weight: 400;
-}
-
-.escrita-card h2 {
-    margin: 0;
-    width: 369px;
-    font-size: 52px;
-    font-size: 800;
-}
-
-/*cabeçalho chat*/
-
-.card-cabecalho {
-    display: flex;
-    background-color: #4E1996;
-    border-radius: 13px;
-    padding-bottom: 8px;
-    font-family: 'Inter', sans-serif;
-    color: #FFFFFF;
-
-}
-
-.card-cabecalho img {
-    display: flex;
-    width: 64px;
-    height: 64px;
-    object-fit: cover;
-    border-radius: 50px;
-    margin-left: 11px;
-    margin-top: 12px;
-    object-position: center top;
-}
-
-.info-usuario {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    width: 100%;
-    height: 70px;
-    gap: 2px;
-}
-
-.info-usuario h1 {
-    font-size: 20px;
-    font-weight: 600;
-    margin: 0;
-    margin-left: 10px;
-    margin-top: 20px;
-}
-
-.info-usuario p {
-    margin: 0;
-    font-size: 12px;
-    font-weight: 400;
-    margin-left: 10px;
-}
-
-.campo-mensagem {
-    display: flex;
-    align-items: center;
-    height: 44px;
-    background-color: #4E1996;
-    border-radius: 25px;
-    padding: 0 6px;
-    margin-left: 24px;
-    margin-right: 24px;
-    margin-bottom: 18px;
-}
-
-.campo-mensagem i {
-    color: #FFFFFF;
-}
-
-.campo-mensagem input {
-    flex: 1;
-    border: none;
-    outline: none;
-    background: transparent;
-    color: #FFFFFF;
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    padding: 0 10px;
-}
-
-.campo-mensagem button {
-    background-color: #4E1996;
-    border: none;
-    font-size: 20px;
-    font-weight: 400;
-    margin-left: 3px;
-    margin-right: 3px;
-}
-
-.campo-mensagem input::placeholder {
-    color: #FFFFFF;
-}
-
-.mensagens {
-    flex: 1;
-    min-height: 0;
-    display: flex;
-    flex-direction: column;
-    overflow-y: scroll;
-    margin-right: 6px;
-}
-
+.janela-chat::-webkit-scrollbar,
 .mensagens::-webkit-scrollbar {
-    width: 6px;
-
+  width: 5px;
 }
 
+.janela-chat::-webkit-scrollbar-track,
 .mensagens::-webkit-scrollbar-track {
-    background: transparent;
+  background: transparent;
 }
 
+.janela-chat::-webkit-scrollbar-thumb,
 .mensagens::-webkit-scrollbar-thumb {
-    background-color: #6A1BDB;
-    border-radius: 10px;
+  background-color: #6A1BDB;
+  border-radius: 10px;
 }
 
-.mensagem-chat {
-    position: relative;
-    width: fit-content;
-    background-color: rgba(255, 255, 255, 0.79);
-    ;
-    color: #2D2C4E;
-    padding: 10px 50px 10px 14px;
-    border-radius: 15px;
-    margin-left: 24px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    font-size: 18px;
+.titulo-lista-chat {
+  margin: 0 0 18px;
+  padding: 4px 8px;
 }
 
-.mensagem-chat::after {
-    content: "";
-    position: absolute;
-    left: -10px;
-    border-width: 8px 8px 0 0;
-    border-style: solid;
-    border-color: #d9d9d9 transparent transparent transparent;
-    bottom: 8px;
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
-    border-right: 15px solid #d9d9d9;
+.titulo-lista-chat h1 {
+  margin: 0 0 5px;
+  color: #FFFFFF;
+  font-size: 24px;
+  font-weight: 700;
 }
 
-.mensagem-chat small {
-    position: absolute;
-    right: 8px;
-    bottom: 3px;
-    font-size: 10px;
+.titulo-lista-chat p {
+  margin: 0;
+  color: #aaa4bd;
+  font-size: 13px;
 }
 
-.minha-mensagem {
-    margin-left: auto;
-    margin-right: 24px;
+/* CARTÃO DO CONTATO */
+.card-usuario {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: 100%;
+  min-height: 82px;
+  margin: 0 0 10px;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 13px;
+  background-color: #2D2C4E;
+  color: #FFFFFF;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
 }
 
-.minha-mensagem::after {
-    left: auto;
-    right: -10px;
-    border-right: none;
-    border-left: 15px solid #d9d9d9;
+.card-usuario:hover,
+.card-usuario.conversa-ativa {
+  background-color: #3A285C;
+  border-color: rgba(164, 112, 239, 0.35);
+}
+
+.usuario {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: 100%;
+  min-width: 0;
+}
+
+.usuario img {
+  display: block;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 23%;
+}
+
+.dados-usuario {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.dados-usuario h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 6px;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.indicador-nao-lida {
+  flex-shrink: 0;
+  color: #E49126;
+  font-size: 8px;
 }
 
 .oculto {
+  display: none;
+}
+
+.dados-usuario .ultima-mensagem {
+  margin: 0;
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 12px;
+  font-weight: 400;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* JANELA DA CONVERSA */
+.card-chat {
+  display: flex;
+  flex: 0 1 676px;
+  flex-direction: column;
+  width: 676px;
+  min-width: 0;
+  height: 510px;
+  margin-top: 25px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 13px;
+  background-color: #2D2C4E;
+}
+
+/* CABEÇALHO */
+.card-cabecalho {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 12px;
+  min-height: 78px;
+  padding: 10px 16px;
+  background-color: #4E1996;
+  color: #FFFFFF;
+}
+
+.card-cabecalho img {
+  display: block;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  margin: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.info-usuario {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  gap: 4px;
+}
+
+.info-usuario h2 {
+  margin: 0;
+  overflow: hidden;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.info-usuario p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+}
+
+.botao-voltar-chat {
+  display: none;
+}
+
+/* MENSAGENS */
+.mensagens {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+  gap: 12px;
+  padding: 18px 14px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.mensagem-chat {
+  position: relative;
+  align-self: flex-start;
+  width: fit-content;
+  max-width: 78%;
+  margin: 0;
+  padding: 10px 48px 17px 13px;
+  border-radius: 14px 14px 14px 4px;
+  background-color: rgba(255, 255, 255, 0.88);
+  color: #2D2C4E;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.mensagem-chat::after {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  left: -8px;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-right: 9px solid rgba(255, 255, 255, 0.88);
+}
+
+.mensagem-chat small {
+  position: absolute;
+  right: 8px;
+  bottom: 4px;
+  font-size: 9px;
+  opacity: 0.65;
+}
+
+.mensagens .minha-mensagem {
+  align-self: flex-end;
+  margin-left: auto;
+  border-radius: 14px 14px 4px 14px;
+  background-color: #4E1996;
+  color: #FFFFFF;
+}
+
+.minha-mensagem::after {
+  right: -8px;
+  left: auto;
+  border-right: none;
+  border-left: 9px solid #4E1996;
+}
+
+/* CAMPO DE ENVIO */
+.campo-mensagem {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 8px;
+  min-height: 64px;
+  margin: 0;
+  padding: 10px 14px;
+  background-color: #24233D;
+}
+
+.campo-mensagem button {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: #FFFFFF;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.campo-mensagem button:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.campo-mensagem input[type="text"] {
+  flex: 1;
+  width: 0;
+  min-width: 0;
+  height: 40px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  outline: none;
+  background-color: #35334F;
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+}
+
+.campo-mensagem input[type="text"]:focus {
+  border-color: #8B5BD1;
+}
+
+.campo-mensagem input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ESTADO INICIAL */
+.mensagem-inicial {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  padding: 24px;
+  text-align: center;
+}
+
+.mensagem-inicial img {
+  display: block;
+  width: 100%;
+  max-width: 290px;
+  max-height: 260px;
+  object-fit: contain;
+}
+
+.mensagem-inicial h2 {
+  margin: 18px 0 8px;
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.mensagem-inicial p {
+  margin: 0;
+  color: #aaa4bd;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+/* RESPONSIVIDADE MOBILE */
+.botao-voltar-chat {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  :host {
+    width: 100%;
+    min-width: 0;
+  }
+
+  main {
+    display: block;
+    width: 100%;
+    min-height: 100dvh;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .janela-chat {
+    display: block;
+    width: 100%;
+    height: 100dvh;
+    max-height: none;
+    padding: 16px;
+    margin: 0;
+    transform: none;
+    overflow-y: auto;
+    border-radius: 0;
+  }
+
+  .titulo-lista-chat {
+    padding: 12px 4px 20px;
+  }
+
+  .titulo-lista-chat h1 {
+    margin: 0 0 5px;
+    font-size: 24px;
+  }
+
+  .titulo-lista-chat p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.7;
+  }
+
+  .card-usuario {
+    display: block;
+    width: 100%;
+    min-height: 76px;
+    height: auto;
+    margin: 0 0 10px;
+    padding: 12px;
+    text-align: left;
+    border-radius: 12px;
+  }
+
+  .usuario {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .usuario img {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .dados-usuario {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .dados-usuario h2 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 5px;
+    font-size: 15px;
+  }
+
+  .ultima-mensagem {
+    margin: 0;
+    overflow: hidden;
+    font-size: 13px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    opacity: 0.75;
+  }
+
+  
+.card-chat {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  transform: none;
+  border-radius: 0;
+  overflow: hidden;
+  flex-direction: column;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+main.conversa-aberta .janela-chat {
+  display: none;
+}
+
+main.conversa-aberta .card-chat {
+  display: flex;
+}
+
+.card-cabecalho {
+  flex-shrink: 0;
+}
+
+.mensagens {
+  flex: 1;
+  max-height: 100%;
+  padding: 16px 12px;
+  overflow-y: auto;
+}
+
+.campo-mensagem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px;
+  padding-bottom: max(32px, env(safe-area-inset-bottom, 0px));
+  margin: 0;
+  border-radius: 0;
+  position: relative;
+  z-index: 2;
+  background: #4E1996;
+}
+
+.campo-mensagem input[type="text"] {
+  flex: 1;
+  width: 0;
+  min-width: 0;
+  font-size: 14px;
+}
+
+.campo-mensagem button {
+  flex-shrink: 0;
+}
+
+
+  main.conversa-aberta .janela-chat {
     display: none;
+  }
+
+  main.conversa-aberta .card-chat {
+    display: flex;
+  }
+
+  .card-cabecalho {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 12px;
+    min-height: 72px;
+    padding: 12px 16px;
+  }
+
+  .botao-voltar-chat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    color: #ECEBEB;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    font-size: 18px;
+  }
+
+  .card-cabecalho img {
+    width: 42px;
+    height: 42px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .info-usuario {
+    min-width: 0;
+  }
+
+  .info-usuario h2 {
+    margin: 0 0 4px;
+    font-size: 16px;
+  }
+
+  .info-usuario p {
+    margin: 0;
+    font-size: 12px;
+    opacity: 0.75;
+  }
+
+  .mensagens {
+    flex: 1;
+    min-height: 0;
+    padding: 16px 12px;
+    overflow-y: auto;
+  }
+
+  .mensagem-chat {
+    max-width: 85%;
+    overflow-wrap: anywhere;
+    font-size: 14px;
+  }
+
+  .campo-mensagem {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 8px;
+    width: 100%;
+    padding: 10px 12px;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .campo-mensagem input[type="text"] {
+    flex: 1;
+    width: 0;
+    min-width: 0;
+    font-size: 14px;
+  }
+
+  .campo-mensagem button {
+    flex-shrink: 0;
+  }
+
+  .mensagem-inicial {
+    display: none;
+  }
 }

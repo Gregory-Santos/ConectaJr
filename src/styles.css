@@ -31,4 +31,9 @@ body {
     width: 100%;
     margin: 0;
   }
+
+  body:has(main.conversa-aberta) app-side-bar-esquerda {
+    display: none !important;
+  }
+
 }

@@ -299,14 +299,14 @@ nav a.ativo {
     position: fixed;
     left: 12px;
     right: 12px;
-    bottom: calc(16px + env(safe-area-inset-bottom));
+    bottom: calc(32px + env(safe-area-inset-bottom));
     width: auto;
     max-width: 420px;
     min-height: 70px;
     margin: 0 auto;
     padding: 8px 10px;
     box-sizing: border-box;
-    background-color: #25253C;
+    background-color: #25253cf0;
     border: 1px solid #FFFFFF20;
     border-radius: 22px;
     box-shadow: 0 8px 30px #00000055;
