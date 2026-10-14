@@ -41,7 +41,7 @@
   height: 180px;
   margin-bottom: 28px;
   background-color: #201840;
-  background-image: url('img/banner.png');
+  background-image: url('/img/banner.png');
   background-position: center;
   background-size: cover;
   border-radius: 20px;
