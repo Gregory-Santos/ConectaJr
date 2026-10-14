@@ -214,7 +214,7 @@ app-agenda {
     margin-top: 0;
     right: 50px;
     width: 330px;
-    z-index: 99999;
+    z-index: 1;
 }
 
 
